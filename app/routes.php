@@ -13,5 +13,12 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+//	return View::make('hello');
+    return Redirect::to('users');
+
+});
+
+Route::get('users', function()
+{
+    return 'Users!';
 });
