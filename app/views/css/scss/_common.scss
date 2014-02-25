@@ -1,0 +1,136 @@
+@import "param";
+
+/*
+|--------------------------------------------------------------------------
+| TOPOGRAPHY
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-additional-text{
+  color: $mid-grey;
+}
+
+.am-h0{
+  font-size: 48px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.am-h1{
+  font-size: 36px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.am-h2{
+  font-size: 30px;
+}
+
+.am-h3{
+  font-size: 24px;
+}
+
+.am-h4{
+  font-size: 18px;
+}
+
+.am-h5{
+  font-size: 14px;
+}
+
+.am-h6{
+  font-size: 12px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| CUSTOMIZED SHAPE
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-triangle{
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid white;
+}
+
+.am-hr-white{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid white;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| REUSABLES
+|--------------------------------------------------------------------------
+|
+*/
+.am-photo-circle{
+  box-sizing:         border-box;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+
+  box-transition:     0.2s;
+  -moz-transition:    0.2s;
+  -webkit-transition: 0.2s;
+
+  background: $bg-primary;
+  border-radius: 125px;
+  box-shadow: 0px 2px 4px 0px $mid-grey;
+  border-color:white;
+}
+
+.am-box-inside-with-shadow{
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:        border-box;
+  border: 1px solid $bg-primary;
+  box-shadow: 0px 0px 1px 0px $light-grey;
+  border-radius: 4px;
+}
+
+.am-tag{
+  color:white;
+  background: $secondary-color;
+  display: inline-block;
+  height: 24px;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.am-row{
+  margin-left: 40px;
+  margin-right:40px;
+}
+
+
+
+
+
+.am-title{
+
+}
+
+.am-title-bar .am-title{
+}
+
+
+.am-title-bar-tab{
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+.am-title-bar-tab>:first-child{
+  margin-right: 20px;
+}
+
+
