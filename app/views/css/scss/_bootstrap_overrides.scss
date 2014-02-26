@@ -17,6 +17,18 @@ a, a:hover, a:focus{
   border-color: $primary-color-dark;
 }
 
+.btn-success {
+  color: #fff;
+  background-color: $secondary-color;
+  border-color: #4cae4c;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+
 /*dashboard page whilte well*/
 .alert-normal {
   color: #000000;

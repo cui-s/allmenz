@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                <div id="am-header-content-login" class="pull-right am-h4">ログイン
+                <div id="am-header-content-login" class="pull-right am-h4" data-toggle="modal" data-target="#modalLogIn">ログイン
                 </div>
             </div>
         </div>
@@ -98,7 +98,107 @@
 
 
 
+
+
+    <!----------------------------------------------------------------------
+    | SIGNUP MODAL
+    |---------------------------------------------------------------------->
+    <div class="modal fade" id="modalLogIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog am-modal-dialog-signup">
+            <div class="modal-content">
+               <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabelLogIn">ログイン</h4>
+               </div>
+               <div class="modal-body">
+                    <button type="button" class="btn btn-primary btn-block" style="background-color: #1867A0;" id="aw-facebookLogin">
+                        <span class="col-md-2">
+                            <i class="fa fa-facebook fa-inverse" style="font-size: 1.4em;"></i>
+                        </span>
+                        <span class="col-md-10 am-modal-dialog-socialbar">
+                            Facebookでログインする
+                        </span>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-block" style="background-color: #3498e1;" id="aw-twitterLogin">
+                        <span class="col-md-2">
+                            <i class="fa fa-twitter fa-inverse" style="font-size: 1.4em;"></i>
+                        </span>
+                        <span class="col-md-10 am-modal-dialog-socialbar">
+                            Twitterでログインする
+                        </span>
+                    </button>
+
+                   <div class="am-modal-dialog-divider">まだは
+                   </div>
+
+                   <hr>
+
+
+                   <div class="input-group am-modal-dialog-input">
+                       <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                       <input class="form-control" type="text" placeholder="Email address">
+                   </div>
+                   <div class="input-group am-modal-dialog-input">
+                       <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                       <input class="form-control" type="password" placeholder="Password">
+                   </div>
+                   <div class="checkbox">
+                       <label>
+                           <input type="checkbox"> ログイン情報を記憶する
+                       </label>
+                   </div>
+
+                   <button type="button" class="btn btn-success btn-block" id="normalLogin">ログイン</button>
+
+<!--                    <form role="form" id="form-loginNormal">-->
+<!--                        <hr>-->
+<!--                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email">-->
+<!--                        <br>-->
+<!--                        <input type="password" class="form-control" name="loginPassword" id="loginPassword" placeholder="Password">-->
+<!--                        <div class="checkbox">-->
+<!--                            <label>-->
+<!--                                <input type="checkbox"> ログイン情報を記憶する-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <br>-->
+<!--                        <button type="button" class="btn btn-info btn-block" id="normalLogin">ログイン</button>-->
+<!--                    </form>-->
+                </div>
+
+                <div class="modal-footer">
+                    <!--<span><span class="label label-primary">Snap&Sell</span>のアカウントはお持ちですか？ <a href="#" id="linkRedirectToSignUp">登録</a></span>-->
+                    <span id="registerReminderMessage"><span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？
+                        <a id="linkOpenLogin">登録</a></span>
+
+
+                    <form role="form" id="form-registrationNormal">
+                        <input type="text" class="form-control" name="registerFirstName" id="registerFirstName" placeholder="First name" required><br>
+                        <input type="text" class="form-control" name="registerLastName" id="registerLastName" placeholder="Last name" required><br>
+                        <input type="email" class="form-control" name="registerEmail" id="registerEmail" placeholder="Email" required><br>
+                        <input type="password" class="form-control" name="registerPassword" id="registerPassword" placeholder="Password" required><br>
+                        <input type="password" class="form-control" name="registerPasswordConfirm" id="registerPasswordConfirm" placeholder="Confirm Password" required><br>
+                        <div class="checkbox" id="signUpNewsletterCheckbox">
+                            <label>
+                                <input type="checkbox" id="signUpNewsletterInput"> Subscribe to our newsletter
+                            </label>
+                        </div>
+                        <small>By signing up, I agree to Airbnb's サービス利用規約, 個人情報保護ポリシー, ゲスト返金ポリシー, and ホスト保証規約.</small>
+
+                        <br>
+                        <!--<button type="button" class="btn btn-info btn-block" id="normalSignUp">登録</button>-->
+                        <input class="btn btn-info btn-block submit" type="submit" value="登録" id="normalSignUp">
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </body>
+
 
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 

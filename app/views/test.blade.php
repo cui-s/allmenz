@@ -3,6 +3,9 @@
 @section('content')
 <div id="am-content">
 
+    <!----------------------------------------------------------------------
+    | SLIDER
+    |---------------------------------------------------------------------->
     <div id="am-index-slider">
         <div class="am-container">
             <div id="am-index-slider-content">
@@ -14,7 +17,6 @@
                         <span class="am-h0 am-index-slider-entry">__________________にせわしましょう！</span>
                     </div>
                 </div>
-
                 <div class="clearfix"></div>
 
                 <div id="am-index-slider-options">
@@ -25,12 +27,13 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
 
-
+    <!----------------------------------------------------------------------
+    | TUTORIAL
+    |---------------------------------------------------------------------->
     <div id="am-index-tutorial">
         <div class="am-container">
             <div class="am-row text-center">
@@ -76,17 +79,17 @@
 
             <div class="clearfix"></div>
             <div class="am-hr-white"></div>
-
             <div class="am-row text-center">
                 <div id="am-index-tutorial-link-label"><strong>ALLMENZご利用の流れ»</strong></div>
-
             </div>
         </div>
 
     </div>
 
 
-
+    <!----------------------------------------------------------------------
+    | CATEGORY
+    |---------------------------------------------------------------------->
     <div id="am-index-category">
         <div class="am-container">
             <div class="am-row">
@@ -178,7 +181,7 @@
                                     </div>
                                     <div id="am-index-category-unfeatured-block2">
                                         <div class="am-index-category-unfeatured-title">
-                                            <span class="am-h3"><strong>髭</strong></span>
+                                            <span class="am-h3"><strong>髪型</strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -215,6 +218,13 @@
         </div>
     </div>
 
+
+
+
+
+    <!----------------------------------------------------------------------
+    | STARUSER
+    |---------------------------------------------------------------------->
     <div id="am-index-staruser">
         <div class="am-container">
             <div class="am-row">
@@ -291,6 +301,6 @@
             </div>
         </div>
     </div>
-
 </div>
+
 @stop
