@@ -8,8 +8,7 @@
 */
 
 .am-modal-dialog-signup{
-  width:300px;
-  margin:auto;
+  width:310px;
 }
 
 .am-modal-dialog-socialbar{
@@ -32,6 +31,10 @@
 
 .am-modal-dialog-socialbar{
 
+}
+
+#am-modal-register-label{
+  color:$primary-color;
 }
 
 
@@ -139,7 +142,7 @@
 
 #am-index-category-featured-picture{
   @extend .am-box-inside-with-shadow;
-  height: 300px;
+  height: 310px;
   background-image:url("../resources/index/category/skin.jpg");
   //  this is just the width of the picture
   background-size: 600px;

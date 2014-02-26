@@ -32,11 +32,6 @@
                         <span class="am-h4">EXPLORE</span>
                     </div>
                     <div class="am-header-content-option-item">
-                        <i class="fa fa-question-circle am-header-icon"></i>
-                        <span class="am-h4">質問</span>
-                    </div>
-
-                    <div class="am-header-content-option-item">
                         <i class="fa fa-tags am-header-icon"></i><span class="am-h4">タグ</span>
                     </div>
                 </div>
@@ -137,11 +132,11 @@
 
                    <div class="input-group am-modal-dialog-input">
                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                       <input class="form-control" type="text" placeholder="Email address">
+                       <input class="form-control" type="text" placeholder="メールアドレス">
                    </div>
                    <div class="input-group am-modal-dialog-input">
                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                       <input class="form-control" type="password" placeholder="Password">
+                       <input class="form-control" type="password" placeholder="パスワード">
                    </div>
                    <div class="checkbox">
                        <label>
@@ -167,27 +162,42 @@
                 </div>
 
                 <div class="modal-footer">
-                    <!--<span><span class="label label-primary">Snap&Sell</span>のアカウントはお持ちですか？ <a href="#" id="linkRedirectToSignUp">登録</a></span>-->
-                    <span id="registerReminderMessage"><span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？
-                        <a id="linkOpenLogin">登録</a></span>
+                    <div id="registerReminderMessage"><span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？</div>
+                    <div id="am-modal-register-label"><strong>新規登録</strong></div>
 
 
                     <form role="form" id="form-registrationNormal">
-                        <input type="text" class="form-control" name="registerFirstName" id="registerFirstName" placeholder="First name" required><br>
-                        <input type="text" class="form-control" name="registerLastName" id="registerLastName" placeholder="Last name" required><br>
-                        <input type="email" class="form-control" name="registerEmail" id="registerEmail" placeholder="Email" required><br>
-                        <input type="password" class="form-control" name="registerPassword" id="registerPassword" placeholder="Password" required><br>
-                        <input type="password" class="form-control" name="registerPasswordConfirm" id="registerPasswordConfirm" placeholder="Confirm Password" required><br>
+
+                        <div class="input-group am-modal-dialog-input">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input class="form-control" type="text" name="registerFirstName" id="registerFirstName" placeholder="名">
+                        </div>
+                        <div class="input-group am-modal-dialog-input">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input class="form-control" type="text" name="registerLastName" id="registerLastName" placeholder="姓">
+                        </div>
+                        <div class="input-group am-modal-dialog-input">
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <input class="form-control" type="text" name="registerEmail" id="registerEmail" placeholder="メールアドレス">
+                        </div>
+                        <div class="input-group am-modal-dialog-input">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input class="form-control" type="text" name="registerPassword" id="registerPassword" placeholder="パスワード">
+                        </div>
+                        <div class="input-group am-modal-dialog-input">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input class="form-control" type="text" name="registerPasswordConfirm" id="registerPasswordConfirm" placeholder="パスワードを確認する">
+                        </div>
+
                         <div class="checkbox" id="signUpNewsletterCheckbox">
                             <label>
-                                <input type="checkbox" id="signUpNewsletterInput"> Subscribe to our newsletter
+                                <input type="checkbox" id="signUpNewsletterInput"><span class="am-h6">耳寄りなALLMENZニュースをお聞かせください！</span>
                             </label>
                         </div>
-                        <small>By signing up, I agree to Airbnb's サービス利用規約, 個人情報保護ポリシー, ゲスト返金ポリシー, and ホスト保証規約.</small>
+                        <div class="am-h6"><small>登録することで、ALLMENZのサービス利用規約、個人情報保護ポリシー, ゲスト返金ポリシー、ホスト保証規約に同意したことになります。</small></div>
 
                         <br>
-                        <!--<button type="button" class="btn btn-info btn-block" id="normalSignUp">登録</button>-->
-                        <input class="btn btn-info btn-block submit" type="submit" value="登録" id="normalSignUp">
+                        <input class="btn btn-success btn-block submit" type="submit" value="登録" id="normalSignUp">
                     </form>
 
 
