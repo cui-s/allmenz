@@ -45,6 +45,9 @@
   font-size: 12px;
 }
 
+.am-h7{
+  font-size: 10px;
+}
 /*
 |--------------------------------------------------------------------------
 | CUSTOMIZED SHAPE
@@ -105,6 +108,36 @@
   height: 24px;
   border-radius: 5px;
   padding: 2px 5px;
+}
+
+.am-badge{
+  padding: 2px 3px;
+  border-radius: 5px;
+  background: $mid-grey;
+  display: inline;
+}
+
+.am-badge-circle{
+  height: 10px;
+  display: inline-block;
+  width: 10px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.am-badge-gold{
+  @extend .am-badge-circle;
+  background: #f8e72a;
+}
+
+.am-badge-silver{
+  @extend .am-badge-circle;
+  background: #d4d4d4;
+}
+
+.am-badge-bronze{
+  @extend .am-badge-circle;
+  background: #8b572a;
 }
 
 .am-row{
