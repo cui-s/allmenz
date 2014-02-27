@@ -5,7 +5,7 @@
 <html>
 <head>
     <!--    this part needs to be templat-ized later-->
-    <title>Basic Page</title>
+    <title>「ALLMENZ」へよこそう</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -28,14 +28,120 @@
                     <i class="fa fa-flip-horizontal fa-pagelines"></i>
                 </div>
                 <div id="am-header-options">
-                    <div class="am-header-content-option-item">
-                        <i class="fa fa-eye fa-fw am-header-icon"></i>
-                        <span class="am-h4">EXPLORE</span>
+
+
+
+                    <div class="btn-group am-header-content-option-item" id="am-header-explore">
+                        <div class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-eye fa-fw am-header-icon"></i>
+                            <span class="am-h3">EXPLORE</span>
+                        </div>
+                        <ul class="dropdown-menu" id="am-header-explore-dropdown">
+                            <div class="col-md-4">
+                                <div class="am-header-explore-dropdown-header">
+                                    <i class="fa fa-star"></i>
+                                    <span class="am-h4">注目</span>
+                                </div>
+                                <div class="am-header-explore-dropdown-featured-oneitem">
+                                    <div class="am-header-explore-dropdown-featured-oneitem-img"></div>
+                                    <div class="am-header-explore-dropdown-featured-oneitem-text">
+                                        東京から25 キロメートルキ
+                                        ロメートル以内京から25キ
+                                        ロメート
+                                    </div>
+                                </div>
+                                <div class="am-header-explore-dropdown-featured-oneitem">
+                                    <div class="am-header-explore-dropdown-featured-oneitem-img"></div>
+                                    <div class="am-header-explore-dropdown-featured-oneitem-text">
+                                        東京 から 25 キロメートルキ
+                                        ロメートル以内の最
+                                    </div>
+                                </div>
+                                <div class="am-header-explore-dropdown-featured-oneitem">
+                                    <div class="am-header-explore-dropdown-featured-oneitem-img"></div>
+                                    <div class="am-header-explore-dropdown-featured-oneitem-text">
+                                        ロメートル以内の最寄り店舗
+                                    </div>
+                                </div>
+                                <div class="am-header-explore-dropdown-seeall">
+                                    <div id="am-header-explore-dropdown-seeall-featured">
+                                        <i class="fa fa-star"></i>
+                                        <span>すべての注目</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="am-header-explore-dropdown-header">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span class="am-h4">最新<span>
+                                </div>
+                                <div class="am-header-explore-dropdown-recent-oneitem-text">
+                                    東京から25 キロメートルキロメートル以内京から25キ？
+                                </div>
+                                <div class="am-header-explore-dropdown-recent-oneitem-text">
+                                    東京から25 キロメートルキロメートル以内京から25キ？
+                                </div>
+                                <div class="am-header-explore-dropdown-recent-oneitem-text">
+                                    東京から25 キロメートルキロメートル以内京から25キ？
+                                </div>
+                                <div class="am-header-explore-dropdown-recent-oneitem-text">
+                                    東京から25 キロメートルキロメートル以内京から25キ？
+                                </div>
+                                <div class="am-header-explore-dropdown-seeall">
+                                    <div id="am-header-explore-dropdown-seeall-recent">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>すべての最新</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="am-header-explore-dropdown-header">
+                                    <i class="fa fa-list"></i>
+                                    <span class="am-h4">カテゴリ</span>
+                                </div>
+                                <div class="am-header-explore-dropdown-category-oneline">
+                                    <div class="am-header-explore-dropdown-category-oneitem">
+                                        <span>皮膚</span>
+                                    </div>
+                                    <div class="am-header-explore-dropdown-category-oneitem">
+                                        <span>スキン</span>
+                                    </div>
+                                    <div class="am-header-explore-dropdown-category-oneitem">
+                                        <span>ひげ</span>
+                                    </div>
+                                </div>
+                                <div class="am-header-explore-dropdown-category-oneline">
+                                    <div class="am-header-explore-dropdown-category-oneitem">
+                                        <span>皮膚</span>
+                                    </div>
+                                    <div class="am-header-explore-dropdown-category-oneitem">
+                                        <span>スキン</span>
+                                    </div>
+                                    <div class="am-header-explore-dropdown-category-oneitem">
+                                        <span>ひげ</span>
+                                    </div>
+                                </div>
+                                <div class="am-header-explore-dropdown-seeall">
+                                    <div id="am-header-explore-dropdown-seeall-recent">
+                                        <i class="fa fa-list"></i>
+                                        <span>すべてのカテゴリ>?</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
                     </div>
+
                     <div class="am-header-content-option-item">
                         <i class="fa fa-tags fa-fw am-header-icon"></i>
                         <span class="am-h4">タグ</span>
                     </div>
+
                 </div>
 
 <!--                <div id="am-header-content-login" class="pull-right am-h4" data-toggle="modal" data-target="#modalLogIn">-->

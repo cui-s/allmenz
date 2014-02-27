@@ -534,6 +534,79 @@ a, a:hover, a:focus {
   margin-right: 10px;
   padding-right: 10px; }
 
+#am-header-explore:hover {
+  background: #d4d4d4; }
+
+#am-header-explore-dropdown {
+  background: #d4d4d4;
+  width: 660px;
+  padding: 0px;
+  margin-top: -1px; }
+
+#am-header-explore-dropdown .col-md-4 {
+  padding: 0px 15px; }
+
+.am-header-explore-dropdown-header {
+  border-bottom: 1px solid #9b9b9b;
+  padding: 10px 0 5px;
+  font-weight: bold; }
+
+.am-header-explore-dropdown-header .fa {
+  font-size: 1.4em;
+  margin-right: 2px; }
+
+.am-header-explore-dropdown-header .fa-star {
+  color: #3498e1; }
+
+.am-header-explore-dropdown-header .fa-clock-o {
+  color: #1abc9c; }
+
+.am-header-explore-dropdown-header .fa-list {
+  color: #F56923; }
+
+.am-header-explore-dropdown-featured-oneitem, .am-header-explore-dropdown-recent-oneitem-text, .am-header-explore-dropdown-category-oneline {
+  border-bottom: 1px solid #9b9b9b;
+  padding: 5px 0;
+  font-size: 12px;
+  height: 60px; }
+
+.am-header-explore-dropdown-featured-oneitem-img {
+  width: 60px;
+  height: 50px;
+  border-radius: 2px;
+  float: left;
+  background: #95c9ef;
+  margin-right: 5px; }
+
+.am-header-explore-dropdown-recent-oneitem-text {
+  height: 45px; }
+
+.am-header-explore-dropdown-category-oneitem {
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  display: inline-block;
+  background: red;
+  border: 2px solid white;
+  margin: 5px 2px; }
+
+.am-header-explore-dropdown-category-oneitem span {
+  margin-top: 30px;
+  position: relative;
+  top: 55px;
+  left: 10px;
+  font-size: 14px; }
+
+.am-header-explore-dropdown-category-oneline {
+  height: 90px; }
+
+.am-header-explore-dropdown-seeall {
+  background: #9b9b9b;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0; }
+
 .am-header-content-option-item:last-child {
   border-right: 0px; }
 
@@ -616,14 +689,14 @@ a, a:hover, a:focus {
 
 .am-header-content-dropdown {
   width: 400px;
-  padding: 0px; }
+  padding: 0px;
+  margin-top: -1px; }
 
 .am-header-content-dropdown-header {
   height: 36px;
   background: #9b9b9b;
   text-align: left;
-  padding: 10px;
-  margin-top: -3px; }
+  padding: 10px; }
 
 .am-header-content-dropdown-body {
   padding: 0px 10px 10px; }
@@ -636,7 +709,7 @@ a, a:hover, a:focus {
 
 .am-header-content-dropdown-oneitem {
   border-bottom: 2px solid #d4d4d4;
-  height: 90px;
+  overflow: auto;
   padding-top: 10px; }
 
 .am-header-content-dropdown-oneitem .col-md-3 {

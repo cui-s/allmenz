@@ -29,6 +29,105 @@
   padding-right: 10px;
 }
 
+#am-header-explore{
+
+}
+
+#am-header-explore:hover{
+  background: $light-grey;
+}
+
+#am-header-explore-dropdown{
+  background: $light-grey;
+  width: 660px;
+  padding:0px;
+  margin-top: -1px;
+}
+#am-header-explore-dropdown .col-md-4{
+  padding: 0px 15px;
+}
+
+.am-header-explore-dropdown-header{
+  border-bottom: 1px solid $mid-grey;
+  padding: 10px 0 5px;
+  font-weight: bold;
+}
+
+.am-header-explore-dropdown-header .fa{
+  font-size: 1.4em;
+  margin-right: 2px;
+}
+
+.am-header-explore-dropdown-header .fa-star{
+  color:$primary-color;
+}
+
+.am-header-explore-dropdown-header .fa-clock-o{
+  color:$secondary-color;
+}
+
+.am-header-explore-dropdown-header .fa-list{
+  color:#F56923;
+}
+
+.am-header-explore-dropdown-featured-oneitem{
+  border-bottom: 1px solid $mid-grey;
+  padding: 5px 0;
+  font-size: 12px;
+  height:60px;
+}
+
+.am-header-explore-dropdown-featured-oneitem-img{
+  width:60px;
+  height:50px;
+  border-radius: 2px;
+  float: left;
+  background: $primary-color-light;
+  margin-right: 5px;
+}
+
+.am-header-explore-dropdown-recent-oneitem-text{
+  @extend .am-header-explore-dropdown-featured-oneitem;
+  height: 45px;
+}
+
+.am-header-explore-dropdown-category-oneitem{
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  display: inline-block;
+  background: red;
+  border: 2px solid white;
+  margin: 5px 2px;
+}
+
+.am-header-explore-dropdown-category-oneitem span{
+  margin-top: 30px;
+  position: relative;
+  top: 55px;
+  left: 10px;
+  font-size: 14px;
+}
+
+.am-header-explore-dropdown-category-oneline{
+  @extend .am-header-explore-dropdown-featured-oneitem;
+  height: 90px;
+}
+
+
+.am-header-explore-dropdown-seeall{
+  background: $mid-grey;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.am-header-explore-dropdown-seeall-featured{
+
+}
+
+
 .am-header-content-option-item:last-child{
   border-right: 0px;
 }
@@ -134,6 +233,7 @@
 .am-header-content-dropdown{
   width: 400px;
   padding:0px;
+  margin-top: -1px;
 }
 
 .am-header-content-dropdown-header{
@@ -141,7 +241,6 @@
   background: #9b9b9b;
   text-align: left;
   padding: 10px;
-  margin-top: -3px;
 }
 
 .am-header-content-dropdown-body{
@@ -158,7 +257,7 @@
 
 .am-header-content-dropdown-oneitem{
   border-bottom: 2px solid #d4d4d4;
-  height: 90px;
+  overflow: auto;
   padding-top: 10px;
 }
 
