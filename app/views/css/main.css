@@ -266,6 +266,10 @@ a, a:hover, a:focus {
   font-size: 12px;
   left: 95px; }
 
+.am-profile-simplified {
+  position: relative;
+  margin-top: -20px; }
+
 .am-photo-circle, .am-index-staruser-circle, #am-index-staruser-details-stats-photo {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -603,6 +607,76 @@ a, a:hover, a:focus {
 
 #am-index-staruser-details-summary {
   padding: 20px 25px; }
+
+#am-search-input input {
+  background: #d4d4d4;
+  color: white;
+  width: 75%;
+  float: left;
+  margin-right: 15px; }
+
+#am-search-go {
+  margin-left: 10px;
+  background: #3498e1;
+  font-weight: bold;
+  color: white; }
+
+#am-search-input .btn:last-child {
+  width: 15%;
+  float: right;
+  font-weight: bold; }
+
+#am-search-result-content {
+  margin-top: 40px; }
+
+#am-search-result-number {
+  display: inline-block;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 10px; }
+
+.am-search-oneitem {
+  padding: 10px;
+  border-bottom: 1px solid #d4d4d4; }
+
+.am-search-oneitem:first-child {
+  margin-top: -20px; }
+
+.am-search-oneitem:last-child {
+  border-bottom: 0px;
+  margin-bottom: 20px; }
+
+.am-search-oneitem .glyphicon {
+  font-size: 2.2em;
+  color: white;
+  margin-right: 10px; }
+
+.am-search-oneitem-stats {
+  width: 15%;
+  display: block;
+  background: #d4d4d4;
+  float: left;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 10px; }
+
+.am-search-oneitem-stats-oneitem {
+  height: 50px;
+  width: 125px;
+  display: inline-block;
+  background: #3498e1;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 5px; }
+
+.am-search-oneitem-stats-oneitem:last-child {
+  margin-bottom: 0px; }
+
+.am-search-oneitem-stats-oneitem-number {
+  position: absolute;
+  font-size: 18px;
+  margin-top: -3px; }
 
 .am-qnacommon-oneitem {
   border-bottom: 1px solid #d4d4d4;

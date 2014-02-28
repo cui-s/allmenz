@@ -28,6 +28,10 @@ Route::get('tag_main', function()
     return View::make('tag_main');
 });
 
+Route::get('search', function()
+{
+    return View::make('search');
+});
 
 
 Route::get('users', function()
