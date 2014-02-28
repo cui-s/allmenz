@@ -77,6 +77,115 @@
 |--------------------------------------------------------------------------
 |
 */
+
+
+.am-profile{
+  display: inline-block;
+  width: 200px;
+  height: 45px;
+  position: relative;
+  left: 130px;
+}
+
+.am-profile:hover{
+  background: $light-grey;
+}
+
+.am-profile-photo{
+  float:left;
+}
+
+
+.am-profile-photo{
+  float:left;
+}
+
+.am-profile-photo img{
+  border-radius: 5px;
+  border: 2px solid white;
+  box-sizing: content-box;
+  margin-top: 2px;
+  margin-right: -30px;
+}
+
+.am-profile-reputation{
+  background: $primary-color-light;
+  border-radius: 2px;
+  width: auto;
+  font-size: 12px;
+  position: relative;
+  top: 4px;
+  left: 35px;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.am-profile-name{
+
+}
+
+.am-profile-posttime{
+
+}
+
+.am-profile-badge{
+  top: 25px;
+  position: absolute;
+  font-size: 12px;
+  left: 42px;
+}
+
+.am-profile-badge-circle{
+  height: 10px;
+  display: inline-block;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.am-profile-gold{
+  @extend .am-profile-badge-circle;
+  background: #f8e72a;
+}
+
+.am-profile-silver{
+  @extend .am-profile-badge-circle;
+  background: #d4d4d4;
+}
+
+.am-profile-bronze{
+  @extend .am-profile-badge-circle;
+  background: #8b572a;
+}
+
+.am-profile-full{
+//  adjust the css when post time and name are added in
+}
+
+.am-profile-full {
+  float: right;
+  position: relative;
+  margin-right: 140px;
+  margin-top: -40px;
+}
+
+.am-profile-full .am-profile-name{
+  position: relative;
+  margin-left: 41px;
+  margin-top: 2px;
+}
+
+
+.am-profile-full .am-profile-reputation{
+  top: 0px;
+}
+
+.am-profile-full .am-profile-badge{
+  top: 40px;
+  position: absolute;
+  font-size: 12px;
+  left: 95px;
+}
+
 .am-photo-circle{
   box-sizing:         border-box;
   -moz-box-sizing:    border-box;

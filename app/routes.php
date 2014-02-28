@@ -11,9 +11,21 @@
 |
 */
 
+
 Route::get('/', function()
 {
-	return View::make('tag_main');
+    return View::make('index');
+});
+
+
+Route::get('tag_detail', function()
+{
+	return View::make('tag_detail');
+});
+
+Route::get('tag_main', function()
+{
+    return View::make('tag_main');
 });
 
 

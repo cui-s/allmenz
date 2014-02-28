@@ -7,16 +7,100 @@
 
 
 
+//----------------------- Q/A PAGE ----------------------
+.am-qnacommon-oneitem{
+  border-bottom: 1px solid $light-grey;
+  padding: 25px 10px 20px;
+  overflow: auto;
+}
+
+.am-qnacommon-oneitem:last-child{
+  border-bottom: 0px;
+}
+
+.am-qnacommon-oneitem .glyphicon{
+  font-size: 2.2em;
+  color: white;
+  margin-left: 6px;
+  margin-bottom: 16px;
+}
+
+.am-qnacommon-oneitem .col-md-3{
+  padding: 0px;
+}
+
+.am-qnacommon-oneitem .col-md-9{
+  padding: 0px;
+  margin-left: -40px;
+}
+
+
+
+.am-qnacommon-oneitem-stats{
+  float:left;
+  margin-right: 15px;
+}
+
+.am-qnacommon-oneitem-stats-oneitem{
+  height: 120px;
+  width: 54px;
+  display: inline-block;
+  background: #d4d4d4;
+  padding: 15px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.am-qnacommon-oneitem-stats-oneitem:active{
+  background: $primary-color;
+}
+
+.am-qnacommon-oneitem-stats-oneitem span:nth-child(3){
+//  margin-left: 5px;
+}
+
+.am-qnacommon-oneitem-stats-oneitem-number{
+  @extend .am-h4;
+  margin-left: 5px;
+}
+
+
+.am-qnacommon-oneitem-content{
+
+}
+
+.am-qnacommon-oneitem-title{
+
+}
+
+.am-qnacommon-oneitem-details{
+  margin: 5px 0;
+}
+
+.am-qnacommon-oneitem-tag{
+
+}
+
+.am-qnacommon-oneitem-user{
+  position: relative;
+  top: -40px;
+  left: -130px;
+}
+
+
+
+
+
 //----------------------- TAG PAGE ----------------------
 
 #am-tagcommon-description{
   margin-top: -30px;
   border-bottom: 1px solid $light-grey;
-  padding: 10px 5px;
+  padding: 10px 10px;
 }
 
 #am-tagcommon-description-option{
-
+  margin: 5px 0 10px;
 }
 
 #am-tagcommon-searchbar{
@@ -116,6 +200,13 @@
   color:$mid-grey
 }
 
+.am-tagdetail-description{
+  background: $bg-primary;
+}
+
+#am-tagdetail-content{
+
+}
 
 //--------------------- FRAMEWORKING --------------------
 
@@ -128,6 +219,7 @@
 #am-header{
   background-color: $bg-primary;
   height: 45px;
+  border-bottom: 2px solid white;
 }
 
 #am-header-content{
@@ -259,72 +351,6 @@
   padding: 0px 10px;
 }
 
-#am-header-content-profile{
-  display: inline-block;
-  width: 180px;
-  height: 45px;
-  position: relative;
-  left: 130px;
-}
-
-#am-header-content-profile:hover{
-  background: $light-grey;
-}
-
-#am-header-content-profile-photo{
-  float:left;
-}
-
-#am-header-content-profile-photo img{
-  border-radius: 5px;
-  border: 2px solid white;
-  box-sizing: content-box;
-  margin-top: 2px;
-  margin-right: -30px;
-}
-
-#am-header-content-profile-reputation{
-  background: $primary-color-light;
-  border-radius: 2px;
-  width: auto;
-  font-size: 12px;
-  position: relative;
-  top: 4px;
-  left: 35px;
-  padding: 0 10px;
-}
-
-
-#am-header-content-profile-badge{
-  top: 25px;
-  position: relative;
-  left: -15px;
-  font-size: 12px;
-}
-
-.am-header-content-profile-badge-circle{
-  height: 10px;
-  display: inline-block;
-  width: 10px;
-  border-radius: 10px;
-}
-
-.am-header-content-profile-gold{
-  @extend .am-header-content-profile-badge-circle;
-  background: #f8e72a;
-}
-
-.am-header-content-profile-silver{
-  @extend .am-header-content-profile-badge-circle;
-  background: #d4d4d4;
-}
-
-.am-header-content-profile-bronze{
-  @extend .am-header-content-profile-badge-circle;
-  background: #8b572a;
-}
-
-
 #am-header-content-search{
   display: inline-block;
 }
@@ -446,9 +472,11 @@
 
 
 #am-footer{
+  display: block;
+  position: static;
+  bottom: 0 !important;
   background-color: white;
   height:120px;
-  margin-top: 200px;
 }
 
 #am-footer-biglogo {
