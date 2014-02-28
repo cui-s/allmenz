@@ -2,7 +2,119 @@
 @import "bootstrap_overrides";
 @import "common";
 @import "page_index";
+@import "page_tag";
 @import "param";
+
+
+
+//----------------------- TAG PAGE ----------------------
+
+#am-tagcommon-description{
+  margin-top: -30px;
+  border-bottom: 1px solid $light-grey;
+  padding: 10px 5px;
+}
+
+#am-tagcommon-description-option{
+
+}
+
+#am-tagcommon-searchbar{
+  width: 200px;
+  position: relative;
+  float: right;
+  margin-top: -15px;
+  margin-right: 5px;
+}
+
+#am-tagcommon-searchbar input{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#am-tagcommon-searchbar-backspace{
+  width: 220px;
+  background: white;
+  position: absolute;
+  float: right;
+  right: -5px;
+  display: inline-block;
+  height: 30px;
+}
+
+#am-taglist-categorylist{
+  background: $bg-primary;
+  border-bottom: 1px solid $light-grey;
+  overflow: auto;
+}
+
+.am-tagcommon-categorylist-oneitem{
+  float:left;
+  padding: 5px 15px;
+}
+
+.am-tagcommon-categorylist-oneitem:active{
+  background: $primary-color;
+  color:white;
+}
+
+.am-tagcommon-categorylist-search{
+  float:right;
+  height: 26px;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.am-tagcommon-categorylist-search input{
+  height: 26px;
+}
+
+.am-taglist-content-onerow{
+  border-bottom: 1px solid $light-grey;
+  overflow: auto;
+}
+
+.am-taglist-content-onerow:last-child{
+  border-bottom: 0px;
+}
+
+.am-taglist-content-oneitem{
+  padding: 20px 15px 10px 5px;
+  overflow:auto;
+}
+
+.am-taglist-content-oneitem-badge{
+  background: $secondary-color;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  float: left;
+  padding: 3px 6px;
+  margin-right: 5px;
+}
+
+.am-taglist-content-oneitem-badge-img{
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background: $light-grey;
+  margin-top: 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.am-taglist-content-oneitem-badge-count{
+  position: relative;
+  margin-top: 10px;
+}
+
+.am-taglist-content-oneitem-description{
+  margin: 10px 0;
+}
+
+.am-taglist-content-oneitem-stats{
+  color:$mid-grey
+}
 
 
 //--------------------- FRAMEWORKING --------------------
@@ -329,12 +441,14 @@
 
 #am-content{
   top: 50px;
+  min-height: 600px;
 }
 
 
 #am-footer{
   background-color: white;
   height:120px;
+  margin-top: 200px;
 }
 
 #am-footer-biglogo {
