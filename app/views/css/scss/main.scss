@@ -5,6 +5,378 @@
 @import "page_tag";
 @import "param";
 
+//--------------------- USER PAGE -----------------------
+#am-usermain-left{
+  width: 25%;
+  background: $bg-primary;
+  float:left;
+}
+
+#am-usermain-right{
+  width: 75%;
+  overflow: auto;
+}
+
+#am-usermain-right .col-md-4{
+  padding: 0 5px;
+  width: 33.3%;
+  display: block;
+  float: left;
+}
+
+.am-usermain-well{
+  background: $bg-primary;
+  border-radius: 5px;
+  border: 1px solid $mid-grey;
+  margin: 20px 15px;
+  padding: 15px;
+}
+
+.am-usermain-well-oneitem{
+  padding: 10px 0;
+  border-bottom: 1px solid $mid-grey;
+  overflow: auto;
+
+}
+
+.am-usermain-well-oneitem>span:first-child{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.am-usermain-well-oneitem:last-child{
+  border-bottom: 0px;
+  margin-bottom: -10px;
+}
+
+#am-usermain-well-profile-pic{
+  height: 178px;
+  width: 178px;
+  background-image:url("../resources/index/staruser/tc.png");
+  background-size: 178px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: -5px;
+}
+
+#am-usermain-well-profile-name{
+
+}
+
+#am-usermain-well-profile-description{
+  margin-bottom:5px;
+}
+
+.am-usermain-well-profile-list-oneitem{
+
+}
+
+.am-usermain-well-profile-stats-oneitem{
+  @extend .am-h4;
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+
+.am-usermain-well-profile-stats-oneitem div{
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+.am-usermain-well-profile-stats-oneitem span{
+ @extend .am-h7;
+}
+
+.am-usermain-well-summary-oneitem{
+  margin: 5px 0;
+  font-size: 12px;
+}
+.am-usermain-well-summary-oneitem .fa{
+  @extend .am-summary-icon;
+}
+
+.am-usermain-well-summary-oneitem span:last-child{
+  font-size: 10px;
+}
+
+.am-usermain-well-summary-oneitem strong{
+  margin-right: 5px;
+}
+
+.am-usermain-well-profile-summary-oneitem-question{
+  background: #58B957;
+}
+
+.am-usermain-well-profile-summary-oneitem-answer{
+  background: #3E8ACC;
+}
+
+
+.am-usermain-well-profile-summary-oneitem-reputation{
+  background: #56C0E0;
+}
+
+
+.am-usermain-well-profile-summary-oneitem-badge{
+  background: #F2AE43;
+}
+
+
+.am-usermain-well-profile-summary-oneitem-tag{
+  background: #DB524B;
+}
+
+
+.am-usermain-well-profile-summary-oneitem-vote{
+  background: #1ABC9C;
+}
+
+.am-usermain-well-pinboard-typebar{
+  width: 100%;
+  background: white;
+  overflow: auto;
+  border-radius: 2px;
+}
+
+.am-usermain-well-pinboard-typebar-oneitem{
+  text-align: center;
+  float: left;
+  width: 33.33%;
+  padding: 1px 1px;
+}
+
+.am-usermain-well-pinboard-typebar-oneitem:active{
+  background: $primary-color-light;
+}
+
+.am-usermain-well-pinboard-list{
+
+}
+
+.am-usermain-well-pinboard-list .fa-li{
+  color: $light-grey !important;
+  font-size: 1.2em;
+  margin-left: -4px;
+}
+
+.am-usermain-well-pinboard-list span{
+  margin-left: -10px;
+}
+
+.am-usermain-well-help-oneitem{
+  margin-top: 10px;
+}
+
+.am-usermain-well-help-oneitem .fa{
+  font-size: 2em;
+  color: $mid-grey;
+  width: 20%;
+  float:left;
+}
+
+.am-usermain-well-help-oneitem div{
+  display: inline-block;
+  width: 80%
+}
+
+
+.am-usermain-well-title{
+  @extend .am-h3;
+  padding: 0 0 5px;
+  border-bottom: 1px solid $mid-grey;
+}
+
+.am-usermain-well-title-question{
+  font-size: 12px;
+  display: block;
+}
+
+.am-usermain-well-close{
+
+}
+
+.am-usermain-well-icon{
+  border-radius: 5px;
+}
+
+.am-usermain-well-icon-cateogry{
+  @extend .am-usermain-well-icon;
+  background: #DB524B;
+}
+
+.am-usermain-well-icon-post{
+  @extend .am-usermain-well-icon;
+  background: #F5A623;
+}
+
+.am-usermain-well-icon-tag{
+  @extend .am-usermain-well-icon;
+  background: $secondary-color;
+}
+
+.am-usermain-well-icon-question{
+  @extend .am-usermain-well-icon;
+  background: $primary-color;
+}
+
+
+
+#am-usermain-left .am-usermain-well{
+  background: $light-grey;
+}
+
+
+
+
+
+.am-usermain-itemwell{
+  @extend .am-usermain-well;
+  padding: 10px 0px;
+}
+
+
+.am-usermain-well-icon-cateogry{
+  @extend .am-summary-icon;
+  background: #DB524B;
+  font-size:18px;
+  padding-top:2px;
+}
+
+.am-usermain-well-icon-post{
+  @extend .am-summary-icon;
+  background: #F5A623;
+  font-size:18px;
+  padding-top:2px;
+}
+
+.am-usermain-well-icon-tag{
+  @extend .am-summary-icon;
+  background: #1ABC9C;
+  font-size:18px;
+  padding-top:2px;
+}
+
+.am-usermain-well-icon-question{
+  @extend .am-summary-icon;
+  background: #3498E1;
+  font-size:18px;
+  padding-top:2px;
+}
+
+.am-usermain-itemwell .am-usermain-well-oneitem{
+  padding: 10px;
+}
+
+.am-usermain-itemwell .glyphicon-remove{
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+  margin-right: 25px;
+  margin-top: -5px;
+  top: inherit;
+  color: $light-grey;
+}
+
+
+.am-usermain-itemwell .am-usermain-well-title{
+  padding: 0px 10px 5px;
+}
+
+.am-usermain-itemwell-picsection{
+  height: 150px;
+  border-bottom: 1px solid $light-grey;
+  box-sizing: border-box;
+}
+
+.am-usermain-itemwell-picsection-main{
+  width: 150px;
+  background-image:url("../resources/index/staruser/shuai1.png");
+  background-size: 150px;
+  height: inherit;
+  width: 148px;
+  float:left;
+}
+
+.am-usermain-itemwell-picsection-side{
+  height: 50px;
+  width: 49px;
+  background: yellow;
+  float: right;
+  display: inline-block;
+  background-size: 49px 50px;
+}
+
+.am-usermain-itemwell-picsection .am-usermain-itemwell-picsection-side:nth-child(2){
+  background-image:url("../resources/index/staruser/qq.png");
+}
+
+.am-usermain-itemwell-picsection .am-usermain-itemwell-picsection-side:nth-child(3){
+  background-image:url("../resources/index/staruser/kelvin.png");
+}
+
+.am-usermain-itemwell-picsection .am-usermain-itemwell-picsection-side:nth-child(4){
+  background-image:url("../resources/index/staruser/shuai2.png");
+}
+
+.am-usermain-itemwell-statssection{
+  padding: 10px;
+  overflow: auto;
+}
+
+.am-usermain-itemwell-statssection-oneitem{
+  width: 50%;
+  float: left;
+}
+
+.am-usermain-itemwell-statssection-oneitem .fa{
+  @extend .am-summary-icon;
+  margin-top: 5px;
+  background: $mid-grey;
+}
+
+.am-usermain-itemwell-statssection-oneitem span{
+  font-size: 12px;
+}
+
+.am-usermain-itemwell-subtitle{
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.am-usermain-itemwell-qora{
+
+}
+
+.am-usermain-itemwell-qora span{
+  margin-bottom: 5px;
+  display: block;
+  font-size: 12px;
+}
+
+.am-usermain-itemwell-qora .glyphicon{
+  float:left;
+  color: $light-grey;
+  font-size: 1.5em;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.am-usermain-itemwell-qora-oneitem{
+  display: block;
+  overflow: auto;
+  margin-bottom: 5px;
+
+}
+
+.am-usermain-itemwell-qora-signoff{
+  @extend .am-h6;
+  float:right;
+  color: $mid-grey;
+}
+
+
+
 
 //-------------------- SEARCH PAGE ----------------------
 #am-search-input input{
@@ -550,8 +922,9 @@
 }
 
 #am-content{
-  top: 50px;
+  top: 40px;
   min-height: 600px;
+  position: relative;
 }
 
 

@@ -3,8 +3,6 @@
 @section('content')
 <div id="am-content">
 
-<div class="am-non-index-spacer"></div>
-
 <div class="am-container">
 <div class="am-row">
 

@@ -33,6 +33,11 @@ Route::get('search', function()
     return View::make('search');
 });
 
+Route::get('user', function()
+{
+    return View::make('user');
+});
+
 
 Route::get('users', function()
 {
