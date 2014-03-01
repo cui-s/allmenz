@@ -154,7 +154,7 @@ a, a:hover, a:focus {
 .am-h3, .am-usermain-well-title {
   font-size: 24px; }
 
-.am-h4, .am-usermain-well-profile-stats-oneitem, .am-qnacommon-oneitem-stats-oneitem-number {
+.am-h4, #am-useredit-newsletter-header, .am-usermain-well-profile-stats-oneitem, .am-qnacommon-oneitem-stats-oneitem-number {
   font-size: 18px; }
 
 .am-h5 {
@@ -649,6 +649,46 @@ a, a:hover, a:focus {
 #am-index-staruser-details-summary {
   padding: 20px 25px; }
 
+#am-usermain-right .am-title-bar {
+  padding: 5px 20px; }
+
+.am-useredit-form-oneitem {
+  overflow: auto;
+  margin-bottom: 10px; }
+
+.am-useredit-form-oneitem span {
+  width: 14%;
+  text-align: right;
+  padding: 5px 15px 10px 5px;
+  display: inline-block;
+  float: left; }
+
+.am-useredit-form-oneitem .form-control {
+  width: 40%;
+  display: inline-block;
+  float: left;
+  font-size: 12px; }
+
+#am-useredit-form-editor {
+  width: 80%;
+  height: 300px; }
+
+#am-useredit-newsletter {
+  width: 215px;
+  height: 200px;
+  background: #f2f4f8;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  margin-left: 450px; }
+
+#am-useredit-newsletter-header {
+  margin-bottom: 5px; }
+
+#am-useredit-newsletter-subscribe .fa {
+  color: #9b9b9b;
+  margin-top: 10px; }
+
 #am-usermain-left {
   width: 25%;
   background: #f2f4f8;
@@ -749,7 +789,7 @@ a, a:hover, a:focus {
   background: #95c9ef; }
 
 .am-usermain-well-pinboard-list .fa-li {
-  color: #d4d4d4 !important;
+  color: #9b9b9b !important;
   font-size: 1.2em;
   margin-left: -4px; }
 

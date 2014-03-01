@@ -3,9 +3,7 @@
 @section('content')
 <div id="am-content">
 
-<!----------------------------------------------------------------------
-| CATEGORY
-|---------------------------------------------------------------------->
+
 <div id="am-index-category">
     <div class="am-container">
         <div class="am-row">

@@ -38,6 +38,10 @@ Route::get('user', function()
     return View::make('user');
 });
 
+Route::get('user_edit', function()
+{
+    return View::make('user_edit');
+});
 
 Route::get('users', function()
 {

@@ -5,7 +5,71 @@
 @import "page_tag";
 @import "param";
 
-//--------------------- USER PAGE -----------------------
+//------------------- USEREDIT PAGE ---------------------
+#am-usermain-right .am-title-bar{
+  padding: 5px 20px;
+}
+
+#am-useredit-form{
+
+}
+
+.am-useredit-form{
+
+}
+
+.am-useredit-form-oneitem{
+  overflow: auto;
+  margin-bottom: 10px;
+
+}
+
+
+.am-useredit-form-oneitem span{
+  width: 14%;
+  text-align: right;
+  padding: 5px 15px 10px 5px;
+  display: inline-block;
+  float: left;
+}
+
+.am-useredit-form-oneitem .form-control{
+  width: 40%;
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+}
+
+#am-useredit-form-editor{
+  width: 80%;
+  height: 300px;
+}
+
+#am-useredit-newsletter{
+  width: 215px;
+  height: 200px;
+  background: $bg-primary;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  margin-left: 450px;
+}
+
+#am-useredit-newsletter-header{
+  @extend .am-h4;
+  margin-bottom: 5px;
+}
+
+#am-useredit-newsletter-content{
+
+}
+
+#am-useredit-newsletter-subscribe .fa{
+  color: $mid-grey;
+  margin-top:10px;
+}
+
+//------------------- USERMAIN PAGE ---------------------
 #am-usermain-left{
   width: 25%;
   background: $bg-primary;
@@ -154,7 +218,7 @@
 }
 
 .am-usermain-well-pinboard-list .fa-li{
-  color: $light-grey !important;
+  color: $mid-grey !important;
   font-size: 1.2em;
   margin-left: -4px;
 }
