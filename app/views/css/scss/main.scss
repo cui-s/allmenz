@@ -5,7 +5,384 @@
 @import "page_tag";
 @import "param";
 
-//------------------- USEREDIT PAGE ---------------------
+
+//---------------- USER ACTIVITY PAGE -------------------
+#am-useractivity-left{
+  width: 600px;
+  float: left;
+}
+
+#am-useractivity-optionbar{
+  display: block;
+  width: 400px;
+  float: right;
+  border-bottom: 2px solid $light-grey;
+  margin-bottom: 30px;
+}
+
+.am-useractivity-optionbar-oneitem{
+  float: left;
+  background: #f5f5f5;
+  padding: 5px 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: 1px solid $light-grey;
+  position: relative;
+  margin-bottom: -15px;
+  z-index: 5;
+}
+
+.am-useractivity-optionbar-oneitem-bg{
+  width: 75px;
+  height: 30px;
+  background: white;
+  display: block;
+  float: left;
+  margin-left: -80px;
+  position: relative;
+  margin-bottom: -15px;
+  z-index: 1;
+}
+
+.am-useractivity-optionbar-oneitem:active{
+  background: $primary-color;
+  color: white;
+}
+
+
+#am-useractivity-timeline{
+  width: 130px;
+  float: left;
+  position: absolute;
+  height: 1100px;
+  border-right: 2px solid $light-grey;
+}
+
+.am-useractivity-daybox{
+  @extend .am-h4;
+  color: $light-grey;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid $light-grey;
+  background: white;
+  width: 100px;
+  text-align: center;
+  margin-left: 80px;
+  position: relative;
+  z-index: 5;
+}
+
+.am-useractivity-daybox-bg{
+  width: 100px;
+  height: 55px;
+  background: white;
+  display: inline-block;
+  margin-left: 80px;
+  margin-top: -45px;
+  position: absolute;
+  z-index: 1;
+}
+
+//the position of the following boxes would be programmed
+#am-useractivity-timeline-today{
+
+}
+
+#am-useractivity-timeline-yday{
+  margin-top: 475px;
+}
+
+#am-useractivity-timeline-createday{
+  margin-top: 350px;
+  margin-top: 350px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+#am-useractivity-content{
+
+}
+
+.am-useractivity-content-oneitem{
+  margin: 20px 0;
+}
+
+.am-useractivity-content-oneitem-stamp{
+  width: 180px;
+  float: left;
+  padding-top: 20px;
+}
+
+.am-useractivity-content-oneitem:first-child .am-useractivity-content-oneitem-stamp{
+  padding-top: 70px;
+}
+
+.am-useractivity-content-oneitem-stamp-time{
+  float: left;
+  display: inline-block;
+  color: $light-grey;
+  margin-left: 25%;
+  margin-top: 5px;
+}
+
+.am-useractivity-content-oneitem-stamp-logo{
+  width: 30px;
+  height: 30px;
+  background: white;
+  display: inline-block;
+  border-radius: 75px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 10px;
+  border: 2px solid $light-grey;
+  z-index: 5;
+  position: absolute;
+}
+
+.am-useractivity-content-oneitem-stamp-logo-bg{
+  width: 30px;
+  height: 50px;
+  background: white;
+  display: inline-block;
+  z-index: 1;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: -10px;
+}
+
+.am-useractivity-content-oneitem-stamp-logo .fa{
+  font-size: 1.3em;
+  color: $light-grey;
+}
+
+.am-useractivity-content-oneitem-stamp .am-triangle{
+  float: right;
+  margin-top: 2px;
+  border-right: 15px solid $light-grey;
+}
+
+
+.am-useractivity-content-oneitem-content{
+  overflow: auto;
+  background: $light-grey;
+  border-radius: 5px;
+  border: 1px solid $mid-grey;
+  padding-bottom:15px;
+  width: 420px;
+  display: inline-block;
+  @extend .am-h6;
+}
+
+
+
+.am-useractivity-content-oneitem-photo{
+  height: 70px;
+  width: 70px;
+  background-image: url("../resources/index/staruser/tc.png");
+  background-size: 70px;
+  border-radius: 75px;
+  border: 4px solid white;
+  box-shadow: 0 2px 4px 0 $mid-grey;
+  float:left;
+  margin: 10px 10px 0px 10px;
+}
+
+
+.am-useractivity-content-oneitem-right{
+  width: 328px;
+  float: right;
+  padding-right: 10px;
+}
+
+.am-useractivity-content-oneitem-description{
+  @extend .am-useractivity-content-oneitem-right;
+  margin-top: 15px;
+}
+
+
+.am-useractivity-content-oneitem-question-title{
+  @extend .am-h4;
+  @extend .am-useractivity-content-oneitem-right;
+}
+
+.am-useractivity-content-oneitem-question-detail{
+  @extend .am-useractivity-content-oneitem-right;
+  margin-top: 10px;
+}
+
+.am-useractivity-content-oneitem-question{
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.am-useractivity-content-oneitem-answerer-photo{
+  height: 70px;
+  width: 70px;
+  background-image: url("../resources/index/staruser/qq.png");
+  background-size: 70px;
+  border-radius: 75px;
+  border: 4px solid white;
+  box-shadow: 0 2px 4px 0 $mid-grey;
+  float:right;
+  margin: 10px 10px 0px 10px;
+}
+
+.am-useractivity-content-oneitem-answer-detail{
+  background: #95c9ef;
+  display: inline-block;
+  width: 318px;
+  float: left;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.am-useractivity-content-oneitem-tag-question{
+  @extend .am-useractivity-content-oneitem-right;
+  margin-top: 20px;
+}
+
+.am-useractivity-content-oneitem-tag-answer{
+  @extend .am-useractivity-content-oneitem-right;
+}
+
+.am-useractivity-content-oneitem-rep-question{
+  @extend .am-useractivity-content-oneitem-right;
+  margin-top: 20px;
+}
+
+.am-useractivity-content-oneitem-rep-answer{
+  @extend .am-useractivity-content-oneitem-right;
+}
+
+
+.am-useractivity-content-oneitem-answer{
+
+}
+
+.am-useractivity-content-oneitem-creation{
+  @extend .am-useractivity-content-oneitem;
+}
+
+.am-useractivity-content-oneitem-creation .am-useractivity-content-oneitem-photo{
+  margin: 0px;
+  margin-left: 90px;
+  position: absolute;
+}
+
+.am-useractivity-content-creation{
+  width: 420px;
+  float: right;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.am-useractivity-content-creation .fa{
+  color: $light-grey;
+}
+
+
+#am-useractivity-right{
+  width: 360px;
+  float: right;
+  padding-left: 20px;
+
+}
+
+.am-useractivity-right-oneitem{
+  margin-bottom: 40px;
+}
+
+.am-useractivity-right-oneitem-table-profilepic{
+  width: 50px;
+  height: 50px;
+  background: $bg-primary;
+  float: left;
+  border-radius: 50px;
+  margin-right: 5px;
+  border-radius: 1px solid white;
+}
+
+.am-useractivity-right-oneitem-table-name{
+  @extend .am-h4;
+}
+
+.am-useractivity-right-oneitem-table-logindate{
+  color: $mid-grey;
+}
+
+.am-useractivity-right-oneitem-table-tags{
+  margin-top: 10px;
+}
+
+.am-useractivity-right-oneitem-table-tags .am-badge{
+  margin-right: 10px;
+}
+
+.am-useractivity-right-oneitem table{
+  width: 100%;
+}
+
+.am-useractivity-right-oneitem thead{
+  background: $bg-primary;
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  @extend .am-h4;
+}
+
+.am-useractivity-right-oneitem tr th{
+  padding: 10px 5px;
+  width: 50%;
+}
+
+.am-useractivity-right-oneitem tbody tr th{
+  font-weight: normal;
+}
+
+.am-useractivity-right-oneitem  tbody tr{
+  border-bottom: 1px solid $light-grey;
+
+}
+
+.am-useractivity-right-oneitem .am-profile-reputation{
+  float:left;
+  top: 0px;
+  left: 0px;
+  margin-right: 10px;
+}
+
+.am-useractivity-right-oneitem .am-profile-badge{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-left: 5px;
+}
+
+.am-useractivity-right-title{
+  @extend .am-h4;
+  font-weight: bold;
+  color: $mid-grey;
+  margin-bottom: 10px;
+}
+
+.am-useractivity-right-chart{
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  height: 140px;
+  background: $bg-primary;
+}
+
+.am-useractivity-right-chart-description{
+  border-bottom: 1px solid $light-grey;
+  text-align: center;
+  padding: 3px 0;
+}
+
+//------------------- USER EDIT PAGE --------------------
 #am-usermain-right .am-title-bar{
   padding: 5px 20px;
 }

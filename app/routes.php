@@ -43,6 +43,11 @@ Route::get('user_edit', function()
     return View::make('user_edit');
 });
 
+Route::get('user_activity', function()
+{
+    return View::make('user_activity');
+});
+
 Route::get('users', function()
 {
     return 'Users!';

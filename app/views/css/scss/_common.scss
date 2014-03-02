@@ -253,6 +253,16 @@
 .am-tag-small .glyphicon, .am-tag-small .fa{
   margin-left:5px;
 }
+.am-number-badge{
+  background: $mid-grey;
+  padding: 2px 8px;
+  border-radius: 35px;
+  font-size: 12px;
+  position: relative;
+  margin-left: 5px;
+  display: inline-block;;
+  color:white
+}
 
 .am-badge{
   padding: 2px 3px;
@@ -266,7 +276,7 @@
   display: inline-block;
   width: 10px;
   border-radius: 10px;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 .am-badge-gold{
