@@ -52,3 +52,8 @@ Route::get('users', function()
 {
     return 'Users!';
 });
+
+Route::get('category', function()
+{
+    return View::make('category_main');
+});
