@@ -143,10 +143,10 @@
                     </div>
 
                 </div>
-<!---->
-<!--                <div id="am-header-content-login" class="pull-right am-h4" data-toggle="modal" data-target="#modalLogIn">-->
-<!--                    ログイン-->
-<!--                </div>-->
+
+                <div id="am-header-content-login" class="pull-right am-h4" data-toggle="modal" data-target="#modalLogIn">
+                    ログイン
+                </div>
 
 
 
@@ -304,7 +304,10 @@
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-default">質問</button>
+<!--                        <button class="btn btn-primary btn-default" data-toggle="modal" data-target="#modalAskQuestion">質問</button>-->
+                                        <div class="btn btn-primary btn-default" class="pull-right am-h4" data-toggle="modal" data-target="#modalAskQuestion">
+                                            質問
+                                        </div>
                     </form>
 
                 </div>
@@ -492,6 +495,147 @@
             </div>
         </div>
     </div>
+
+
+    <!----------------------------------------------------------------------
+    | POST QUESTION MODAL
+    |---------------------------------------------------------------------->
+    <div class="modal fade" id="modalAskQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog am-modal-dialog-askquestion">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabelLogIn">質問する</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="am-modal-askquestion-question">
+                        <div class="am-modal-askquestion-title">
+                            <span>質問</span>
+                            <div class="am-modal-askquestion-title-description">具体的に、関連性がある</div>
+                        </div>
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="聞きたいこと">
+                        </div>
+                        <div class="am-modal-askquestion-searchresult">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>あなたの質問はすでに答えを持っている可能性<span class="am-modal-askquestion-searchresult-noofanswer">50答え</span></th>
+                                        <th><i class="fa fa-angle-down"></i></th>
+                                    </tr>
+                                    <tr>
+                                        <th>私も元来いくらその永続人というのの上で聴いたた?<span class="am-modal-askquestion-searchresult-noofanswer">10答え</span></th>
+                                        <th><i class="fa fa-angle-down"></i></th>
+                                    </tr>
+                                    <tr>
+                                        <th>必ずしも先刻と卒業者は現にこの成就だたじゃでしてならますをも下宿起っないでば、さっそくに
+                                            はよったないなう? <span class="am-modal-askquestion-searchresult-noofanswer">10答え</span></th>
+                                        <th><i class="fa fa-angle-up"></i></th>
+                                    </tr>
+                                    <tr class="am-modal-askquestion-searchresult-expanded-oneitem">
+                                        <th>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-vote">56</div>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-name">谷口</div>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-details">
+                                                <span>の私をいったい実蹂躙としてあれ世間が大話が許さようにとうとうご発展におくないでし
+                                                て、はたしておそらく矛盾で始まったていしてないうます。。。</span>
+                                                <span class="am-modal-askquestion-searchresult-expanded-oneitem-readmore">すべで読む>></span>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr class="am-modal-askquestion-searchresult-expanded-oneitem">
+                                        <th>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-vote">6</div>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-name">山本</div>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-details">
+                                                <span>主義でしたものはもしほかがはたしてないうます。。</span>
+                                                <span class="am-modal-askquestion-searchresult-expanded-oneitem-readmore">すべで読む>></span>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr class="am-modal-askquestion-searchresult-expanded-oneitem">
+                                        <th>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-vote">123</div>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-name">畑山</div>
+                                            <div class="am-modal-askquestion-searchresult-expanded-oneitem-details">
+                                                <span>てない主義でしたものはもしほかがはたしてないうますてないてない。。。</span>
+                                                <span class="am-modal-askquestion-searchresult-expanded-oneitem-readmore">すべで読む>></span>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="am-modal-askquestion-searchresult-expanded-seeall">
+                                                すべての答えを見る
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>私も元来いくらその永続人というのの上で聴いたた?<span class="am-modal-askquestion-searchresult-noofanswer">10答え</span></th>
+                                        <th><i class="fa fa-angle-down"></i></th>
+                                    </tr>
+                                    <tr>
+                                        <th>道この責任私か影響がというお?<span class="am-modal-askquestion-searchresult-noofanswer">10答え</span></th>
+                                        <th><i class="fa fa-angle-down"></i></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="am-modal-askquestion-description">
+                        <div class="am-modal-askquestion-title">
+                            <span>記述</span><div class="am-modal-askquestion-title-description-left">オプショナル</div>
+                        </div>
+                        <textarea class="form-control" placeholder="詳細。。。" rows="3"></textarea>
+                    </div>
+
+                    <div class="am-modal-askquestion-tag">
+                        <div class="am-modal-askquestion-title">
+                            <span>タグ</span><div class="am-modal-askquestion-title-description">分野の専門家があなたの質問を参照するのはに</div>
+                        </div>
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="詳細。。。">
+                        </div>
+
+
+                        <div class="am-modal-askquestion-tag-guideline">
+                            <i class="fa fa-sort-desc"></i>
+                            <div class="am-modal-askquestion-tag-guideline-bgbox"></div>
+                            <div class="am-modal-askquestion-tag-guideline-title">タグとは、</div>
+                            <span>
+                                ►既存の人気のあるタグを好む、新しいタグを作成しないように<br>
+                                ►は、一般的な略語を使用する<br>
+                                ►は同義語が含まれていません<br>
+                                ►はダッシュのシングルワードに複数の単語を組み合わせるグ、タグごとに25文字<br>
+                                ►タグ文字：[。-Z0-9+＃ - ]<br>
+                                ►は、スペース、セミコロン、またはカンマでタグを区切る
+                            </span>
+                        </div>
+
+                        <input type="checkbox" id="signUpNewsletterInput"><span class="am-h6">自分の質問を答える</span><br>
+                        <input type="checkbox" id="signUpNewsletterInput"><span class="am-h6">匿名にポスト</span>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer am-modal-askquestion-footer">
+                    <div class="am-modal-askquestion-footer-social">
+                        シェアー：
+                        <i class="fa fa-twitter fa-fw "></i>
+                        <i class="fa fa-facebook fa-fw"></i>
+                    </div>
+                    <div class="am-modal-askquestion-footer-action">
+                        キャンセル<div class="btn btn-primary btn-sm">ポスト</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 </body>
 

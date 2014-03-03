@@ -5,8 +5,167 @@
 @import "page_tag";
 @import "param";
 
+//-------------- MAIN PAGE - Q/A MODAL ------------------
+.am-modal-dialog-askquestion{
+  width: 600px;
+}
+
+.am-modal-askquestion-title{
+  margin: 40px 0px 5px 0;
+}
+
+.am-modal-askquestion-question .am-modal-askquestion-title{
+  margin-top: 10px;
+}
+
+.am-modal-askquestion-title span{
+  @extend .am-h4;
+  font-weight: bold;
+}
+
+.am-modal-askquestion-title-description{
+  @extend .am-h6;
+  float: right;
+  margin-top: 7px;
+}
+
+.am-modal-askquestion-title-description-left{
+  @extend .am-modal-askquestion-title-description;
+  float:right;
+}
+
+.am-modal-askquestion-title span .am-modal-askquestion-title-description{
+  float: left;
+}
+
+.am-modal-dialog-askquestion .input-group{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.am-modal-dialog-askquestion .input-group .form-control{
+  @extend .am-h6;
+  border-radius: 5px;
+}
+
+.am-modal-askquestion-searchresult table{
+
+}
+
+.am-modal-askquestion-searchresult tr{
+  border-bottom: 1px solid $mid-grey;
+}
+
+.am-modal-askquestion-searchresult tr:active{
+  background: $bg-primary;
+}
+
+.am-modal-askquestion-searchresult th{
+  padding: 5px 3px;
+  font-weight: normal;
+}
+
+.am-modal-askquestion-searchresult th .fa{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.am-modal-askquestion-searchresult-expanded-oneitem{
+  border-bottom: 0px !important;
+  margin: 0 10px;
+}
+
+.am-modal-askquestion-searchresult-expanded-oneitem-vote{
+  float: left;
+  padding: 0 5px;
+  background: $bg-primary;
+  border-radius: 2px;
+  color:$primary-color-dark;
+  width: 6%;
+  text-align: center;
+}
+
+.am-modal-askquestion-searchresult-expanded-oneitem-name{
+  float:left;
+  color: $primary-color;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.am-modal-askquestion-searchresult-expanded-oneitem-details{
+  width: 85%;
+  float: right;
+}
+
+.am-modal-askquestion-searchresult-expanded-oneitem-readmore{
+  color: $primary-color-dark;
+}
+
+.am-modal-askquestion-searchresult-expanded-seeall{
+  color: $primary-color-dark;
+  font-weight: bold;
+}
+
+.am-modal-askquestion-tag-guideline-title{
+  margin: 5px 0;
+  font-weight: bold;
+}
 
 
+.am-modal-askquestion-tag-guideline{
+  background: $bg-primary;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid $mid-grey;
+}
+
+.am-modal-askquestion-tag-guideline .fa{
+  position: absolute;
+  margin-top: -12px;
+  font-size: 2em;
+  color: $bg-primary;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $mid-grey;
+}
+
+.am-modal-askquestion-tag-guideline-bgbox{
+  height: 10px;
+  background: $bg-primary;
+  position: absolute;
+  width: 20px;
+  margin-top: -5px;
+  margin-left: -2px;
+}
+
+.am-modal-askquestion-footer{
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  background: $primary-color-light;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.am-modal-askquestion-footer-social{
+  float:left;
+}
+
+.am-modal-askquestion-footer-social .fa{
+  color:white;
+  font-size: 1.5em;
+}
+
+.am-modal-askquestion-footer-action{
+  color: white;
+  float:right;
+}
+
+.am-modal-askquestion-footer-action .btn{
+  margin-left: 5px;
+  background: $primary-color;
+  color:white;
+  font-weight: bold;
+}
 
 //------------------- CATEGORY PAGE ---------------------
 .am-category-taglist{
@@ -1455,7 +1614,7 @@ am-usermain-itemwell .am-usermain-itemwell-statssection-oneitem .fa{
   height: 30px;
 }
 
-#am-header-content-search button{
+#am-header-content-search div.btn{
   color:white;
   font-weight: bold;
   background: $primary-color;
