@@ -1,0 +1,385 @@
+@import "param";
+
+/*
+|--------------------------------------------------------------------------
+| INDEX PAGE MODAL
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-modal-dialog-signup{
+  width:310px;
+}
+
+.am-modal-dialog-socialbar{
+  margin-left: -25px;
+  color: white;
+}
+
+.am-modal-dialog-divider{
+  position: absolute;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 90px;
+  width: 70px;
+  background: white;
+
+}
+.am-modal-dialog-input{
+  margin: 10px 0;
+}
+
+.am-modal-dialog-socialbar{
+
+}
+
+#am-modal-register-label{
+  color:$primary-color;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| INDEX PAGE OTHERS
+|--------------------------------------------------------------------------
+|
+*/
+
+#am-index-slider{
+  position:relative;
+  height: 480px;
+  width: 100%;
+  color: white;
+}
+
+#am-index-slider:before{
+  content: '';
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  opacity:0.7;
+  z-index: 1;
+  width: inherit;
+  height:inherit;
+  background-image:url("../resources/index/slider/roar.jpg");
+  background-size: 1500px;
+  background-position: center center;
+  color: white;
+  -webkit-filter: blur(.5px);
+}
+
+#am-index-slider-content{
+  position: relative;
+  z-index: 2;
+}
+
+#am-index-slider-mainbar{
+  padding-top:200px;
+}
+
+#am-index-slider-searchicon{
+  border: solid white 2px;
+  height: 55px;
+  width: 55px;
+  border-radius: 125px;
+  background: #f2f4f8;
+  box-shadow: 0px 2px 2px 1px #d4d4d4;
+  font-size: 2.2em;
+  display: block;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.am-index-slider-entry{
+  margin-left: 40px;
+}
+
+#am-index-slider-options{
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+#am-index-tutorial{
+  background-color: $bg-primary;
+  height: 350px;
+}
+
+.am-index-tutorial-onestep-block{
+  margin:10px 0;
+  padding: 10px 0;
+  border: 2px solid $bg-primary;
+}
+
+.am-index-tutorial-onestep-block:hover{
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:        border-box;
+  background: $primary-color;
+  border-radius: 10px;
+  border: 2px solid white;
+  color:white;
+}
+
+.am-index-tutorial-icon{
+  font-size: 2em;
+  margin-right: -10px;
+}
+
+#am-index-tutorial-link-label{
+  background-color: $primary-color-light;
+  display: block;
+  padding: 5px 10px;
+  width: 200px;
+  margin: -35px auto 0;
+  border-radius: 5px;
+  border-color: white;
+}
+
+#am-index-category{
+  background-color: white;
+  height: 650px;
+}
+
+#am-index-category-featured-picture{
+  @extend .am-box-inside-with-shadow;
+  height: 310px;
+  background-image:url("../resources/index/category/skin.jpg");
+  //  this is just the width of the picture
+  background-size: 600px;
+  background-position: right;
+}
+
+#am-index-category-featured-text{
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+#am-index-category-featured-text-title{
+
+}
+
+#am-index-category-featured-text-stats{
+
+}
+
+#am-index-category-featured-tag{
+  margin-top:15px;
+}
+
+.am-index-category-unfeatured-block{
+  @extend .am-box-inside-with-shadow;
+  height: 140px;
+  width: 200px;
+  display: block;
+  background-position: right;
+}
+
+.am-index-category-unfeatured-block-background{
+  content: '';
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  opacity:0.7;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background-size:200px;
+  margin-top: -10px;
+}
+
+#am-index-category-unfeatured-block1{
+  position:relative;
+  width:inherit;
+  height:inherit;
+}
+
+#am-index-category-unfeatured-block1:before{
+  @extend .am-index-category-unfeatured-block-background;
+  background-image:url("../resources/index/category/hige.jpg");
+}
+
+#am-index-category-unfeatured-block2{
+  position:relative;
+  width:inherit;
+  height:inherit;
+}
+
+#am-index-category-unfeatured-block2:before{
+  @extend .am-index-category-unfeatured-block-background;
+  background-image:url("../resources/index/category/hairstyle.jpg");
+}
+
+#am-index-category-unfeatured-block3{
+}
+
+#am-index-category-unfeatured-block4:before{
+  @extend .am-index-category-unfeatured-block-background;
+  background-image:url("../resources/index/category/pua.jpg");
+}
+
+#am-index-category-unfeatured-block5{
+
+}
+
+#am-index-category-unfeatured-block6{
+
+}
+
+.am-index-category-unfeatured-title{
+  margin-left: 10px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+
+}
+
+.am-index-category-unfeatured-block:hover{
+  background: black;
+  opacity: 0.8;
+}
+
+.am-index-category-unfeatured-text{
+  color: white;
+  position: absolute;
+  padding: 40px 0;
+  z-index: 3;
+  opacity: 0;
+}
+
+.am-index-category-unfeatured-text:hover{
+  opacity: 1;
+}
+
+.am-index-category-unfeatured-logo{
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.am-index-category-unfeatured-details{
+
+}
+
+
+
+
+
+#am-index-staruser{
+  background-color: $bg-primary;
+  height: 460px;
+}
+
+#am-index-staruser-circlelist{
+  height: 400px;
+  padding-top: 40px;
+}
+
+.am-index-staruser-circle{
+  @extend .am-photo-circle;
+  width: 105px;
+  height:105px;
+  border: 4px solid #f5f5f5;
+  margin-top:10px;
+  opacity:0.5;
+}
+
+.am-index-staruser-circle:hover{
+  box-shadow: 0px 2px 2px 0px $light-grey;
+  border-width:2px;
+  opacity: 1;
+}
+
+.am-index-staruser-circle-background{
+  background-size:110px;
+}
+
+#am-index-staruser-circle1{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/shuai1.png");
+}
+
+#am-index-staruser-circle2{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/tc.png");
+}
+
+#am-index-staruser-circle3{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/qq.png");
+}
+
+#am-index-staruser-circle4{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/kelvin.png");
+}
+
+#am-index-staruser-circle5{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/shuai2.png");
+}
+
+#am-index-staruser-circle6{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/sn.png");
+}
+
+#am-index-staruser-circle7{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/gb.png");
+}
+
+#am-index-staruser-details{
+  height: 350px;
+  background: white;
+  margin-top: 60px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+.am-index-startuser-details-triangle{
+  margin-top: 100px;
+  position: absolute;
+}
+
+#am-index-staruser-details-stats{
+  padding-top:15px;
+}
+
+#am-index-staruser-details-stats-photo{
+  @extend .am-photo-circle;
+  width: 75px;
+  height:75px;
+  border: 2px solid;
+  margin-left: 10px;
+  margin-top: 15px;
+  background-image:url("../resources/index/staruser/tc.png") !important;
+  background-size: 70px !important;
+}
+
+#am-index-staruser-details-stats-text{
+  margin-top: 27px;
+  margin-left: -25px;
+}
+
+#am-index-staruser-details-question{
+  padding: 10px 10px;
+}
+
+.am-index-staruser-details-question-item{
+  margin-top: 10px;
+}
+
+.am-index-staruser-details-question-view{
+  background: $primary-color-light;
+  border-radius: 3px;
+}
+
+.am-index-staruser-details-question-topic{
+}
+
+#am-index-staruser-details-summary{
+  padding: 20px 25px;
+}
+
+
+

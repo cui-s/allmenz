@@ -1,0 +1,47 @@
+@import "param";
+
+/*Base, basemenu template diting*/
+a, a:hover, a:focus{
+  color: $primary-color;
+}
+
+.btn-primary {
+  color: black;
+  background-color: $primary-color-light;
+  border-color: whitesmoke;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: $primary-color;
+  border-color: $primary-color-dark;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: $secondary-color;
+  border-color: #4cae4c;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+
+
+//
+//modal
+.modal-header{
+  padding: 10px 20px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.42857143px;
+  background: $primary-color-light;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body{
+  padding: 10px 20px;
+}
+

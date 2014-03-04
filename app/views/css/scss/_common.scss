@@ -1,0 +1,386 @@
+@import "param";
+
+/*
+|--------------------------------------------------------------------------
+| TOPOGRAPHY
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-additional-text{
+  color: $mid-grey;
+}
+
+.am-h0{
+  font-size: 48px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.am-h1{
+  font-size: 36px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.am-h2{
+  font-size: 30px;
+}
+
+.am-h3{
+  font-size: 24px;
+}
+
+.am-h4{
+  font-size: 18px;
+}
+
+.am-h5{
+  font-size: 14px;
+}
+
+.am-h6{
+  font-size: 12px;
+}
+
+.am-h7{
+  font-size: 10px;
+}
+/*
+|--------------------------------------------------------------------------
+| CUSTOMIZED SHAPE
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-triangle{
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid white;
+}
+
+.am-triangle-right{
+  @extend .am-triangle;
+  border-left: 15px solid $bg-primary;
+  border-right: 0;
+}
+
+.am-hr-white{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid white;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| REUSABLES
+|--------------------------------------------------------------------------
+|
+*/
+
+
+.am-profile{
+  display: inline-block;
+  width: 160px;
+  height: 45px;
+  position: relative;
+  left: 130px;
+}
+
+.am-profile:hover{
+  background: $light-grey;
+}
+
+.am-profile-photo{
+  float:left;
+}
+
+
+.am-profile-photo{
+  float:left;
+}
+
+.am-profile-photo img{
+  border-radius: 5px;
+  border: 2px solid white;
+  box-sizing: content-box;
+  margin-top: 2px;
+  margin-right: -30px;
+}
+
+.am-profile-reputation{
+  background: $primary-color-light;
+  border-radius: 2px;
+  width: auto;
+  font-size: 12px;
+  position: relative;
+  top: 4px;
+  left: 35px;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.am-profile-name{
+
+}
+
+.am-profile-posttime{
+
+}
+
+.am-profile-pasttime{
+
+}
+
+.am-profile-badge{
+  top: 25px;
+  position: absolute;
+  font-size: 12px;
+  left: 42px;
+}
+
+.am-profile-badge-circle{
+  height: 10px;
+  display: inline-block;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.am-profile-gold{
+  @extend .am-profile-badge-circle;
+  background: #f8e72a;
+}
+
+.am-profile-silver{
+  @extend .am-profile-badge-circle;
+  background: #d4d4d4;
+}
+
+.am-profile-bronze{
+  @extend .am-profile-badge-circle;
+  background: #8b572a;
+}
+
+.am-profile-full{
+//  adjust the css when post time and name are added in
+}
+
+.am-profile-full {
+  float: right;
+  position: relative;
+  margin-right: 140px;
+  margin-top: -40px;
+}
+
+.am-profile-full .am-profile-name{
+  position: relative;
+  margin-left: 41px;
+  margin-top: 2px;
+}
+
+
+.am-profile-full .am-profile-reputation{
+  top: 0px;
+}
+
+.am-profile-full .am-profile-badge{
+  top: 40px;
+  position: absolute;
+  font-size: 12px;
+  left: 95px;
+}
+
+.am-profile-simplified{
+  position: relative;
+  margin-top: -20px;
+}
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| COMPONENTS
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-photo-circle{
+  box-sizing:         border-box;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+
+  box-transition:     0.2s;
+  -moz-transition:    0.2s;
+  -webkit-transition: 0.2s;
+
+  background: $bg-primary;
+  border-radius: 125px;
+  box-shadow: 0px 2px 4px 0px $mid-grey;
+  border-color:white;
+}
+
+.am-box-inside-with-shadow{
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:        border-box;
+  border: 1px solid $bg-primary;
+  box-shadow: 0px 0px 1px 0px $light-grey;
+  border-radius: 4px;
+}
+
+.am-tag-big{
+  @extend .am-h4;
+  color:white;
+  background: $secondary-color;
+  display: inline-block;
+  height: 32px;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+
+.am-tag{
+  color:white;
+  background: $secondary-color;
+  display: inline-block;
+  height: 24px;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.am-tag-small{
+  color:white;
+  background: $secondary-color;
+  display: inline-block;
+  height: 16px;
+//  add the cross as well
+  padding: 1px 10px 2px 5px;
+  font-size:10px;
+  border-radius: 3px;
+}
+
+.am-tag-small .glyphicon, .am-tag-small .fa{
+  margin-left:5px;
+}
+.am-number-badge{
+  background: $mid-grey;
+  padding: 2px 8px;
+  border-radius: 35px;
+  font-size: 12px;
+  position: relative;
+  margin-left: 5px;
+  display: inline-block;;
+  color:white
+}
+
+.am-badge{
+  padding: 2px 3px;
+  border-radius: 5px;
+  background: $mid-grey;
+  display: inline;
+}
+
+.am-badge-circle{
+  height: 10px;
+  display: inline-block;
+  width: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.am-badge-gold{
+  @extend .am-badge-circle;
+  background: #f8e72a;
+}
+
+.am-badge-silver{
+  @extend .am-badge-circle;
+  background: #d4d4d4;
+}
+
+.am-badge-bronze{
+  @extend .am-badge-circle;
+  background: #8b572a;
+}
+
+.am-summary-icon{
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 5px;
+  float: left;
+  padding: 5px;
+  margin-top: 2px;
+  margin-right: 3px;
+}
+
+
+
+.am-btn-mid{
+  height:30px;
+  color:white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
+.am-btn-small{
+  @extend .am-btn-mid;
+  height:20px;
+  padding: 2px;
+}
+
+.am-btn-mid-secondary{
+  @extend .am-btn-mid;
+  background: $secondary-color;
+
+}
+
+.am-btn-mid-primary{
+  @extend .am-btn-mid;
+  background: $primary-color;
+}
+
+/*
+|--------------------------------------------------------------------------
+| FORMATTING
+|--------------------------------------------------------------------------
+|
+*/
+
+.am-row{
+  margin-left: 40px;
+  margin-right:40px;
+}
+
+
+
+.am-title{
+
+}
+
+.am-title-bar .am-title{
+}
+
+
+.am-title-bar-tab{
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+.am-title-bar-tab>:first-child{
+  margin-right: 20px;
+}
+
+

@@ -5,6 +5,11 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+    /**
+     * The layout that should be used for responses.
+     */
+    protected $layout = 'layouts.master';
+
 	/**
 	 * The database table used by the model.
 	 *
