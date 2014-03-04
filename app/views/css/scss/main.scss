@@ -5,6 +5,248 @@
 @import "page_tag";
 @import "param";
 
+//-------------------- QNA PAGE -------------------------
+
+.am-qna-profile{
+  width:15%;
+  float:left;
+  text-align: center;
+}
+
+.am-qna-profile-pic{
+  height: 100px;
+  width: 100px;
+  background-image: url("../resources/index/staruser/tc.png");
+  background-size: 100px;
+  border-radius: 75px;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px 0 #9b9b9b;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.am-qna-profile-name{
+  @extend .am-h4;
+  font-weight: bold;
+}
+
+.am-qna-profile-description{
+  margin: 5px 0;
+}
+
+.am-qna-profile-stats{
+  padding: 0px;
+  float: left;
+}
+
+.am-qna-profile-stats .am-profile-reputation{
+  top: 0px;
+  left: 0px;
+  float: left;
+}
+
+.am-qna-profile-stats .am-profile-badge{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  float: left;
+}
+
+.am-qna-content{
+  width: 70%;
+  float: left;
+  height: 240px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.am-qna-content .am-triangle{
+  position: absolute;
+  margin-left: -35px;
+  margin-top: 15px;
+}
+
+.am-qna-content .am-triangle-right{
+  position: absolute;
+  margin-left: 640px;
+}
+
+.am-qna-content-bestanswer{
+  border-left: 10px solid $secondary-color;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.am-qna-content-question{
+  @extend .am-h4;
+}
+
+.am-qna-content-question span{
+  color: $primary-color;
+  font-weight: bold;
+}
+
+.am-qna-content-top{
+  height:185px;
+}
+
+.am-qna-content-tag{
+  margin-top: 10px;
+}
+
+.am-qna-content-optionbar{
+  border-top: 2px solid #d4d4d4;
+  padding-top: 5px;
+}
+
+.am-qna-content-optionbar .fa{
+  font-size: 1.2em;
+  color: $mid-grey;
+}
+
+.am-qna-content-comment{
+  margin-top: 25px;
+  border-radius: 5px;
+  border: 1px solid #9b9b9b;
+  overflow: auto;
+  width: 65%;
+  margin-left: 11%;
+  margin-bottom: 25px; 
+}
+
+.am-qna-content-comment-oneitem{
+  padding: 5px 10px;
+  border-bottom: 1px solid $mid-grey;
+}
+
+.am-qna-content-comment-oneitem:last-child{
+  border-bottom: 0px;
+}
+
+.am-qna-content-comment-oneitem-vote{
+  font-weight: bold;
+  color: $primary-color;
+  float:left;
+  width: 20px;
+}
+
+.am-qna-content-comment-oneitem-options{
+  float:left;
+  width: 20px;
+}
+
+.am-qna-content-comment-oneitem-options .fa{
+  color:$light-grey;
+}
+
+.am-qna-content-comment-oneitem-options .fa:hover{
+  color: $primary-color;
+}
+
+.am-qna-content-comment-oneitem-content-answerer{
+  color: $mid-grey;
+}
+
+
+.am-qna-content-comment-oneitem:last-child{
+  border-bottom:none;
+}
+
+.am-qna-content-comment-triangle{
+  position: absolute;
+}
+
+.am-qna-content-comment-triangle .fa{
+  font-size: 2em;
+  margin-left: 30px;
+  margin-top: -10px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $mid-grey;
+}
+
+.am-qna-content-comment-triangle span{
+  height: 30px;
+  background: white;
+  width: 20px;
+  display: block;
+  margin-top: -19px;
+  margin-left: 30px;
+  z-index: 100;
+  position: absolute;
+}
+
+.am-qna-optionbar .fa{
+  color: white;
+  font-size: 2em;
+}
+
+.am-qna-optionbar{
+  float: left;
+  padding: 0 15px;
+  width: 80px;
+}
+
+.am-qna-optionbar-vote{
+  background: $light-grey;
+  border-radius: 5px;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.am-qna-optionbar-vote span:nth-child(2){
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.am-qna-optionbar-watch{
+  @extend .am-qna-optionbar-vote;
+  margin-top: 10px;
+}
+
+.am-qna-optionbar-voteup{
+  @extend .am-qna-optionbar-vote;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.am-qna-optionbar-votedown{
+  @extend .am-qna-optionbar-watch;
+  font-weight: bold;
+  color: $primary-color;
+  background: none;
+  margin-top: -10px;
+}
+
+.am-qna-question{
+  height: 300px;
+  background: $bg-primary;
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+.am-qna-answer{
+
+}
+
+.am-qna-answer .am-qna-content{
+  background: $bg-primary;
+  margin-right: 15px;
+  margin-left: 0px;
+}
+
+.am-qna-answer-oneitem{
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.am-qna-answer-oneitem .am-qna-optionbar .fa{
+  color: $primary-color;
+}
+
 //-------------- MAIN PAGE - Q/A MODAL ------------------
 .am-modal-dialog-askquestion{
   width: 600px;
@@ -537,7 +779,7 @@
   background-image: url("../resources/index/staruser/tc.png");
   background-size: 70px;
   border-radius: 75px;
-  border: 4px solid white;
+  border: 3px solid white;
   box-shadow: 0 2px 4px 0 $mid-grey;
   float:left;
   margin: 10px 10px 0px 10px;

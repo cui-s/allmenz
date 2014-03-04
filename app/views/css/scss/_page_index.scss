@@ -318,6 +318,15 @@
   background-image:url("../resources/index/staruser/shuai2.png");
 }
 
+#am-index-staruser-circle6{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/sn.png");
+}
+
+#am-index-staruser-circle7{
+  @extend .am-index-staruser-circle-background;
+  background-image:url("../resources/index/staruser/gb.png");
+}
 
 #am-index-staruser-details{
   height: 350px;

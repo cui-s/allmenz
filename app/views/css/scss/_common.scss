@@ -63,6 +63,12 @@
   border-right: 15px solid white;
 }
 
+.am-triangle-right{
+  @extend .am-triangle;
+  border-left: 15px solid $bg-primary;
+  border-right: 0;
+}
+
 .am-hr-white{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -318,6 +324,8 @@
   margin-right: 3px;
 }
 
+
+
 .am-btn-mid{
   height:30px;
   color:white;
@@ -325,6 +333,12 @@
   border-radius: 5px;
   text-align: center;
   padding: 5px;
+}
+
+.am-btn-small{
+  @extend .am-btn-mid;
+  height:20px;
+  padding: 2px;
 }
 
 .am-btn-mid-secondary{

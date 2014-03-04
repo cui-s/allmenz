@@ -57,3 +57,8 @@ Route::get('category', function()
 {
     return View::make('category_main');
 });
+
+Route::get('qna', function()
+{
+    return View::make('qna');
+});
