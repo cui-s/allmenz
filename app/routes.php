@@ -12,11 +12,20 @@
 */
 
 
-Route::get('/', function()
-{
-    return View::make('index');
-});
+Route::get('/', 'UserController@test');
 
+//Route::get('/', function()
+//{
+////    return View::make('index');
+//    return Redirect::to('index.php');
+//
+////    return "mie";
+//});
+
+Route::get('user/{id}', function($id)
+{
+    return 'User '.$id;
+});
 
 Route::get('tag_detail', function()
 {
@@ -48,10 +57,6 @@ Route::get('user_activity', function()
     return View::make('user_activity');
 });
 
-Route::get('users', function()
-{
-    return 'Users!';
-});
 
 Route::get('category', function()
 {
@@ -62,3 +67,17 @@ Route::get('qna', function()
 {
     return View::make('qna');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Route URLS
+|--------------------------------------------------------------------------
+|
+*/
+
+$url_main = URL::to('index');
+$url_user = URL::to('user');
+$url_tag = URL::to('tag_main');
+$url_category = URL::to('category_main');
+
