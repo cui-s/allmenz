@@ -1,6 +1,7 @@
 /*Base, basemenu template diting*/
 a, a:hover, a:focus {
-  color: #3498e1; }
+  color: inherit;
+  text-decoration: inherit; }
 
 .btn-primary {
   color: black;
@@ -2044,7 +2045,8 @@ am-usermain-itemwell .am-usermain-itemwell-statssection-oneitem .fa {
 
 /*Base, basemenu template diting*/
 a, a:hover, a:focus {
-  color: #3498e1; }
+  color: inherit;
+  text-decoration: inherit; }
 
 .btn-primary {
   color: black;

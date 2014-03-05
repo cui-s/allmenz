@@ -2,7 +2,8 @@
 
 /*Base, basemenu template diting*/
 a, a:hover, a:focus{
-  color: $primary-color;
+  color: inherit;  //$primary-color;
+  text-decoration: inherit;
 }
 
 .btn-primary {

@@ -138,7 +138,7 @@
 
                     <div class="am-header-content-option-item">
                         <i class="fa fa-tags fa-fw am-header-icon"></i>
-                        <span class="am-h4">タグ</span>
+                        <span class="am-h4"><a href="{{ URL::to('tag') }}">タグ</a></span>
                     </div>
 
                 </div>
@@ -149,9 +149,8 @@
                     </div>
                 <?PHP } ?>
 
-
                 <?PHP if (isset($login_status)) { ?>
-                    <a href="{{ URL::to('logout') }}">Logout</a>
+                    <a href="{{ URL::to('logout') }}" style="position:absolute;">Logout</a>
 
                     <div id="am-header-content-user" class="pull-right">
 
@@ -310,7 +309,8 @@
                         </form>
                     </div>
 
-                    <div class="am-profile">
+
+                        <a href="{{ URL::to('user/pinboard') }}"><div class="am-profile">
                         <div class="am-profile-badge" class="pull-right">
                             <span class="am-profile-gold"></span>
                             <span class="am-profile-gold-number">123</span>
@@ -321,7 +321,9 @@
                         </div>
                         <div class="am-profile-reputation" class="pull-right">1324</div>
                         <div class="am-profile-photo" class="pull-right"><img src="holder.js/35x35"></div>
-                    </div>
+                        </div>
+                        </a>
+
                 <?PHP } ?>
             </div>
 
