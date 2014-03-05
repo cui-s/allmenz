@@ -16,10 +16,13 @@ class UserController extends BaseController {
         return View::make('hello');
     }
 
-    public function test()
+    public function login()
     {
-        $results = DB::select('select * from users where id = ?', array(1));
-        return $results;
+//        $results = DB::select('select * from users where id = ?', array(1));
+//        return $results;
+        $data = Input::old();
+        var_dump($data);
+
     }
 
 

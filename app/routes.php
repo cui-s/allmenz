@@ -12,15 +12,42 @@
 */
 
 
-Route::get('/', 'UserController@test');
+Route::get('/', function()
+{
+    return View::make('index');
+});
 
-//Route::get('/', function()
-//{
-////    return View::make('index');
-//    return Redirect::to('index.php');
-//
-////    return "mie";
+Route::get('mie', array('uses' => 'UserController@Login'));
+
+//Route::post('mie', function(){
+//    var_dump(Input::all());
 //});
+
+Route::post('/', function(){
+
+    Eloquent::unguard();
+
+    $v = User::validate(Input::all());
+
+    Log::info("after validation");
+    if ( $v->passes() ) {
+
+        User::create(array(
+            'name'      =>  Input::get('firstname') + " " + Input::get('lastname') ,
+            'user_name' =>  Input::get('email'),
+            'password'  =>  Hash::make(Input::get('password')),
+        ));
+        return View::make('index'); // need to send in some parameter to output hte bar as well
+    } else {
+        return Redirect::to('/')->withErrors($v->getMessageBag());
+    }
+});
+
+
+
+
+
+
 
 Route::get('user/{id}', function($id)
 {

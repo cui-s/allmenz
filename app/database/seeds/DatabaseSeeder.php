@@ -27,7 +27,11 @@ class UserTableSeeder extends Seeder {
     {
         Eloquent::unguard();
 
-        User::create(array('name' => 'test1', 'user_name'=>'test1@gmail.com', 'password'=>'test1'));
+        User::create(array(
+            'name' => 'test1',
+            'user_name'=>'test1@gmail.com',
+            'password'=>'test1')
+        );
 
         // TODO: sneed a more generic way for data insertion, e.g. read from text file?
     }
