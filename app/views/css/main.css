@@ -34,6 +34,9 @@ a, a:hover, a:focus {
 .modal-body {
   padding: 10px 20px; }
 
+.modal-footer {
+  margin-top: 5px; }
+
 /*
 |--------------------------------------------------------------------------
 | TOPOGRAPHY
@@ -2078,6 +2081,9 @@ a, a:hover, a:focus {
 
 .modal-body {
   padding: 10px 20px; }
+
+.modal-footer {
+  margin-top: 5px; }
 
 /*
 |--------------------------------------------------------------------------

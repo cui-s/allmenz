@@ -419,17 +419,16 @@
 
                    <hr>
 
-                   @if ( $errors->count() > 0 )
-                   <p>The following errors have occurred:</p>
-
-                   <ul>
-                       @foreach( $errors->all() as $message )
-                       <li>{{ $message }}</li>
-                       @endforeach
-                   </ul>
-                   @endif
-
                    <form action="{{ url('login') }}" method="POST">
+                       @if ( $errors->count() > 0 )
+                           <p>The following errors have occurred:</p>
+
+                           <ul>
+                               @foreach( $errors->all() as $message )
+                               <li>{{ $message }}</li>
+                               @endforeach
+                           </ul>
+                       @endif
                        <div class="input-group am-modal-dialog-input">
                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
                            <input class="form-control" type="text" name="email" placeholder="メールアドレス">
@@ -443,26 +442,27 @@
                                <input type="checkbox"> ログイン情報を記憶する
                            </label>
                        </div>
-
                        <button type="submit" class="btn btn-success btn-block" id="normalLogin">ログイン</button>
                    </form>
                 </div>
 
                 <div class="modal-footer">
-                    <div id="registerReminderMessage"><span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？</div>
-                    <div id="am-modal-register-label"><strong>新規登録</strong></div>
+                        <div id="am-modal-modal-footer">
+                            <span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？
+                            <div id="am-modal-dialog-login-label"><strong>新規登録</strong></div>
+                        </div>
 
-                    @if ( $errors->count() > 0 )
-                    <p>The following errors have occurred:</p>
+                    <form role="form" id="am-modal-form-signup" action="{{ url('signup') }}" method="POST" style="display: none;">
+                        @if ( $errors->count() > 0 )
+                            <p>The following errors have occurred:</p>
 
-                    <ul>
-                        @foreach( $errors->all() as $message )
-                        <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                    @endif
+                            <ul>
+                                @foreach( $errors->all() as $message )
+                                <li>{{ $message }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-                    <form role="form" id="form-registrationNormal" action="{{ url('signup') }}" method="POST">
                         <div class="input-group am-modal-dialog-input">
                             <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                             <input class="form-control" type="text" name="firstname" id="am-modal-register-firstname" placeholder="名">
@@ -642,11 +642,19 @@
         </div>
     </div>
 
-
 </body>
 
 
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script>
+    // Show login form upon clicking of the button
+    $("#am-modal-dialog-login-label").on("click", function(){
+        $("#am-modal-form-signup").show('slow');
+        $(".am-modal-dialog-signup .modal-body").css('display','none');
+        $("#am-modal-modal-footer").css('display',"none");
+        $(".am-modal-dialog-signup .modal-footer").css("border-top","0px");
+    });
+</script>
 
 </html>
 
