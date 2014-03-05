@@ -143,184 +143,188 @@
 
                 </div>
 
-                <div id="am-header-content-login" class="pull-right am-h4" data-toggle="modal" data-target="#modalLogIn">
-                    ログイン
-                </div>
+                <?PHP if (!isset($login_status)) { ?>
+                    <div id="am-header-content-login" class="pull-right am-h4" data-toggle="modal" data-target="#modalLogIn">
+                        ログイン
+                    </div>
+                <?PHP } ?>
 
 
-<!---->
-<!---->
-<!--                <div id="am-header-content-user" class="pull-right">-->
-<!---->
-<!--                    <div class="btn-group">-->
-<!--                        <i class="fa fa-fw fa-signal am-header-icon dropdown-toggle" data-toggle="dropdown" style="margin-top:-3px"></i>-->
-<!--                        <ul class="dropdown-menu am-header-content-dropdown">-->
-<!--                            <div class="am-header-content-dropdown-header">-->
-<!--                                <span>受信箱</span>-->
-<!--                            </div>-->
-<!--                            <div class="am-header-content-dropdown-body">-->
-<!--                                <div class="am-header-content-dropdown-oneitem">-->
-<!--                                    <div class="col-md-1 am-header-content-dropdown-icon">-->
-<!--                                        <span class="glyphicon glyphicon-bullhorn"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-11 am-header-content-dropdown-content">-->
-<!--                                        <div class="am-header-content-dropdown-title">-->
-<!--                                            質問-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-date am-h6">-->
-<!--                                            2014-02-03 04:50-->
-<!--                                        </div>-->
-<!--                                        <div class="clearfix"></div>-->
-<!--                                        <div class="am-header-content-dropdown-question am-h6">-->
-<!--                                            lorem ipsum とは?-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-description am-h6">-->
-<!--                                            略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ-->
-<!--                                            ザインなどの-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="am-header-content-dropdown-oneitem">-->
-<!--                                    <div class="col-md-1 am-header-content-dropdown-icon">-->
-<!--                                        <span class="glyphicon glyphicon-comment"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-11 am-header-content-dropdown-content">-->
-<!--                                        <div class="am-header-content-dropdown-title">-->
-<!--                                            答え-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-date am-h6">-->
-<!--                                            2014-02-03 04:50-->
-<!--                                        </div>-->
-<!--                                        <div class="clearfix"></div>-->
-<!--                                        <div class="am-header-content-dropdown-question am-h6">-->
-<!--                                            lorem ipsum とは?-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-description am-h6">-->
-<!--                                            略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ-->
-<!--                                            ザインなどの-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="am-header-content-dropdown-oneitem">-->
-<!--                                    <div class="col-md-1 am-header-content-dropdown-icon">-->
-<!--                                        <span class="glyphicon glyphicon-comment"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-11 am-header-content-dropdown-content">-->
-<!--                                        <div class="am-header-content-dropdown-title">-->
-<!--                                            答え-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-date am-h6">-->
-<!--                                            2014-02-03 04:50-->
-<!--                                        </div>-->
-<!--                                        <div class="clearfix"></div>-->
-<!--                                        <div class="am-header-content-dropdown-question am-h6">-->
-<!--                                            lorem ipsum とは?-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-description am-h6">-->
-<!--                                            略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ-->
-<!--                                            ザインなどの-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="am-header-content-dropdown-oneitem">-->
-<!--                                    <div class="col-md-1 am-header-content-dropdown-icon">-->
-<!--                                        <span class="glyphicon glyphicon-bullhorn"></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-11 am-header-content-dropdown-content">-->
-<!--                                        <div class="am-header-content-dropdown-title">-->
-<!--                                            質問-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-date am-h6">-->
-<!--                                            2014-02-03 04:50-->
-<!--                                        </div>-->
-<!--                                        <div class="clearfix"></div>-->
-<!--                                        <div class="am-header-content-dropdown-question am-h6">-->
-<!--                                            lorem ipsum とは?-->
-<!--                                        </div>-->
-<!--                                        <div class="am-header-content-dropdown-description am-h6">-->
-<!--                                            略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ-->
-<!--                                            ザインなどの-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="btn-group">-->
-<!--                        <i class="fa fa-fw fa-inbox am-header-icon dropdown-toggle" data-toggle="dropdown"></i>-->
-<!--                        <ul class="dropdown-menu am-header-content-dropdown">-->
-<!--                            <div class="am-header-content-dropdown-header">-->
-<!--                                <span>達成</span>-->
-<!--                            </div>-->
-<!--                            <div class="am-header-content-dropdown-body">-->
-<!--                                <div class="am-header-content-dropdown-oneday">-->
-<!--                                    今日<i class="fa fa-chevron-right am-header-content-dropdown-oneday-icon"></i>-->
-<!--                                </div>-->
-<!---->
-<!--                                <div class="am-header-content-dropdown-oneday">-->
-<!--                                    昨日<i class="fa fa-chevron-down am-header-content-dropdown-oneday-icon"></i>-->
-<!--                                    <div class="am-header-content-dropdown-oneitem">-->
-<!--                                        <div class="clearfix"></div>-->
-<!--                                        <div class="col-md-3">-->
-<!--                                            <span class="am-tag">+5</span>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-md-9 am-header-content-dropdown-content">-->
-<!--                                            <div class="am-header-content-dropdown-description am-h6">-->
-<!--                                                略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ-->
-<!--                                                ザインなどの-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="am-header-content-dropdown-oneitem">-->
-<!--                                        <div class="col-md-3">-->
-<!--                                            <div class="am-badge">-->
-<!--                                                <span class="am-badge-gold"></span>-->
-<!--                                                <span class="am-h7">コスメングル</span>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-md-9 am-header-content-dropdown-content">-->
-<!--                                            <div class="am-header-content-dropdown-description am-h6">-->
-<!--                                                略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ-->
-<!--                                                ザインなどの-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!---->
-<!---->
-<!---->
-<!--                                <div class="am-header-content-dropdown-oneday" style="margin-left: 14px;">-->
-<!--                                    昔<i class="fa fa-chevron-right am-header-content-dropdown-oneday-icon"></i>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!---->
-<!--                    <form class="navbar-form" id="am-header-content-search" role="search">-->
-<!--                        <div class="form-group">-->
-<!--                            <input type="text" class="form-control" placeholder="Search">-->
-<!--                        </div>-->
-<!--                        <div class="btn btn-primary btn-default" class="pull-right am-h4" data-toggle="modal" data-target="#modalAskQuestion">-->
-<!--                            質問-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="am-profile">-->
-<!--                    <div class="am-profile-badge" class="pull-right">-->
-<!--                        <span class="am-profile-gold"></span>-->
-<!--                        <span class="am-profile-gold-number">123</span>-->
-<!--                        <span class="am-profile-silver"></span>-->
-<!--                        <span class="am-profile-silver-number">123</span>-->
-<!--                        <span class="am-profile-bronze"></span>-->
-<!--                        <span class="am-profile-bronze-number">123</span>-->
-<!--                    </div>-->
-<!--                    <div class="am-profile-reputation" class="pull-right">1324</div>-->
-<!--                    <div class="am-profile-photo" class="pull-right"><img src="holder.js/35x35"></div>-->
-<!--                </div>-->
-<!---->
+                <?PHP if (isset($login_status)) { ?>
+                    <a href="{{ URL::to('logout') }}">Logout</a>
+
+                    <div id="am-header-content-user" class="pull-right">
+
+                        <div class="btn-group">
+                            <i class="fa fa-fw fa-signal am-header-icon dropdown-toggle" data-toggle="dropdown" style="margin-top:-3px"></i>
+                            <ul class="dropdown-menu am-header-content-dropdown">
+                                <div class="am-header-content-dropdown-header">
+                                    <span>受信箱</span>
+                                </div>
+                                <div class="am-header-content-dropdown-body">
+                                    <div class="am-header-content-dropdown-oneitem">
+                                        <div class="col-md-1 am-header-content-dropdown-icon">
+                                            <span class="glyphicon glyphicon-bullhorn"></span>
+                                        </div>
+                                        <div class="col-md-11 am-header-content-dropdown-content">
+                                            <div class="am-header-content-dropdown-title">
+                                                質問
+                                            </div>
+                                            <div class="am-header-content-dropdown-date am-h6">
+                                                2014-02-03 04:50
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="am-header-content-dropdown-question am-h6">
+                                                lorem ipsum とは?
+                                            </div>
+                                            <div class="am-header-content-dropdown-description am-h6">
+                                                略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ
+                                                ザインなどの
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="am-header-content-dropdown-oneitem">
+                                        <div class="col-md-1 am-header-content-dropdown-icon">
+                                            <span class="glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="col-md-11 am-header-content-dropdown-content">
+                                            <div class="am-header-content-dropdown-title">
+                                                答え
+                                            </div>
+                                            <div class="am-header-content-dropdown-date am-h6">
+                                                2014-02-03 04:50
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="am-header-content-dropdown-question am-h6">
+                                                lorem ipsum とは?
+                                            </div>
+                                            <div class="am-header-content-dropdown-description am-h6">
+                                                略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ
+                                                ザインなどの
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="am-header-content-dropdown-oneitem">
+                                        <div class="col-md-1 am-header-content-dropdown-icon">
+                                            <span class="glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="col-md-11 am-header-content-dropdown-content">
+                                            <div class="am-header-content-dropdown-title">
+                                                答え
+                                            </div>
+                                            <div class="am-header-content-dropdown-date am-h6">
+                                                2014-02-03 04:50
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="am-header-content-dropdown-question am-h6">
+                                                lorem ipsum とは?
+                                            </div>
+                                            <div class="am-header-content-dropdown-description am-h6">
+                                                略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ
+                                                ザインなどの
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="am-header-content-dropdown-oneitem">
+                                        <div class="col-md-1 am-header-content-dropdown-icon">
+                                            <span class="glyphicon glyphicon-bullhorn"></span>
+                                        </div>
+                                        <div class="col-md-11 am-header-content-dropdown-content">
+                                            <div class="am-header-content-dropdown-title">
+                                                質問
+                                            </div>
+                                            <div class="am-header-content-dropdown-date am-h6">
+                                                2014-02-03 04:50
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="am-header-content-dropdown-question am-h6">
+                                                lorem ipsum とは?
+                                            </div>
+                                            <div class="am-header-content-dropdown-description am-h6">
+                                                略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ
+                                                ザインなどの
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <div class="btn-group">
+                            <i class="fa fa-fw fa-inbox am-header-icon dropdown-toggle" data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu am-header-content-dropdown">
+                                <div class="am-header-content-dropdown-header">
+                                    <span>達成</span>
+                                </div>
+                                <div class="am-header-content-dropdown-body">
+                                    <div class="am-header-content-dropdown-oneday">
+                                        今日<i class="fa fa-chevron-right am-header-content-dropdown-oneday-icon"></i>
+                                    </div>
+
+                                    <div class="am-header-content-dropdown-oneday">
+                                        昨日<i class="fa fa-chevron-down am-header-content-dropdown-oneday-icon"></i>
+                                        <div class="am-header-content-dropdown-oneitem">
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-3">
+                                                <span class="am-tag">+5</span>
+                                            </div>
+                                            <div class="col-md-9 am-header-content-dropdown-content">
+                                                <div class="am-header-content-dropdown-description am-h6">
+                                                    略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ
+                                                    ザインなどの
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="am-header-content-dropdown-oneitem">
+                                            <div class="col-md-3">
+                                                <div class="am-badge">
+                                                    <span class="am-badge-gold"></span>
+                                                    <span class="am-h7">コスメングル</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 am-header-content-dropdown-content">
+                                                <div class="am-header-content-dropdown-description am-h6">
+                                                    略してリプサム lipsum ともいうとは、出版、ウェブデザイン、グラフィックデ
+                                                    ザインなどの
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="am-header-content-dropdown-oneday" style="margin-left: 14px;">
+                                        昔<i class="fa fa-chevron-right am-header-content-dropdown-oneday-icon"></i>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <form class="navbar-form" id="am-header-content-search" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <div class="btn btn-primary btn-default" class="pull-right am-h4" data-toggle="modal" data-target="#modalAskQuestion">
+                                質問
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="am-profile">
+                        <div class="am-profile-badge" class="pull-right">
+                            <span class="am-profile-gold"></span>
+                            <span class="am-profile-gold-number">123</span>
+                            <span class="am-profile-silver"></span>
+                            <span class="am-profile-silver-number">123</span>
+                            <span class="am-profile-bronze"></span>
+                            <span class="am-profile-bronze-number">123</span>
+                        </div>
+                        <div class="am-profile-reputation" class="pull-right">1324</div>
+                        <div class="am-profile-photo" class="pull-right"><img src="holder.js/35x35"></div>
+                    </div>
+                <?PHP } ?>
             </div>
+
         </div>
     </div>
 
@@ -413,14 +417,24 @@
 
                    <hr>
 
-                   <form action="{{ url('/') }}" method="POST">
+                   @if ( $errors->count() > 0 )
+                   <p>The following errors have occurred:</p>
+
+                   <ul>
+                       @foreach( $errors->all() as $message )
+                       <li>{{ $message }}</li>
+                       @endforeach
+                   </ul>
+                   @endif
+
+                   <form action="{{ url('login') }}" method="POST">
                        <div class="input-group am-modal-dialog-input">
                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                           <input class="form-control" type="text" name="am-modal-login-username" placeholder="メールアドレス">
+                           <input class="form-control" type="text" name="email" placeholder="メールアドレス">
                        </div>
                        <div class="input-group am-modal-dialog-input">
                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                           <input class="form-control" type="password" name="am-modal-login-password" placeholder="パスワード">
+                           <input class="form-control" type="password" name="password" placeholder="パスワード">
                        </div>
                        <div class="checkbox">
                            <label>
@@ -436,7 +450,6 @@
                     <div id="registerReminderMessage"><span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？</div>
                     <div id="am-modal-register-label"><strong>新規登録</strong></div>
 
-
                     @if ( $errors->count() > 0 )
                     <p>The following errors have occurred:</p>
 
@@ -447,8 +460,7 @@
                     </ul>
                     @endif
 
-                    <form role="form" id="form-registrationNormal" action="{{ url('/') }}" method="POST">
-
+                    <form role="form" id="form-registrationNormal" action="{{ url('signup') }}" method="POST">
                         <div class="input-group am-modal-dialog-input">
                             <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                             <input class="form-control" type="text" name="firstname" id="am-modal-register-firstname" placeholder="名">

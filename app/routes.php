@@ -17,42 +17,19 @@ Route::get('/', function()
     return View::make('index');
 });
 
-Route::get('mie', array('uses' => 'UserController@Login'));
 
-//Route::post('mie', function(){
-//    var_dump(Input::all());
-//});
-
-Route::post('/', function(){
-
-    Eloquent::unguard();
-
-    $v = User::validate(Input::all());
-
-    Log::info("after validation");
-    if ( $v->passes() ) {
-
-        User::create(array(
-            'name'      =>  Input::get('firstname') + " " + Input::get('lastname') ,
-            'user_name' =>  Input::get('email'),
-            'password'  =>  Hash::make(Input::get('password')),
-        ));
-        return View::make('index'); // need to send in some parameter to output hte bar as well
-    } else {
-        return Redirect::to('/')->withErrors($v->getMessageBag());
-    }
-});
+Route::post('signup', array('uses' => 'UserController@doSignup'));
+Route::post('login', array('uses' => 'UserController@doLogin'));
+Route::get('logout', array('uses' => 'UserController@doLogout'));
 
 
+/*
+|--------------------------------------------------------------------------
+| Application Route Pages
+|--------------------------------------------------------------------------
+|
+*/
 
-
-
-
-
-Route::get('user/{id}', function($id)
-{
-    return 'User '.$id;
-});
 
 Route::get('tag_detail', function()
 {
