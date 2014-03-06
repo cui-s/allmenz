@@ -19,9 +19,11 @@ class UserController extends BaseController {
     public function doSignup(){
         $input = Input::all();
 
-        $user = DB::table('users')->where('user_name', $input['email']);
+        $user = DB::table('users')->where('user_name', $input['email'])->first();
         if($user){
-            // do nothing, user alr exists
+//            Log::info($input);
+//            Log::info($user);
+//            Log::info("user exists");
         }
         else{
             Eloquent::unguard();
@@ -33,6 +35,7 @@ class UserController extends BaseController {
                 'create_time'   =>  date('Y/m/d H:i:s'),
                 'create_method' =>  isset($input['method']) ? $input['method'] : 'manual'
             ));
+            Log::info("new user created");
         }
 
     }
