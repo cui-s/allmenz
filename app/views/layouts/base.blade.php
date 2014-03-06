@@ -679,7 +679,7 @@ $(document).ready(function(){
         },
 
         submitHandler: function(form) {
-            $.ajax("http://tan-c.allmenz.jp/public/login",{
+            $.ajax("/public/login",{
                 type: "post",
                 data: $('#am-modal-form-login').serialize(),
                 success: function(response) {
@@ -739,12 +739,22 @@ $(document).ready(function(){
         },
 
         submitHandler: function(form) {
-            $.ajax("http://tan-c.allmenz.jp/public/signup",{
-                type: "post",
-                data: $('#am-modal-form-signup').serialize(),
-                success: function(response) {
-                    LoginPostProcessing();
-                }
+            $.ajax("/public/email_unique_validate",{
+               type: "post",
+               data: $('#am-modal-form-signup').serialize(),
+               success: function(response) {
+                   if(response=="avaliable") {
+                       $.ajax("/public/signup",{
+                           type: "post",
+                           data: $('#am-modal-form-signup').serialize(),
+                           success: function(response) {
+                               LoginPostProcessing();
+                           }
+                       });
+                   }
+                   else
+                       $("#am-modal-form-signup").prepend("<span class='am-error-top'>"+response+"</span>");
+               }
             });
         }
     });
@@ -760,7 +770,7 @@ $(document).ready(function(){
 
 
     function FBLoginProcess(){
-        $.ajax("http://tan-c.allmenz.jp/public/signup",{
+        $.ajax("/public/signup",{
             type: "post",
             data: {
                 "email":JSON.parse(localStorage.userInfo).email,

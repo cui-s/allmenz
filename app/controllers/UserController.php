@@ -62,4 +62,17 @@ class UserController extends BaseController {
 
     }
 
+    /*
+     * Create uniqueness Check during creating new account
+     */
+    public function doEmailUniqueValidate() {
+        $userName = Input::get('email');
+        $exist = DB::table('users')->where('user_name', $userName)->first();
+        if(is_null($exist)) {
+            return "avaliable";
+        } else {
+            return "このメルアドはすでに登録されてます";
+        }
+
+    }
 }

@@ -21,6 +21,7 @@ Route::get('/', function()
 Route::post('signup', array('uses' => 'UserController@doSignup'));
 Route::post('login', array('uses' => 'UserController@doLogin'));
 Route::get('logout', array('uses' => 'UserController@doLogout'));
+Route::post('email_unique_validate', array('uses' => 'UserController@doEmailUniqueValidate'));
 
 
 /*
