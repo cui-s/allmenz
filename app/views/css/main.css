@@ -32,7 +32,7 @@ a, a:hover, a:focus {
   border-top-right-radius: 5px; }
 
 .modal-body {
-  padding: 10px 20px; }
+  padding: 15px 20px 10px; }
 
 .modal-footer {
   margin-top: 5px; }
@@ -58,13 +58,13 @@ a, a:hover, a:focus {
   padding-top: 20px;
   padding-bottom: 10px; }
 
-.am-h2 {
+.am-h2, .am-index-tutorial-main-grid button {
   font-size: 30px; }
 
 .am-h3, .am-usermain-well-title {
   font-size: 24px; }
 
-.am-h4, .am-tag-big, .am-qna-profile-name, .am-qna-content-question, .am-modal-askquestion-title span, .am-category-details-contents-details, .am-useractivity-daybox, .am-useractivity-content-oneitem-question-title, .am-useractivity-right-oneitem-table-name, .am-useractivity-right-oneitem thead, .am-useractivity-right-title, #am-useredit-newsletter-header, .am-usermain-well-profile-stats-oneitem, .am-qnacommon-oneitem-stats-oneitem-number {
+.am-h4, .am-tag-big, .am-index-tutorial-main-grid button:last-child, .am-qna-profile-name, .am-qna-content-question, .am-modal-askquestion-title span, .am-category-details-contents-details, .am-useractivity-daybox, .am-useractivity-content-oneitem-question-title, .am-useractivity-right-oneitem-table-name, .am-useractivity-right-oneitem thead, .am-useractivity-right-title, #am-useredit-newsletter-header, .am-usermain-well-profile-stats-oneitem, .am-qnacommon-oneitem-stats-oneitem-number {
   font-size: 18px; }
 
 .am-h5 {
@@ -590,6 +590,39 @@ a, a:hover, a:focus {
 
 #am-index-staruser-details-summary {
   padding: 20px 25px; }
+
+.am-index-tutorial-main-grid {
+  padding: 10px 0 40px;
+  text-align: center; }
+
+.am-index-tutorial-main-grid:nth-child(odd) {
+  background: white; }
+
+.am-index-tutorial-main-grid:nth-child(even) {
+  background: #f2f4f8; }
+
+.am-index-tutorial-main-grid .am-h0, .am-index-tutorial-main-grid .am-category-details-title {
+  font-size: 54px; }
+
+.am-index-tutorial-main-grid .glyphicon-circle-arrow-down {
+  color: #3498e1;
+  font-size: 1.5em; }
+
+.am-index-tutorial-main-grid .glyphicon-circle-arrow-down:hover {
+  color: #95c9ef; }
+
+.am-index-tutorial-main-grid button {
+  width: 300px;
+  height: 120px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: #d4d4d4;
+  border: 1px solid #9b9b9b;
+  margin: 0 10px; }
+
+.am-index-tutorial-main-grid button:last-child {
+  width: 200px;
+  height: 50px; }
 
 .am-qna-profile {
   width: 15%;
@@ -2080,7 +2113,7 @@ a, a:hover, a:focus {
   border-top-right-radius: 5px; }
 
 .modal-body {
-  padding: 10px 20px; }
+  padding: 15px 20px 10px; }
 
 .modal-footer {
   margin-top: 5px; }
@@ -2106,13 +2139,13 @@ a, a:hover, a:focus {
   padding-top: 20px;
   padding-bottom: 10px; }
 
-.am-h2 {
+.am-h2, .am-index-tutorial-main-grid button {
   font-size: 30px; }
 
 .am-h3, .am-usermain-well-title {
   font-size: 24px; }
 
-.am-h4, .am-tag-big, .am-qna-profile-name, .am-qna-content-question, .am-modal-askquestion-title span, .am-category-details-contents-details, .am-useractivity-daybox, .am-useractivity-content-oneitem-question-title, .am-useractivity-right-oneitem-table-name, .am-useractivity-right-oneitem thead, .am-useractivity-right-title, #am-useredit-newsletter-header, .am-usermain-well-profile-stats-oneitem, .am-qnacommon-oneitem-stats-oneitem-number {
+.am-h4, .am-tag-big, .am-index-tutorial-main-grid button:last-child, .am-qna-profile-name, .am-qna-content-question, .am-modal-askquestion-title span, .am-category-details-contents-details, .am-useractivity-daybox, .am-useractivity-content-oneitem-question-title, .am-useractivity-right-oneitem-table-name, .am-useractivity-right-oneitem thead, .am-useractivity-right-title, #am-useredit-newsletter-header, .am-usermain-well-profile-stats-oneitem, .am-qnacommon-oneitem-stats-oneitem-number {
   font-size: 18px; }
 
 .am-h5 {

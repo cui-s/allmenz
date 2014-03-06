@@ -61,6 +61,11 @@ Route::get('qna', function()
 });
 
 
+Route::get('tutorial', function()
+{
+    return View::make('tutorial');
+});
+
 /*
 |--------------------------------------------------------------------------
 | USER Route
