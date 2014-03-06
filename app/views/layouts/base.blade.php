@@ -397,27 +397,16 @@
        </div>
        <div class="modal-body">
             <button type="button" class="btn btn-primary btn-block" style="background-color: #1867A0;" id="aw-facebookLogin">
-                <span class="col-md-2">
-                    <i class="fa fa-facebook fa-inverse" style="font-size: 1.4em;"></i>
-                </span>
-                <span class="col-md-10 am-modal-dialog-socialbar">
-                    Facebookでログインする
-                </span>
+                <span class="col-md-2"><i class="fa fa-facebook fa-inverse" style="font-size: 1.4em;"></i></span>
+                <span class="col-md-10 am-modal-dialog-socialbar">Facebookでログインする</span>
             </button>
 
             <button type="button" class="btn btn-primary btn-block" style="background-color: #3498e1;" id="aw-twitterLogin">
-                <span class="col-md-2">
-                    <i class="fa fa-twitter fa-inverse" style="font-size: 1.4em;"></i>
-                </span>
-                <span class="col-md-10 am-modal-dialog-socialbar">
-                    Twitterでログインする
-                </span>
+                <span class="col-md-2"><i class="fa fa-twitter fa-inverse" style="font-size: 1.4em;"></i></span>
+                <span class="col-md-10 am-modal-dialog-socialbar">Twitterでログインする</span>
             </button>
 
-           <div class="am-modal-dialog-divider">まだは
-           </div>
-
-           <hr>
+           <div class="am-modal-dialog-divider">まだは</div><hr>
 
            <form action="" id="am-modal-form-login" method="POST">
                <div class="input-group am-modal-dialog-input">
@@ -626,9 +615,10 @@
 
 </body>
 
-
+<div id="fb-root"></div>
 
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="http://tan-c.allmenz.jp/app/views/js/facebook.js"></script>
 
 @if (Auth::check())
 <script>
@@ -647,7 +637,11 @@ $(document).ready(function(){
 @endif
 
 <script>
-    // Show login form upon clicking of the button
+
+    // -------------------------------------------
+    // Form validation
+    // -------------------------------------------
+
     $("#am-modal-dialog-login-label").on("click", function(){
         $("#am-modal-form-signup").fadeIn('slow');
         $(".am-modal-dialog-signup .modal-body").css('display','none');
@@ -689,11 +683,8 @@ $(document).ready(function(){
                 type: "post",
                 data: $('#am-modal-form-login').serialize(),
                 success: function(response) {
-                    if(response=="OK"){
-                        $("#am-header-content-login").hide();
-                        $('#modalLogIn').modal('hide')
-                        $("#am-header-content-user").show();
-                    }
+                    if(response=="OK")
+                        LoginPostProcessing();
                     else
                         $("#am-modal-form-login").prepend("<span class='am-error-top'>"+response+"</span>");
                 }
@@ -752,16 +743,41 @@ $(document).ready(function(){
                 type: "post",
                 data: $('#am-modal-form-signup').serialize(),
                 success: function(response) {
-                    if(response=="OK"){
-                        $("#am-header-content-login").hide();
-                        $('#modalLogIn').modal('hide')
-                        $("#am-header-content-user").show();
-                    }
-                    console.log(response);
+                    LoginPostProcessing();
                 }
             });
         }
     });
+
+
+
+    // -------------------------------------------
+    // SNS login function
+    // -------------------------------------------
+    $("#aw-facebookLogin").on("click", function(){
+        Login(FBLoginProcess);
+    });
+
+
+    function FBLoginProcess(){
+        $.ajax("http://tan-c.allmenz.jp/public/signup",{
+            type: "post",
+            data: {
+                "email":JSON.parse(localStorage.userInfo).email,
+                "name":JSON.parse(localStorage.userInfo).name,
+                "method":"facebook"
+            },
+            success: function(response) {
+                LoginPostProcessing();
+            }
+        });
+    }
+
+    function LoginPostProcessing(){
+        $("#am-header-content-login").hide();
+        $('#modalLogIn').modal('hide')
+        $("#am-header-content-user").show();
+    }
 </script>
 
 </html>

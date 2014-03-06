@@ -20,13 +20,16 @@ class UserController extends BaseController {
 
         Eloquent::unguard();
 
+        $input = Input::all();
+
         User::create(array(
-            'name'      =>  Input::get('firstname')." ".Input::get('lastname') ,
-            'user_name' =>  Input::get('email'),
-            'password'  =>  Hash::make(Input::get('password')),
+            'name'          =>  isset($input['name']) ? $input['name'] : $input['firstname']." ".$input['lastname'] ,
+            'user_name'     =>  Input::get('email'),
+            'password'      =>  isset($input['password']) ? Hash::make($input['password']): "",       // i think password is a keyword
+            'create_time'   =>  date('Y/m/d H:i:s'),
+            'create_method' =>  isset($input['method']) ? $input['method'] : 'manual'
         ));
 
-        Eloquent::guard();
     }
 
     public function doLogout(){
