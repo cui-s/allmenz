@@ -106,7 +106,6 @@ a, a:hover, a:focus {
 |
 */
 .am-profile {
-  display: inline-block;
   width: 160px;
   height: 45px;
   position: relative;
@@ -329,6 +328,13 @@ label.am-error {
   margin-top: -8px;
   display: block;
   margin-left: 3px; }
+
+.am-error-top {
+  padding: 30px;
+  background: #4a4a4a;
+  text-align: center;
+  display: block;
+  color: white; }
 
 /*
 |--------------------------------------------------------------------------
@@ -2200,7 +2206,6 @@ a, a:hover, a:focus {
 |
 */
 .am-profile {
-  display: inline-block;
   width: 160px;
   height: 45px;
   position: relative;
@@ -2423,6 +2428,13 @@ label.am-error {
   margin-top: -8px;
   display: block;
   margin-left: 3px; }
+
+.am-error-top {
+  padding: 30px;
+  background: #4a4a4a;
+  text-align: center;
+  display: block;
+  color: white; }
 
 /*
 |--------------------------------------------------------------------------
