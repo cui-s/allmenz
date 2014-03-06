@@ -17,18 +17,23 @@ class UserController extends BaseController {
     }
 
     public function doSignup(){
-
-        Eloquent::unguard();
-
         $input = Input::all();
 
-        User::create(array(
-            'name'          =>  isset($input['name']) ? $input['name'] : $input['firstname']." ".$input['lastname'] ,
-            'user_name'     =>  Input::get('email'),
-            'password'      =>  isset($input['password']) ? Hash::make($input['password']): "",       // i think password is a keyword
-            'create_time'   =>  date('Y/m/d H:i:s'),
-            'create_method' =>  isset($input['method']) ? $input['method'] : 'manual'
-        ));
+        $user = DB::table('users')->where('user_name', $input['email']);
+        if($user){
+            // do nothing, user alr exists
+        }
+        else{
+            Eloquent::unguard();
+
+            User::create(array(
+                'name'          =>  isset($input['name']) ? $input['name'] : $input['firstname']." ".$input['lastname'] ,
+                'user_name'     =>  $input['email'],
+                'password'      =>  isset($input['password']) ? Hash::make($input['password']): "",       // i think password is a keyword
+                'create_time'   =>  date('Y/m/d H:i:s'),
+                'create_method' =>  isset($input['method']) ? $input['method'] : 'manual'
+            ));
+        }
 
     }
 
