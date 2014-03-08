@@ -1,57 +1,6 @@
-<?php
-
-define('__ROOT__', dirname(dirname(dirname(__FILE__))));
-require_once(__ROOT__.'/vendor/twitteroauth/twitteroauth.php');
-//oauth.php. Your callback File
-
-$CONSUMER_KEY='wHLNxp8OcgwLFIrLIhmiuQ';
-$CONSUMER_SECRET='bpmW1B4UdzWYjHvsphYi84hgkSvlTS0CXPCFGbMIk';
-
-session_start();
-
-if(isset($_GET['oauth_token']))
-{
-    $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_SECRET, $_SESSION['request_token'], $_SESSION['request_token_secret']);
-    $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
-    if($access_token)
-    {
-        $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-        $params =array();
-        $params['include_entities']='false';
-        $content = $connection->get('account/verify_credentials',$params);
-
-        if($content && isset($content->screen_name) && isset($content->name))
-        {
-            $_SESSION['name']=$content->name;
-            $_SESSION['image']=$content->profile_image_url;
-            $_SESSION['twitter_id']=$content->screen_name;
-            log::info($content->name);
-            log::info($content->profile_image_url);
-            log::info($content->screen_name);
-
-            //redirect to main page. Your own
-//            header('Location: login.php');
-
-        }
-        else
-        {
-            echo "<h4> Login Error </h4>";
-        }
-    }
-
-    else
-    {
-
-        echo "<h4> Login Error </h4>";
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-    <!--    this part needs to be templat-ized later-->
     <title>「ALLMENZ」へよこそう</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

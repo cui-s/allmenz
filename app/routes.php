@@ -21,6 +21,7 @@ Route::get('/', function()
 Route::post('signup', array('uses' => 'UserController@doSignup'));
 Route::post('login', array('uses' => 'UserController@doLogin'));
 Route::get('login_twitter', array('uses' => 'UserController@doLoginTwitter'));
+Route::get('login_twitter_redirect', array('uses' => 'UserController@doLoginRedirectTwitter'));
 Route::get('logout', array('uses' => 'UserController@doLogout'));
 
 
