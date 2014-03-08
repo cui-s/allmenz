@@ -23,7 +23,11 @@ class CreateUsersTable extends Migration {
             $table->enum('create_method',array('facebook','twitter','manual'))->default('manual');
             $table->enum('role',array('user','contributor','moderator'))->default('user');
             $table->integer('reputation')->default(0);
-            $table->text('badge_list');
+            $table->text('badge_gold');
+            $table->text('badge_silver');
+            $table->text('badge_bronze');
+            $table->string('picture_url', 255);
+
 
             $table->smallInteger('question_asked');
             $table->smallInteger('question_answered');
@@ -31,6 +35,7 @@ class CreateUsersTable extends Migration {
 
             $table->text('following');
             $table->text('follower');
+
 
 
 			$table->timestamps();

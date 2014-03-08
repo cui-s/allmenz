@@ -132,11 +132,10 @@ class UserController extends BaseController {
 
                 if($content && isset($content->screen_name) && isset($content->name))
                 {
-                    $_SESSION['image']=$content->profile_image_url;
+                    log::info($content->profile_image_url);
 
                     // sign up the user
                     self::doSignup($content->screen_name, $content->name, "twitter");
-
                     return Redirect::to('/');
                 }
                 else
