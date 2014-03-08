@@ -22,7 +22,7 @@ class UserController extends BaseController {
 
     public function doSignup($name = null, $username = null, $method = "manual"){
         if($name != null){
-            // do nothing
+            // do nothing when user use the form to login (aka manual login)
         }
         else{
             $input = Input::all();
@@ -39,7 +39,6 @@ class UserController extends BaseController {
             //            Log::info("user exists");
         }
         else{
-            Log::info("im here-- creating user");
             Eloquent::unguard();
 
             User::create(array(
@@ -73,7 +72,7 @@ class UserController extends BaseController {
 
         // attempt to do the login， based on the result the redirection will be handled accordingly at the front end
         if (Auth::attempt($userdata)) {
-            return "OK";
+            return Redirect::to('/');
         } else {
             return "パスワードが無効です";
         }
@@ -91,9 +90,9 @@ class UserController extends BaseController {
             $token = $request_token['oauth_token'];
             $_SESSION['request_token'] = $token ;
             $_SESSION['request_token_secret'] = $request_token['oauth_token_secret'];
-            Log::info($token);
-            Log::info($request_token['oauth_token_secret']);
-            Log::info($connection->http_code);
+//            Log::info($token);
+//            Log::info($request_token['oauth_token_secret']);
+//            Log::info($connection->http_code);
 
             switch ($connection->http_code)
             {
@@ -134,8 +133,10 @@ class UserController extends BaseController {
 
                     // sign up the user
                     self::doSignup($content->screen_name, $content->name, "twitter");
-                    // redirect to home page]
-                    return Redirect::to('/');
+                    // redirect to home page with the user data
+                    $user_id =  DB::table('users')->where('user_name', $content->name)->pluck('id');
+                    Session::put('user', User::find($user_id));
+                    return View::make('index'); //->with("user",User::find($user_id));
                 }
                 else
                 {

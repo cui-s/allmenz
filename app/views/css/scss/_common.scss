@@ -114,6 +114,7 @@
 }
 
 .am-profile-reputation{
+  float:left;
   background: $primary-color-light;
   border-radius: 2px;
   width: auto;
@@ -126,7 +127,7 @@
 }
 
 .am-profile-name{
-
+  margin-left: 45px;
 }
 
 .am-profile-posttime{
@@ -141,7 +142,7 @@
   top: 25px;
   position: absolute;
   font-size: 12px;
-  left: 42px;
+  left: 75px;
 }
 
 .am-profile-badge-circle{
