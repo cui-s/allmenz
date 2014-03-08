@@ -47,7 +47,9 @@
         </div>
 
         <div class="am-usermain-well-oneitem">
-            <div class="am-btn-mid-secondary">編集</div>
+            <a href="{{ URL::to('user/edit') }}">
+                <div class="am-btn-mid-secondary">編集</div>
+            </a>
         </div>
 
     </div>

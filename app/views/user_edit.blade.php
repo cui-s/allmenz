@@ -11,7 +11,7 @@
                 <ul class="am-title-bar-tab nav nav-tabs">
                     <li class="active pull-right"><a href="#edit" data-toggle="tab">編集</a></li>
                     <li class="pull-right"><a href="#pinboard" data-toggle="tab">ピンボード</a></li>
-                    <li class="pull-right"><a href="#overview" data-toggle="tab">活動一覧</a></li>
+                    <li class="pull-right"><a href="{{ URL::to('user/timeline') }}">活動一覧</a></li>
                 </ul>
 
                 <!-- Tab panes -->

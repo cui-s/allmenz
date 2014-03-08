@@ -5,6 +5,50 @@
 @import "page_tag";
 @import "param";
 
+//--------------- TUTORIAL PAGE -------------------------
+
+.am-index-tutorial-main-grid{
+  padding: 10px 0 40px;
+  text-align: center;
+}
+
+.am-index-tutorial-main-grid:nth-child(odd){
+  background: white;
+}
+
+.am-index-tutorial-main-grid:nth-child(even){
+  background: $bg-primary;
+}
+
+.am-index-tutorial-main-grid .am-h0{
+  font-size: 54px;
+}
+
+.am-index-tutorial-main-grid .glyphicon-circle-arrow-down{
+  color: $primary-color;
+  font-size: 1.5em;
+}
+
+.am-index-tutorial-main-grid .glyphicon-circle-arrow-down:hover{
+  color: $primary-color-light;
+}
+
+.am-index-tutorial-main-grid button{
+  @extend .am-h2;
+  width: 300px;
+  height: 120px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: $light-grey;
+  border: 1px solid $mid-grey;
+  margin:0 10px;
+}
+
+.am-index-tutorial-main-grid button:last-child{
+  @extend .am-h4;
+  width: 200px;
+  height: 50px;
+}
 //-------------------- QNA PAGE -------------------------
 
 .am-qna-profile{
@@ -2427,7 +2471,6 @@ am-usermain-itemwell .am-usermain-itemwell-statssection-oneitem .fa{
 
 .am-useractivity-right-oneitem  tbody tr{
   border-bottom: 1px solid $light-grey;
-
 }
 
 .am-useractivity-right-oneitem .am-profile-reputation{
