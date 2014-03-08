@@ -153,32 +153,17 @@
                 border-radius: 5px;">Logout</a>
 
             <a href="{{ URL::to('user/pinboard') }}" style="float:left;margin-right:130px">
-<!--                <div class="am-profile am-profile-full">-->
-<!--                    <div class="am-profile-photo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzNSI+PHJlY3Qgd2lkdGg9IjM1IiBoZWlnaHQ9IjM1IiBmaWxsPSIjZWVlIj48L3JlY3Q+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTcuNSIgeT0iMTcuNSIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjM1eDM1PC90ZXh0Pjwvc3ZnPg==" data-src="holder.js/35x35" alt="35x35" style="width: 35px; height: 35px;"></div>-->
-<!--                    <div class="am-profile-name am-h6">タンク</div>-->
-<!--                    <div class="am-profile-reputation">1324</div>-->
-<!--                    <div class="am-profile-badge">-->
-<!--                        <span class="am-profile-gold"></span>-->
-<!--                        <span class="am-profile-gold-number">13</span>-->
-<!--                        <span class="am-profile-silver"></span>-->
-<!--                        <span class="am-profile-silver-number">13</span>-->
-<!--                        <span class="am-profile-bronze"></span>-->
-<!--                        <span class="am-profile-bronze-number">123</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-
                 <div class="am-profile">
                     <div class="am-profile-photo"><img src="holder.js/35x35"></div>
-                    <div class="am-profile-name">{{{ Session::get('user')->name }}}</div>
-                    <div class="am-profile-reputation">{{{  Session::get('user')->reputation }}}</div>
+                    <div class="am-profile-name">@if (Auth::check()) {{{ Session::get('user')->name }}} @endif</div>
+                    <div class="am-profile-reputation">@if (Auth::check()) {{{  Session::get('user')->reputation }}} @endif</div>
                     <div class="am-profile-badge">
                         <span class="am-profile-gold"></span>
-                        <span class="am-profile-gold-number">{{{ Session::get('user')->badge_list }}}</span>
+                        <span class="am-profile-gold-number">@if (Auth::check()) {{{ Session::get('user')->badge_list }}} @endif</span>
                         <span class="am-profile-silver"></span>
-                        <span class="am-profile-silver-number">{{{ Session::get('user')->badge_list }}}</span>
+                        <span class="am-profile-silver-number">@if (Auth::check()) {{{ Session::get('user')->badge_list }}} @endif</span>
                         <span class="am-profile-bronze"></span>
-                        <span class="am-profile-bronze-number">{{{ Session::get('user')->badge_list }}}</span>
+                        <span class="am-profile-bronze-number">@if (Auth::check()) {{{ Session::get('user')->badge_list }}} @endif</span>
                     </div>
                 </div>
             </a>
@@ -799,9 +784,7 @@ $(document).ready(function(){
     }
 
     function LoginPostProcessing(){
-        $("#am-header-content-login").hide();
-        $('#modalLogIn').modal('hide')
-        $("#am-header-content-user").show();
+        window.location.href=window.location.href;
     }
 </script>
 

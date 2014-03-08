@@ -54,11 +54,12 @@ class UserController extends BaseController {
         $user_data =  DB::table('users')->where('user_name', $username)->pluck('id');
         $user =  User::find($user_data);
         Auth::login($user);
-
+        Session::put('user', $user);
     }
 
     public function doLogout(){
         Auth::logout(); // log the user out of our application
+        Session::flush();
         return Redirect::to('/'); // redirect the user to the login screen
     }
 
@@ -72,7 +73,9 @@ class UserController extends BaseController {
 
         // attempt to do the login， based on the result the redirection will be handled accordingly at the front end
         if (Auth::attempt($userdata)) {
-            return Redirect::to('/');
+            $user_data =  DB::table('users')->where('user_name', Input::get('email'))->pluck('id');
+            Session::put('user', User::find($user_data));
+            return "OK";
         } else {
             return "パスワードが無効です";
         }
@@ -133,10 +136,8 @@ class UserController extends BaseController {
 
                     // sign up the user
                     self::doSignup($content->screen_name, $content->name, "twitter");
-                    // redirect to home page with the user data
-                    $user_id =  DB::table('users')->where('user_name', $content->name)->pluck('id');
-                    Session::put('user', User::find($user_id));
-                    return View::make('index'); //->with("user",User::find($user_id));
+
+                    return Redirect::to('/');
                 }
                 else
                 {
