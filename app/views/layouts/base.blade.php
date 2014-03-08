@@ -404,7 +404,7 @@
                 </a>
             </button>
 
-           <div class="am-modal-dialog-divider">まだは</div><hr>
+           <div class="am-modal-dialog-divider">または</div><hr>
 
            <form action="" id="am-modal-form-login" method="POST">
                <div class="input-group am-modal-dialog-input">
@@ -422,49 +422,53 @@
                </div>
                <button type="submit" class="btn btn-success btn-block" id="normalLogin">ログイン</button>
            </form>
+
+           <form role="form" id="am-modal-form-signup" action="" method="POST" style="display: none;">
+
+               <div class="input-group am-modal-dialog-input">
+                   <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                   <input class="form-control" type="text" name="firstname" id="am-modal-register-firstname" placeholder="名">
+               </div>
+               <div class="input-group am-modal-dialog-input">
+                   <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                   <input class="form-control" type="text" name="lastname" id="am-modal-register-lastname" placeholder="姓">
+               </div>
+               <div class="input-group am-modal-dialog-input">
+                   <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                   <input class="form-control" type="text" name="email" id="am-modal-register-email" placeholder="メールアドレス">
+               </div>
+               <div class="input-group am-modal-dialog-input">
+                   <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                   <input class="form-control" type="password" name="password" id="am-modal-register-password" placeholder="パスワード">
+               </div>
+               <div class="input-group am-modal-dialog-input">
+                   <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                   <input class="form-control" type="password" name="password_confirmation" id="am-modal-register-password_confirmation" placeholder="パスワードを確認する">
+               </div>
+
+               <div class="checkbox" id="signUpNewsletterCheckbox">
+                   <label>
+                       <input type="checkbox" id="signUpNewsletterInput"><span class="am-h6">耳寄りなALLMENZニュースをお聞かせください！</span>
+                   </label>
+               </div>
+               <div class="am-h6"><small>登録することで、ALLMENZのサービス利用規約、個人情報保護ポリシー, ゲスト返金ポリシー、ホスト保証規約に同意したことになります。</small></div>
+
+               <br>
+               <input class="btn btn-success btn-block submit" type="submit" value="登録" id="normalSignUp">
+           </form>
         </div>
 
         <div class="modal-footer">
-                <div id="am-modal-modal-footer">
+            <div id="am-modal-modal-footer">
+                <span>
                     <span class="label label-primary">ALLMENZ</span>のアカウントはお持ちですか？
                     <div id="am-modal-dialog-login-label"><strong>新規登録</strong></div>
-                </div>
-
-            <form role="form" id="am-modal-form-signup" action="" method="POST" style="display: none;">
-
-                <div class="input-group am-modal-dialog-input">
-                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                    <input class="form-control" type="text" name="firstname" id="am-modal-register-firstname" placeholder="名">
-                </div>
-                <div class="input-group am-modal-dialog-input">
-                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                    <input class="form-control" type="text" name="lastname" id="am-modal-register-lastname" placeholder="姓">
-                </div>
-                <div class="input-group am-modal-dialog-input">
-                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input class="form-control" type="text" name="email" id="am-modal-register-email" placeholder="メールアドレス">
-                </div>
-                <div class="input-group am-modal-dialog-input">
-                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" name="password" id="am-modal-register-password" placeholder="パスワード">
-                </div>
-                <div class="input-group am-modal-dialog-input">
-                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" name="password_confirmation" id="am-modal-register-password_confirmation" placeholder="パスワードを確認する">
-                </div>
-
-                <div class="checkbox" id="signUpNewsletterCheckbox">
-                    <label>
-                        <input type="checkbox" id="signUpNewsletterInput"><span class="am-h6">耳寄りなALLMENZニュースをお聞かせください！</span>
-                    </label>
-                </div>
-                <div class="am-h6"><small>登録することで、ALLMENZのサービス利用規約、個人情報保護ポリシー, ゲスト返金ポリシー、ホスト保証規約に同意したことになります。</small></div>
-
-                <br>
-                <input class="btn btn-success btn-block submit" type="submit" value="登録" id="normalSignUp">
-            </form>
-
-
+                </span>
+                <span style="display: none">
+                    すでに<span class="label label-primary">ALLMENZ</span>のメンバーですか？
+                    <div id="am-modal-dialog-login-label-login"><strong>ログイン</strong></div>
+                </span>
+            </div>
         </div>
 
     </div>
@@ -642,11 +646,17 @@ $(document).ready(function(){
 
     $("#am-modal-dialog-login-label").on("click", function(){
         $("#am-modal-form-signup").fadeIn('slow');
-        $(".am-modal-dialog-signup .modal-body").css('display','none');
-        $("#am-modal-modal-footer").css('display',"none");
-        $(".am-modal-dialog-signup .modal-footer").css("border-top","0px");
+        $("#am-modal-form-login").css('display','none');
+        $("#am-modal-modal-footer>span:first-child").css("display","none");
+        $("#am-modal-modal-footer>span:nth-child(2)").css("display","block");
     });
 
+    $("#am-modal-dialog-login-label-login").on("click", function(){
+        $("#am-modal-form-signup").css('display','none');
+        $("#am-modal-form-login").fadeIn('slow');
+        $("#am-modal-modal-footer>span:first-child").css("display","block");
+        $("#am-modal-modal-footer>span:nth-child(2)").css("display","none");
+    });
     //TODO: when modal dismissed return to the display state:
 
     $("#am-modal-form-login").validate({
