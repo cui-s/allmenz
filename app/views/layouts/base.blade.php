@@ -154,16 +154,16 @@
 
             <a href="{{ URL::to('user/pinboard') }}" style="float:left;margin-right:130px">
                 <div class="am-profile">
-                    <div class="am-profile-photo"><img src="holder.js/35x35"></div>
+                    <div class="am-profile-photo"><img src="@if (Auth::check()) {{{ Session::get('user')->picture_url }}} @endif"></div>
                     <div class="am-profile-name">@if (Auth::check()) {{{ Session::get('user')->name }}} @endif</div>
                     <div class="am-profile-reputation">@if (Auth::check()) {{{  Session::get('user')->reputation }}} @endif</div>
                     <div class="am-profile-badge">
                         <span class="am-profile-gold"></span>
-                        <span class="am-profile-gold-number">@if (Auth::check()) {{{ Session::get('user')->badge_list }}} @endif</span>
+                        <span class="am-profile-gold-number">@if (Auth::check()) {{{ Session::get('user')->badge_gold }}} @endif</span>
                         <span class="am-profile-silver"></span>
-                        <span class="am-profile-silver-number">@if (Auth::check()) {{{ Session::get('user')->badge_list }}} @endif</span>
+                        <span class="am-profile-silver-number">@if (Auth::check()) {{{ Session::get('user')->badge_silver }}} @endif</span>
                         <span class="am-profile-bronze"></span>
-                        <span class="am-profile-bronze-number">@if (Auth::check()) {{{ Session::get('user')->badge_list }}} @endif</span>
+                        <span class="am-profile-bronze-number">@if (Auth::check()) {{{ Session::get('user')->badge_bronze }}} @endif</span>
                     </div>
                 </div>
             </a>
@@ -775,7 +775,8 @@ $(document).ready(function(){
             data: {
                 "email":JSON.parse(localStorage.userInfo).email,
                 "name":JSON.parse(localStorage.userInfo).name,
-                "method":"facebook"
+                "method":"facebook",
+                "picture": localStorage.userProfilePicUrl
             },
             success: function(response) {
                 LoginPostProcessing();

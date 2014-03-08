@@ -20,15 +20,17 @@ class UserController extends BaseController {
     |
     */
 
-    public function doSignup($name = null, $username = null, $method = "manual"){
+    public function doSignup($name = null, $username = null, $method = "manual", $picture = ""){
         if($name != null){
-            // do nothing when user use the form to login (aka manual login)
+            // do nothing when user use the form to login (manual login or twitter)
         }
-        else{
+        else{   // facebook
             $input = Input::all();
+            log::info(Input::all());
             $name = isset($input['name']) ? $input['name'] : $input['firstname']." ".$input['lastname'];
             $username = $input['email'];
             $method = isset($input['method']) ? $input['method'] : 'manual';
+            $picture = isset($input['picture']) ? $input['picture'] : "";
         }
 
         $user = DB::table('users')->where('user_name', $username)->first();
@@ -46,7 +48,8 @@ class UserController extends BaseController {
                 'user_name'     =>  $username,
                 'password'      =>  isset($input['password']) ? Hash::make($input['password']): "",       // i think password is a keyword
                 'create_time'   =>  date('Y/m/d H:i:s'),
-                'create_method' =>  $method
+                'create_method' =>  $method,
+                'picture_url'   =>  $picture
             ));
         }
 
@@ -135,7 +138,7 @@ class UserController extends BaseController {
                     log::info($content->profile_image_url);
 
                     // sign up the user
-                    self::doSignup($content->screen_name, $content->name, "twitter");
+                    self::doSignup($content->screen_name, $content->name, "twitter",$content->profile_image_url);
                     return Redirect::to('/');
                 }
                 else
