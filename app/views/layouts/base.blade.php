@@ -418,7 +418,7 @@
                </div>
                <div class="checkbox">
                    <label>
-                       <input type="checkbox"> ログイン情報を記憶する
+                       <input type="checkbox"><font size="1">ログイン情報を記憶する</font><button class="btn btn-primary btn-sm pull-right" id="pwback">パスワードを忘れた</button>
                    </label>
                </div>
                <button type="submit" class="btn btn-success btn-block" id="normalLogin">ログイン</button>
@@ -749,7 +749,7 @@ $(document).ready(function(){
         },
 
         submitHandler: function(form) {
-            $.ajax("http://tan-c.allmenz.jp/public/signup",{
+            $.ajax("/public/signup",{
                 type: "post",
                 data: $('#am-modal-form-signup').serialize(),
                 success: function(response) {
@@ -770,7 +770,7 @@ $(document).ready(function(){
 
 
     function FBLoginProcess(){
-        $.ajax("http://tan-c.allmenz.jp/public/signup",{
+        $.ajax("/public/signup",{
             type: "post",
             data: {
                 "email":JSON.parse(localStorage.userInfo).email,
@@ -787,6 +787,21 @@ $(document).ready(function(){
     function LoginPostProcessing(){
         window.location.href=window.location.href;
     }
+
+
+    // -------------------------------------------
+    // Password Retrival
+    // -------------------------------------------
+    $("#pwback").on("click", function(){
+        $.ajax("/public/pw_retrieval", {
+            type: "post",
+            data: $('#am-modal-form-login').serialize(),
+            success: function(response) {
+                // to do
+            }
+        });
+    });
+
 </script>
 
 </html>
