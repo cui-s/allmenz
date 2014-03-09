@@ -23,7 +23,7 @@
         <div id="am-logo">
             <i class="fa fa-flip-horizontal fa-pagelines"></i>
         </div>
-        <div id="am-header-options">
+        <div id="am-header-opÅtions">
 
 
             <div class="btn-group am-header-content-option-item" id="am-header-explore">
@@ -493,9 +493,9 @@
                 <div class="am-modal-askquestion-title">
                     <span>質問</span>
                     <div class="am-modal-askquestion-title-description">具体的に、関連性がある</div>
-                </div>
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="聞きたいこと">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="聞きたいこと">
+                    </div>
                 </div>
                 <div class="am-modal-askquestion-searchresult">
                     <table>
@@ -564,6 +564,8 @@
 
                 </div>
             </div>
+
+
             <div class="am-modal-askquestion-description">
                 <div class="am-modal-askquestion-title">
                     <span>記述</span><div class="am-modal-askquestion-title-description-left">オプショナル</div>
@@ -574,11 +576,10 @@
             <div class="am-modal-askquestion-tag">
                 <div class="am-modal-askquestion-title">
                     <span>タグ</span><div class="am-modal-askquestion-title-description">分野の専門家があなたの質問を参照するのはに</div>
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="詳細。。。">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="詳細。。。">
-                </div>
-
 
                 <div class="am-modal-askquestion-tag-guideline">
                     <i class="fa fa-sort-desc"></i>
@@ -640,6 +641,33 @@ $(document).ready(function(){
 @endif
 
 <script>
+
+    // -------------------------------------------
+    // Initializer
+    // -------------------------------------------
+    $(document).ready(function(){
+        // Hide the tips for the qna modal
+        $(".am-modal-askquestion-searchresult").css("display","none");
+        $(".am-modal-askquestion-tag-guideline").css("display","none");
+    });
+
+    // -------------------------------------------
+    // QnA Modal
+    // -------------------------------------------
+
+    $(".am-modal-askquestion-tag input").focus(function(){
+        $(".am-modal-askquestion-tag-guideline").fadeIn("slow");
+    });
+    $(".am-modal-askquestion-tag input").blur(function(){
+        $(".am-modal-askquestion-tag-guideline").fadeOut("slow");
+    });
+
+    $(".am-modal-askquestion-question input").focus(function(){
+        $(".am-modal-askquestion-searchresult").fadeIn("slow");
+    });
+    $(".am-modal-askquestion-question input").blur(function(){
+        $(".am-modal-askquestion-searchresult").fadeOut("slow");
+    });
 
     // -------------------------------------------
     // Form validation
@@ -787,6 +815,7 @@ $(document).ready(function(){
     function LoginPostProcessing(){
         window.location.href=window.location.href;
     }
+
 </script>
 
 </html>
