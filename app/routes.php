@@ -36,8 +36,9 @@ Route::get('logout', array('uses' => 'UserController@doLogout'));
 
 Route::get('question/{id}', array('as' => 'question', function($id)
 {
-
-    return View::make('question')->with("question",Question::find($id));
+    return View::make('question')
+        ->with("question",Question::find($id))
+        ->with("answers",Answer::where("question_id", $id)->get());
 }));
 
 

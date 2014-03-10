@@ -57,11 +57,12 @@
 <div class="am-qna-answer">
 <div class="am-row">
 
+    @foreach ($answers as $answer)
     <div class="am-qna-answer-oneitem">
         <div class="am-qna-optionbar">
             <div class="am-qna-optionbar-voteup">
                 <i class="fa fa-sort-desc fa-fw"></i>
-                <span>4</span>
+                <span>{{{$answer->voting_point}}}</span>
             </div>
             <div class="am-qna-optionbar-votedown"><i class="fa fa-sort-down fa-fw"></i></div>
         </div>
@@ -69,11 +70,7 @@
         <div class="am-qna-content am-qna-content-bestanswer">
             <div class="am-triangle-right"></div>
             <div class="am-qna-content-top">
-                <div class="am-qna-content-question">
-                <span>質問</span>
-                    ：セロは床のぼんやり悪評汁を狸をあけるセロたまし。それか
-                    らそうまじめございたとかいうセロでた。なぜか。
-                </div>
+                <div class="am-qna-content-question"><span>答え：</span>{{{$answer->content}}}</div>
                 <div class="am-qna-content-tag">
                     <div class="am-tag">#眉</div>
                     <div class="am-tag">#メイクアップ</div>
@@ -107,7 +104,7 @@
         </div>
     </div>
 
-    <div class="am-qna-content-comment">
+    <div class="am-qna-content-comment" id="am-qna-content-comment{{{$answer->id}}}">
         <div class="am-qna-content-comment-triangle">
             <i class="fa fa-sort-desc"></i><span></span>
         </div>
@@ -145,6 +142,7 @@
             </div>
         </div>
     </div>
+    @endforeach
 
 
     <form role="form" id="am-answer-question" method="POST">
@@ -176,6 +174,13 @@
             });
         }
     });
+
+    // Display comment only upon clicking
+    $(".am-qna-content-comment").css("display","none");
+    $(".am-qna-content-optionbar .fa-comments").on("click", function(){
+        $(this).closest(".am-qna-answer-oneitem").next().toggle("slow");
+    });
+
 
 </script>
 

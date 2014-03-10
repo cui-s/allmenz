@@ -20,6 +20,7 @@ class CreateAnswerTable extends Migration {
             $table->integer('question_id')->unsigned();
             $table->text('content');
             $table->tinyInteger('is_best');
+            $table->integer('voting_point');
             $table->timestamps();
 
 
