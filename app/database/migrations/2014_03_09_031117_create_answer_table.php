@@ -16,15 +16,14 @@ class CreateAnswerTable extends Migration {
         {
 
             $table->increments('id');
+            $table->integer('answerer_id')->unsigned();
             $table->integer('question_id')->unsigned();
             $table->text('content');
             $table->tinyInteger('is_best');
-
-            $table->dateTime('create_time');
-            $table->dateTime('update_time');
-
             $table->timestamps();
 
+
+            $table->foreign('answerer_id')->references('id')->on('users');
             $table->foreign('question_id')->references('id')->on('question');
             // foreign key to the category as well
         });

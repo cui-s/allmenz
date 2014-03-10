@@ -133,6 +133,11 @@
   font-weight: bold;
 }
 
+.am-qna-content-description{
+  @extend .am-05;
+  color: $mid-grey;
+}
+
 .am-qna-content-top{
   height:185px;
 }

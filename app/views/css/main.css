@@ -632,7 +632,6 @@ label.am-error {
   color: #3498e1;
   font-size: 1.5em; }
 
-df
 .am-index-tutorial-main-grid .glyphicon-circle-arrow-down:hover {
   color: #95c9ef; }
 
@@ -713,6 +712,9 @@ df
 .am-qna-content-question span {
   color: #3498e1;
   font-weight: bold; }
+
+.am-qna-content-description {
+  color: #9b9b9b; }
 
 .am-qna-content-top {
   height: 185px; }

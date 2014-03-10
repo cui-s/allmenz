@@ -16,7 +16,7 @@ class QuestionController extends BaseController {
             'content'       =>  $input['description'],
             'tag'           =>  $input['tag'],
             'created_at'    =>  $date,
-            'updated_at'    =>  $date,
+            'updated_at'    =>  $date
         ));
 
         // Get the id of the route
@@ -33,4 +33,22 @@ class QuestionController extends BaseController {
 
     }
 
+
+    public function answerQuestion(){
+
+        $input = Input::all();
+        $date = new \DateTime;
+
+        Eloquent::unguard();
+
+        Answer::create(array(
+            'answerer_id'   =>  $input['answerer_id'],
+            'question_id'   =>  $input['question_id'],
+            'content'       =>  $input['content'],
+            'created_at'    =>  $date,
+            'updated_at'    =>  $date
+        ));
+
+
+    }
 }

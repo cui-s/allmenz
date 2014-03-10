@@ -59,20 +59,13 @@
                             </div>
                             <div class="am-useredit-form-oneitem">
                                 <span>自己紹介</span>
-                                <div class="form-control" id="am-useredit-form-editor"></div>
+                                <textarea class="form-control" id="am-useredit-form-editor"></textarea>
                             </div>
                         </div>
-
-
-
                     </div>
-
-
 
                     <div class="tab-pane" id="pinboard">
-
                     </div>
-
 
                     <div class="tab-pane" id="overview">
                         asdfasd

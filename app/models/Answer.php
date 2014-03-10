@@ -1,6 +1,6 @@
 <?php
 
-class Question extends Eloquent{
+class Answer extends Eloquent{
 
     /**
      * The layout that should be used for responses.
@@ -12,7 +12,7 @@ class Question extends Eloquent{
      *
      * @var string
      */
-    protected $table = 'question';
+    protected $table = 'answer';
 
     /**
      * The attributes excluded from the model's JSON form.

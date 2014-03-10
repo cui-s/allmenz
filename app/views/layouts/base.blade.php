@@ -628,19 +628,19 @@
 <script src="http://tan-c.allmenz.jp/app/views/js/facebook.js"></script>
 
 @if (Auth::check())
-<script>
-$(document).ready(function(){
-    $("#am-header-content-login").hide();
-    $("#am-header-content-user").show();
-});
-</script>
+    <script>
+        $(document).ready(function(){
+            $("#am-header-content-login").hide();
+            $("#am-header-content-user").show();
+        });
+        </script>
 @else
-<script>
-$(document).ready(function(){
-    $("#am-header-content-login").show();
-    $("#am-header-content-user").hide();
-});
-</script>
+    <script>
+    $(document).ready(function(){
+        $("#am-header-content-login").show();
+        $("#am-header-content-user").hide();
+    });
+    </script>
 @endif
 
 <script>
