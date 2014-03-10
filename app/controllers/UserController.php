@@ -3,8 +3,6 @@
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'/vendor/twitteroauth/twitteroauth.php');
 
-
-
 class UserController extends BaseController {
 
     private static $CONSUMER_KEY='wHLNxp8OcgwLFIrLIhmiuQ';

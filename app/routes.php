@@ -17,7 +17,7 @@ Route::get('/', function()
     return View::make('index');
 });
 
-
+Route::post('post_question', array('uses' => 'QuestionController@postQuestion'));
 Route::post('signup', array('uses' => 'UserController@doSignup'));
 Route::post('login', array('uses' => 'UserController@doLogin'));
 Route::get('login_twitter', array('uses' => 'UserController@doLoginTwitter'));
