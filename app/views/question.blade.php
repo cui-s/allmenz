@@ -10,7 +10,7 @@
 
     <div class="am-qna-profile">
         <div class="am-qna-profile-pic"></div>
-        <div class="am-qna-profile-name">タンク</div>
+        <div class="am-qna-profile-name">{{{ $question->id or 'Default' }}}タンク</div>
         <div class="am-qna-profile-description">ご自由に, 睡觉达人いえみえ</div>
         <div class="am-qna-profile-stats">
             <div class="am-profile-reputation">1324</div>

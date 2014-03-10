@@ -145,7 +145,7 @@
 
         <div id="am-header-content-user" class="pull-right">
 
-            <a href="{{ URL::to('logout') }}"
+            <a href="{{ URL::to('mie') }}"
                style="position:absolute;position: absolute;
                 margin-left: -220px;
                 background: red;
@@ -792,19 +792,16 @@ $(document).ready(function(){
 
     $("#am-modal-form-post-question").validate({
         submitHandler: function(form) {
-            alert("mie");
             $.ajax("http://tan-c.allmenz.jp/public/post_question",{
                 type: "post",
                 data: $('#am-modal-form-post-question').serialize(),
                 success: function(response) {
-                    if(response=="OK"){
-
-                    }
+                    window.location.href="http://tan-c.allmenz.jp/public/question/"+response;
                 }
             });
         }
-
     });
+
 
     // -------------------------------------------
     // SNS login function

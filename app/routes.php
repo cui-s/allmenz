@@ -32,15 +32,18 @@ Route::get('logout', array('uses' => 'UserController@doLogout'));
 |
 */
 
-Route::get('test', array('as' => 'test', function()
+
+Route::get('question/{id}', array('as' => 'question', function($id)
 {
-    echo "login pls";
+
+    return View::make('question')->with("question",Question::find($id));
 }));
 
-Route::get('tag', function()
+
+Route::get('tag', array('as' => 'tag', function()
 {
     return View::make('tag_main');
-});
+}));
 
 Route::get('tag_detail', function()
 {
@@ -57,10 +60,6 @@ Route::get('category', function()
     return View::make('category_main');
 });
 
-Route::get('qna', function()
-{
-    return View::make('qna');
-});
 
 
 Route::get('tutorial', function()
