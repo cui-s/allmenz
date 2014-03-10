@@ -59,10 +59,10 @@
 
     @foreach ($answers as $answer)
     <div class="am-qna-answer-oneitem">
-        <div class="am-qna-optionbar">
+        <div class="am-qna-optionbar" value="{{{$answer->id}}}">
             <div class="am-qna-optionbar-voteup">
                 <i class="fa fa-sort-desc fa-fw"></i>
-                <span>{{{$answer->voting_point}}}</span>
+                <span id="am-qna-answer-vote-{{{$answer->id}}}">{{{$answer->voting_point}}}</span>
             </div>
             <div class="am-qna-optionbar-votedown"><i class="fa fa-sort-down fa-fw"></i></div>
         </div>
@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <div class="am-qna-content-comment" id="am-qna-content-comment{{{$answer->id}}}">
+    <div class="am-qna-content-comment"">
         <div class="am-qna-content-comment-triangle">
             <i class="fa fa-sort-desc"></i><span></span>
         </div>
@@ -168,8 +168,6 @@
                         "answerer_id": {{{ Session::get('user')->id }}}
                 },
                 success: function(response) {
-//                    window.location.href="http://tan-c.allmenz.jp/public/question/"+response;
-                    console.log(response);
                 }
             });
         }
@@ -177,8 +175,41 @@
 
     // Display comment only upon clicking
     $(".am-qna-content-comment").css("display","none");
+
     $(".am-qna-content-optionbar .fa-comments").on("click", function(){
         $(this).closest(".am-qna-answer-oneitem").next().toggle("slow");
+    });
+
+
+    // Vote up/down function
+    $(".am-qna-optionbar .fa-sort-desc").on("click", function(){
+        var self = "#am-qna-answer-vote-"+$(this).closest(".am-qna-optionbar").attr("value");
+        $.ajax("http://tan-c.allmenz.jp/public/vote_question",{
+            type: "post",
+            data: {
+                    "id": $(this).closest(".am-qna-optionbar").attr("value"),
+                    "direction": "up",
+                    "type":"answer"
+            },
+            success: function(response) {
+                $(self).text(response);
+            }
+        });
+    });
+
+    $(".am-qna-optionbar .fa-sort-down").on("click", function(){
+        var self = "#am-qna-answer-vote-"+$(this).closest(".am-qna-optionbar").attr("value");
+        $.ajax("http://tan-c.allmenz.jp/public/vote_question",{
+            type: "post",
+            data: {
+                    "id": $(this).closest(".am-qna-optionbar").attr("value"),
+                    "direction": "down",
+                    "type":"answer"
+            },
+            success: function(response) {
+                $(self).text(response);
+            }
+       });
     });
 
 

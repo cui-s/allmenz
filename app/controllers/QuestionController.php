@@ -48,7 +48,25 @@ class QuestionController extends BaseController {
             'created_at'    =>  $date,
             'updated_at'    =>  $date
         ));
+    }
 
+    public function vote(){
+
+        $input = Input::all();
+        Eloquent::unguard();
+
+        if($input['type'] == "answer")
+            $target = Answer::where("id", $input['id'])->firstOrFail();
+        else if($input['type'] == "question")
+            $target = Question::where("id", $input['id'])->firstOrFail();
+
+        if($input['direction'] == "up")
+            $target -> voting_point +=1;
+        else
+            $target -> voting_point -=1;
+        $target -> save();
+
+        return $target -> voting_point;
 
     }
 }

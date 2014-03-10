@@ -17,6 +17,7 @@ Route::get('/', function()
     return View::make('index');
 });
 
+Route::post('vote_question', array('uses' => 'QuestionController@vote'));
 Route::post('answer_question', array('uses' => 'QuestionController@answerQuestion'));
 Route::post('post_question', array('uses' => 'QuestionController@postQuestion'));
 Route::post('signup', array('uses' => 'UserController@doSignup'));
@@ -80,7 +81,6 @@ Route::group(array('prefix' => 'user', 'before' => 'auth'), function(){
     Route::get('pinboard',  array('as' => 'user_pinboard', function()
     {
         return View::make('user');
-//        ->with("login_status", $login_status)
     }));
 
     Route::get('edit', function()
