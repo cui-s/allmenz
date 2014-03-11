@@ -83,7 +83,7 @@
             </div>
 
             <div class="am-qna-content-optionbar">
-                <i class="fa fa-comments fa-fw"></i>45コメント
+                <i class="fa fa-comments fa-fw"></i><span class="comment-counter">{{{count($answer->comment)}}}</span>コメント
                 <i class="fa fa-share fa-fw"></i>シェアル
                 <i class="fa fa-volume-up fa-fw"></i>誰に聞く
                 <span class="pull-right"><i class="fa fa-flag fa-fw"></i>報告</span>
@@ -139,11 +139,9 @@
         </div>
         @endforeach
         <div class="am-qna-content-comment-makecomment"  value="{{{$answer->answer->id}}}">
-<!--            <form role="form" class="am-comment" method="POST">-->
-                <div><img src="http://pbs.twimg.com/profile_images/418097553192677376/gqwPNjop_normal.jpeg"></div>
-                <input type="text" class="form-control" id="am-qna-comment-answer{{{$answer->answer->id}}}" placeholder="コメント">
-                <button type="submit" class="btn btn-primary btn-default">コメント</button>
-<!--            </form>-->
+            <div><img src="http://pbs.twimg.com/profile_images/418097553192677376/gqwPNjop_normal.jpeg"></div>
+            <input type="text" class="form-control" id="am-qna-comment-answer{{{$answer->answer->id}}}" placeholder="コメント">
+            <button type="submit" class="btn btn-primary btn-default">コメント</button>
         </div>
     </div>
     </div>
@@ -195,6 +193,11 @@
                 $(oneitem).find(".am-qna-content-comment-oneitem-content-answer").html(response);
                 $(oneitem).css("display","block");
                 $(self).closest(".am-qna-content-comment").find(".am-qna-content-comment-oneitem:nth-last-child(2)").after(oneitem);
+
+                // update the number of comments
+                var counter = $(self).closest(".am-qna-answer-container").find(".comment-counter").html();
+                counter ++ ;
+                $(self).closest(".am-qna-answer-container").find(".comment-counter").html(counter);
             }
 
         });
