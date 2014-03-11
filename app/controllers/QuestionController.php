@@ -92,8 +92,15 @@ class QuestionController extends BaseController {
         }
         else
             Log::info("You already have this record!");
+    }
 
+    public function bestAnswer(){
+        $input = Input::all();
+        $answer = Answer::where("id", $input['answer_id'])
+                            -> where("question_id", $input['question_id'])
+                            -> first();
 
-
+        $answer -> is_best = $input['is_best'];
+        $answer -> save();
     }
 }

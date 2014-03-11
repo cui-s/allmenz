@@ -225,14 +225,43 @@
             $(".am-qna-optionbar-bestanswer .fa-check").css("display","none");
             $(this).addClass("best-answer").removeClass("normal-answer").css("display","block");
             $(this).closest(".am-qna-optionbar").next().addClass("am-qna-content-bestanswer");
-            console.log($(this).closest(".am-qna-optionbar"));
-        }
+
+            // updating database
+            $.ajax("http://tan-c.allmenz.jp/public/best_answer",{
+                    type: "post",
+                    data: {
+                           "question_id": {{{ $question->id}}},
+                           "answer_id": $(this).closest(".am-qna-optionbar").attr("value"),
+                           "is_best":1
+                           },
+                    success: function(response) {
+                       console.log(response)
+                    }
+                });
+            }
         else{
             $(".am-qna-optionbar-bestanswer .fa-check").css("display","block");
             $(this).removeClass("best-answer").addClass("normal-answer");
             $(this).closest(".am-qna-optionbar").next().removeClass("am-qna-content-bestanswer");
+
+            // updating database
+            $.ajax("http://tan-c.allmenz.jp/public/best_answer",{
+                type: "post",
+                data: {
+                       "question_id": {{{ $question->id}}},
+                       "answer_id": $(this).closest(".am-qna-optionbar").attr("value"),
+                       "is_best":0
+                },
+                success: function(response) {
+                    console.log(response)
+                }
+            });
         }
     })
+
+    $(document).ready(function(){
+       // Only show the tickets if the user is the creator of the question
+    });
 
 </script>
 

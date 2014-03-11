@@ -17,6 +17,7 @@ Route::get('/', function()
     return View::make('index');
 });
 
+Route::post('best_answer', array('uses' => 'QuestionController@bestAnswer'));
 Route::post('vote_question', array('uses' => 'QuestionController@vote'));
 Route::post('answer_question', array('uses' => 'QuestionController@answerQuestion'));
 Route::post('post_question', array('uses' => 'QuestionController@postQuestion'));
