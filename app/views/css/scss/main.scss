@@ -296,6 +296,14 @@
   color: $primary-color;
 }
 
+.am-qna-answer-oneitem .am-qna-optionbar .fa:hover{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: whitesmoke;
+  box-sizing: content-box;
+  font-size: 2.7em;
+  margin-left: -4px;
+}
+
 //-------------- MAIN PAGE - Q/A MODAL ------------------
 .am-modal-dialog-askquestion{
   width: 600px;

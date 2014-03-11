@@ -839,6 +839,13 @@ label.am-error {
 .am-qna-answer-oneitem .am-qna-optionbar .fa {
   color: #3498e1; }
 
+.am-qna-answer-oneitem .am-qna-optionbar .fa:hover {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: whitesmoke;
+  box-sizing: content-box;
+  font-size: 2.7em;
+  margin-left: -4px; }
+
 .am-modal-dialog-askquestion {
   width: 600px; }
 

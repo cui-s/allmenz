@@ -194,7 +194,8 @@
                     "type":"answer"
             },
             success: function(response) {
-                $(self).text(response);
+                if(response)
+                    $(self).text(response);
             }
         });
     });
@@ -211,7 +212,8 @@
                     "type":"answer"
             },
             success: function(response) {
-                $(self).text(response);
+                if(response)
+                    $(self).text(response);
             }
        });
     });
