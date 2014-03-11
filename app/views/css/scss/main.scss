@@ -121,7 +121,11 @@
 .am-qna-content-bestanswer{
   border-left: 10px solid $secondary-color;
   border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .am-qna-content-question{
@@ -237,6 +241,7 @@
   float: left;
   padding: 0 15px;
   width: 80px;
+  text-align: center;
 }
 
 .am-qna-optionbar-vote{
@@ -292,16 +297,30 @@
   overflow: auto;
 }
 
-.am-qna-answer-oneitem .am-qna-optionbar .fa{
+.am-qna-answer-oneitem .am-qna-optionbar .fa-fw{
   color: $primary-color;
 }
 
-.am-qna-answer-oneitem .am-qna-optionbar .fa:hover{
+.am-qna-answer-oneitem .am-qna-optionbar .fa-fw:hover{
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: whitesmoke;
   box-sizing: content-box;
   font-size: 2.7em;
-  margin-left: -4px;
+}
+
+.am-qna-optionbar-bestanswer .fa-check{
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $mid-grey;
+}
+
+.am-qna-optionbar-bestanswer .fa-check:hover{
+  color:$mid-grey;
+}
+
+.am-qna-optionbar-bestanswer .fa-check.best-answer{
+  color:$primary-color;
+  -webkit-text-stroke-color: white;
 }
 
 //-------------- MAIN PAGE - Q/A MODAL ------------------

@@ -65,9 +65,10 @@
                 <span id="am-qna-answer-vote-{{{$answer->id}}}">{{{$answer->voting_point}}}</span>
             </div>
             <div class="am-qna-optionbar-votedown"><i class="fa fa-sort-down fa-fw"></i></div>
+            <div class="am-qna-optionbar-bestanswer"><i class="fa fa-check normal-answer"></i></div>
         </div>
 
-        <div class="am-qna-content am-qna-content-bestanswer">
+        <div class="am-qna-content">
             <div class="am-triangle-right"></div>
             <div class="am-qna-content-top">
                 <div class="am-qna-content-question"><span>答え：</span>{{{$answer->content}}}</div>
@@ -104,7 +105,7 @@
         </div>
     </div>
 
-    <div class="am-qna-content-comment"">
+    <div class="am-qna-content-comment">
         <div class="am-qna-content-comment-triangle">
             <i class="fa fa-sort-desc"></i><span></span>
         </div>
@@ -218,6 +219,20 @@
        });
     });
 
+    // Best answer would change color upon clicking
+    $(".am-qna-optionbar-bestanswer .fa-check").on("click",function(){
+        if($(this).hasClass("normal-answer")){
+            $(".am-qna-optionbar-bestanswer .fa-check").css("display","none");
+            $(this).addClass("best-answer").removeClass("normal-answer").css("display","block");
+            $(this).closest(".am-qna-optionbar").next().addClass("am-qna-content-bestanswer");
+            console.log($(this).closest(".am-qna-optionbar"));
+        }
+        else{
+            $(".am-qna-optionbar-bestanswer .fa-check").css("display","block");
+            $(this).removeClass("best-answer").addClass("normal-answer");
+            $(this).closest(".am-qna-optionbar").next().removeClass("am-qna-content-bestanswer");
+        }
+    })
 
 </script>
 

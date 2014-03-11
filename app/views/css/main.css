@@ -707,7 +707,11 @@ label.am-error {
 .am-qna-content-bestanswer {
   border-left: 10px solid #1abc9c;
   border-top-left-radius: 0px;
-  border-top-right-radius: 0px; }
+  border-bottom-left-radius: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
 
 .am-qna-content-question span {
   color: #3498e1;
@@ -796,7 +800,8 @@ label.am-error {
 .am-qna-optionbar {
   float: left;
   padding: 0 15px;
-  width: 80px; }
+  width: 80px;
+  text-align: center; }
 
 .am-qna-optionbar-vote, .am-qna-optionbar-watch, .am-qna-optionbar-votedown, .am-qna-optionbar-voteup {
   background: #d4d4d4;
@@ -836,15 +841,26 @@ label.am-error {
   margin-bottom: 20px;
   overflow: auto; }
 
-.am-qna-answer-oneitem .am-qna-optionbar .fa {
+.am-qna-answer-oneitem .am-qna-optionbar .fa-fw {
   color: #3498e1; }
 
-.am-qna-answer-oneitem .am-qna-optionbar .fa:hover {
+.am-qna-answer-oneitem .am-qna-optionbar .fa-fw:hover {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: whitesmoke;
   box-sizing: content-box;
-  font-size: 2.7em;
-  margin-left: -4px; }
+  font-size: 2.7em; }
+
+.am-qna-optionbar-bestanswer .fa-check {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #9b9b9b; }
+
+.am-qna-optionbar-bestanswer .fa-check:hover {
+  color: #9b9b9b; }
+
+.am-qna-optionbar-bestanswer .fa-check.best-answer {
+  color: #3498e1;
+  -webkit-text-stroke-color: white; }
 
 .am-modal-dialog-askquestion {
   width: 600px; }

@@ -20,12 +20,10 @@
 <div id="am-header"  class=" navbar-fixed-top" role="navigation">
 <div id="am-header-content">
     <div class="am-row">
-        <div id="am-logo">
-            <i class="fa fa-flip-horizontal fa-pagelines"></i>
-        </div>
-        <div id="am-header-opÅtions">
-
-
+<!--        <div id="am-logo">-->
+<!--            <i class="fa fa-flip-horizontal fa-pagelines"></i>-->
+<!--        </div>-->
+        <div id="am-header-options">
             <div class="btn-group am-header-content-option-item" id="am-header-explore">
                 <div class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-eye fa-fw am-header-icon"></i>
