@@ -112,6 +112,18 @@
         <div class="am-qna-content-comment-triangle">
             <i class="fa fa-sort-desc"></i><span></span>
         </div>
+        <div class="am-qna-content-comment-oneitem" style="display:none">
+            <div class="am-qna-content-comment-oneitem-vote">0</div>
+            <div class="am-qna-content-comment-oneitem-options">
+                <i class="fa fa-sort-desc fa-fw"></i>
+                <i class="fa fa-flag fa-fw"></i>
+            </div>
+
+            <div class="am-qna-content-comment-oneitem-content">
+                <div class="am-qna-content-comment-oneitem-content-answer"></div>
+                <div class="am-qna-content-comment-oneitem-content-answerer">タンク  12秒前</div>
+            </div>
+        </div>
         @foreach ($answer->comment as $comment)
         <div class="am-qna-content-comment-oneitem">
             <div class="am-qna-content-comment-oneitem-vote">0</div>
@@ -127,11 +139,11 @@
         </div>
         @endforeach
         <div class="am-qna-content-comment-makecomment"  value="{{{$answer->answer->id}}}">
-            <form role="form" class="am-comment" method="POST">
+<!--            <form role="form" class="am-comment" method="POST">-->
                 <div><img src="http://pbs.twimg.com/profile_images/418097553192677376/gqwPNjop_normal.jpeg"></div>
                 <input type="text" class="form-control" id="am-qna-comment-answer{{{$answer->answer->id}}}" placeholder="コメント">
                 <button type="submit" class="btn btn-primary btn-default">コメント</button>
-            </form>
+<!--            </form>-->
         </div>
     </div>
     </div>
@@ -161,26 +173,31 @@
                         "answerer_id": {{{ Session::get('user')->id }}}
                 },
                 success: function(response) {
+
                 }
             });
         }
     });
 
-    $(".am-comment").validate({
+    $(".am-qna-content-comment-makecomment button").on("click",function(){
+        var self = this;
+        $.ajax("http://tan-c.allmenz.jp/public/create_comment",{
+            type: "post",
+            data: {
+                "content": $("#am-qna-comment-answer"+$(this).closest(".am-qna-content-comment-makecomment").attr("value")).val(),
+                "question_id": {{{ $question->id}}},
+                "answer_id": $(this).closest(".am-qna-content-comment-makecomment").attr("value"),
+                "user_id": {{{ Session::get('user')->id }}}
+            },
+            success: function(response) {
+                //insert the content into the place
+                var oneitem = $(self).closest(".am-qna-content-comment").find(".am-qna-content-comment-oneitem:nth-child(2)").clone();
+                $(oneitem).find(".am-qna-content-comment-oneitem-content-answer").html(response);
+                $(oneitem).css("display","block");
+                $(self).closest(".am-qna-content-comment").find(".am-qna-content-comment-oneitem:nth-last-child(2)").after(oneitem);
+            }
 
-        submitHandler: function(form) {
-            $.ajax("http://tan-c.allmenz.jp/public/create_comment",{
-                type: "post",
-                data: {
-                    "content": $("#am-qna-comment-answer"+$(form).closest(".am-qna-content-comment-makecomment").attr("value")).val(),
-                    "question_id": {{{ $question->id}}},
-                    "answer_id": $(form).closest(".am-qna-content-comment-makecomment").attr("value"),
-                    "user_id": {{{ Session::get('user')->id }}}
-                },
-                success: function(response) {
-                }
-            });
-        }
+        });
     });
 
     // Display comment only upon clicking
@@ -285,7 +302,6 @@
         var items = parent.children(childSelector).sort(function(a, b) {
             var vA = $(keySelector, a).text();
             var vB = $(keySelector, b).text();
-            console.log(vA);
             if(typeInput=="text")
                 return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
             else if(typeInput=="number")

@@ -117,6 +117,8 @@ class QuestionController extends BaseController {
             'created_at'    =>  $date,
             'updated_at'    =>  $date
         ));
+
+        return $input['content'];
     }
 
 }
