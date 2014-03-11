@@ -39,11 +39,24 @@ Route::get('logout', array('uses' => 'UserController@doLogout'));
 
 Route::get('question/{id}', array('as' => 'question', function($id)
 {
+    $answerFullDetailAll = Array();
+
+    $answerList = Answer::where("question_id", $id)->get();
+    foreach ($answerList as $oneAnswer){
+        $answerFullDetail = new StdClass();
+        $answerFullDetail -> answer = $oneAnswer;
+        $answerFullDetail -> comment = Comment::where("question_id", $id) -> where("answer_id", $oneAnswer->id)->get();
+        $answerFullDetail -> answerer = User:: where("id", $oneAnswer->answerer_id)->first();
+        array_push($answerFullDetailAll, $answerFullDetail);
+    }
+
     return View::make('question')
         ->with("question",Question::find($id))
         // and the asker detail from the question_id
-        ->with("answers",Answer::where("question_id", $id)->get());
+        ->with("answerList",$answerFullDetailAll);
         // and all the users with the answer_id
+
+        // and all the comments with the respective answer
 }));
 
 

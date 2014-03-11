@@ -57,13 +57,13 @@
 <div class="am-qna-answer">
 <div class="am-row">
 
-    @foreach ($answers as $answer)
+    @foreach ($answerList as $answer)
     <div class="am-qna-answer-container">
     <div class="am-qna-answer-oneitem">
-        <div class="am-qna-optionbar" value="{{{$answer->id}}}">
+        <div class="am-qna-optionbar" value="{{{$answer->answer->id}}}">
             <div class="am-qna-optionbar-voteup">
                 <i class="fa fa-sort-desc fa-fw"></i>
-                <span id="am-qna-answer-vote-{{{$answer->id}}}">{{{$answer->voting_point}}}</span>
+                <span id="am-qna-answer-vote-{{{$answer->answer->id}}}">{{{$answer->answer->voting_point}}}</span>
             </div>
             <div class="am-qna-optionbar-votedown"><i class="fa fa-sort-down fa-fw"></i></div>
             @if ($question->asker_id === Session::get('user')->id)
@@ -74,7 +74,7 @@
         <div class="am-qna-content">
             <div class="am-triangle-right"></div>
             <div class="am-qna-content-top">
-                <div class="am-qna-content-question"><span>答え：</span>{{{$answer->content}}}</div>
+                <div class="am-qna-content-question"><span>答え：</span>{{{$answer->answer->content}}}</div>
                 <div class="am-qna-content-tag">
                     <div class="am-tag">#眉</div>
                     <div class="am-tag">#メイクアップ</div>
@@ -91,18 +91,18 @@
         </div>
 
         <div class="am-qna-profile">
-            <div class="am-qna-profile-pic"></div>
-            <div class="am-qna-profile-name">タンク</div>
-            <div class="am-qna-profile-description">ご自由に, 睡觉达人いえみえ</div>
+            <div class="am-qna-profile-pic" style="background-image:url({{{$answer->answerer->picture_url}}})"></div>
+            <div class="am-qna-profile-name">{{{$answer->answerer->name}}}</div>
+            <div class="am-qna-profile-description">{{{$answer->answerer->introduction}}}</div>
             <div class="am-qna-profile-stats">
-                <div class="am-profile-reputation">1324</div>
+                <div class="am-profile-reputation">{{{$answer->answerer->reputation}}}</div>
                 <div class="am-profile-badge">
                     <span class="am-profile-gold"></span>
-                    <span class="am-profile-gold-number">13</span>
+                    <span class="am-profile-gold-number">{{{$answer->answerer->badge_gold}}}</span>
                     <span class="am-profile-silver"></span>
-                    <span class="am-profile-silver-number">13</span>
+                    <span class="am-profile-silver-number">{{{$answer->answerer->badge_silver}}}</span>
                     <span class="am-profile-bronze"></span>
-                    <span class="am-profile-bronze-number">123</span>
+                    <span class="am-profile-bronze-number">{{{$answer->answerer->badge_bronze}}}</span>
                 </div>
             </div>
         </div>
@@ -112,21 +112,24 @@
         <div class="am-qna-content-comment-triangle">
             <i class="fa fa-sort-desc"></i><span></span>
         </div>
+        @foreach ($answer->comment as $comment)
         <div class="am-qna-content-comment-oneitem">
             <div class="am-qna-content-comment-oneitem-vote">0</div>
             <div class="am-qna-content-comment-oneitem-options">
                 <i class="fa fa-sort-desc fa-fw"></i>
                 <i class="fa fa-flag fa-fw"></i>
             </div>
+
             <div class="am-qna-content-comment-oneitem-content">
-                <div class="am-qna-content-comment-oneitem-content-answer">らだろのますうと煩悶ぶつかって話、さんへただそれだけできなものらしくでた。</div>
+                <div class="am-qna-content-comment-oneitem-content-answer">{{{isset($comment->content)? $comment->content: ""}}}</div>
                 <div class="am-qna-content-comment-oneitem-content-answerer">タンク  12秒前</div>
             </div>
         </div>
-        <div class="am-qna-content-comment-makecomment"  value="{{{$answer->id}}}">
+        @endforeach
+        <div class="am-qna-content-comment-makecomment"  value="{{{$answer->answer->id}}}">
             <form role="form" class="am-comment" method="POST">
                 <div><img src="http://pbs.twimg.com/profile_images/418097553192677376/gqwPNjop_normal.jpeg"></div>
-                <input type="text" class="form-control" id="am-qna-comment-answer{{{$answer->id}}}" placeholder="コメント">
+                <input type="text" class="form-control" id="am-qna-comment-answer{{{$answer->answer->id}}}" placeholder="コメント">
                 <button type="submit" class="btn btn-primary btn-default">コメント</button>
             </form>
         </div>

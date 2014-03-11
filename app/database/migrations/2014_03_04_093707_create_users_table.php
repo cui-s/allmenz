@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
             $table->string('name', 255);
             $table->string('user_name', 255);
             $table->string('password', 255);
-            $table->dateTime('create_time');
+            $table->text('introduction');
             $table->enum('create_method',array('facebook','twitter','manual'))->default('manual');
             $table->enum('role',array('user','contributor','moderator'))->default('user');
             $table->integer('reputation')->default(0);
