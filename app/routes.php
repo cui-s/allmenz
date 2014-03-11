@@ -40,7 +40,9 @@ Route::get('question/{id}', array('as' => 'question', function($id)
 {
     return View::make('question')
         ->with("question",Question::find($id))
+        // and the asker detail from the question_id
         ->with("answers",Answer::where("question_id", $id)->get());
+        // and all the users with the answer_id
 }));
 
 

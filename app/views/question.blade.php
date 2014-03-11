@@ -58,6 +58,7 @@
 <div class="am-row">
 
     @foreach ($answers as $answer)
+    <div class="am-qna-answer-container">
     <div class="am-qna-answer-oneitem">
         <div class="am-qna-optionbar" value="{{{$answer->id}}}">
             <div class="am-qna-optionbar-voteup">
@@ -112,17 +113,6 @@
             <i class="fa fa-sort-desc"></i><span></span>
         </div>
         <div class="am-qna-content-comment-oneitem">
-            <div class="am-qna-content-comment-oneitem-vote">12</div>
-            <div class="am-qna-content-comment-oneitem-options">
-                <i class="fa fa-sort-desc fa-fw"></i>
-                <i class="fa fa-flag fa-fw"></i>
-            </div>
-            <div class="am-qna-content-comment-oneitem-content">
-                <div class="am-qna-content-comment-oneitem-content-answer">らだろのますうと煩悶ぶつかって話。</div>
-                <div class="am-qna-content-comment-oneitem-content-answerer">タンク  12秒前</div>
-            </div>
-        </div>
-        <div class="am-qna-content-comment-oneitem">
             <div class="am-qna-content-comment-oneitem-vote">0</div>
             <div class="am-qna-content-comment-oneitem-options">
                 <i class="fa fa-sort-desc fa-fw"></i>
@@ -133,17 +123,7 @@
                 <div class="am-qna-content-comment-oneitem-content-answerer">タンク  12秒前</div>
             </div>
         </div>
-        <div class="am-qna-content-comment-oneitem">
-            <div class="am-qna-content-comment-oneitem-vote">65</div>
-            <div class="am-qna-content-comment-oneitem-options">
-                <i class="fa fa-sort-desc fa-fw"></i>
-                <i class="fa fa-flag fa-fw"></i>
-            </div>
-            <div class="am-qna-content-comment-oneitem-content">
-                <div class="am-qna-content-comment-oneitem-content-answer">らだろのますうと煩悶ぶつかって話。</div>
-                <div class="am-qna-content-comment-oneitem-content-answerer">タンク  12秒前</div>
-            </div>
-        </div>
+    </div>
     </div>
     @endforeach
 
@@ -262,9 +242,29 @@
     })
 
     $(document).ready(function(){
-       // Only show the tickets if the user is the creator of the question
+       // Sort the answers based on the number of votes
+        var parent = $(".am-qna-answer .am-row");
+        var children = $(".am-qna-answer-container");
+
+        parent.fadeOut('slow', function() {
+            sortUsingNestedText(parent,children, ".am-qna-optionbar-voteup span", "number");
+        });
     });
 
+
+
+    function sortUsingNestedText(parent, childSelector, keySelector, typeInput) {
+        var items = parent.children(childSelector).sort(function(a, b) {
+            var vA = $(keySelector, a).text();
+            var vB = $(keySelector, b).text();
+            console.log(vA);
+            if(typeInput=="text")
+                return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
+            else if(typeInput=="number")
+                return (parseInt(vA, 10) > parseInt(vB, 10)) ? -1 : (parseInt(vA, 10) < parseInt(vB, 10)) ? 1 : 0;
+        });
+        parent.append(items).fadeIn('fast');
+    }
 </script>
 
 
