@@ -741,13 +741,33 @@ label.am-error {
   overflow: auto;
   width: 65%;
   margin-left: 11%;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  padding-bottom: 25px; }
+
+.am-qna-content-comment-makecomment {
+  padding-top: 10px;
+  border-top: 2px solid whitesmoke;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px; }
+
+.am-qna-content-comment-makecomment input {
+  float: left;
+  width: 76%;
+  margin: 0 6px; }
+
+.am-qna-content-comment-makecomment img {
+  border-radius: 5px;
+  border: 2px solid white;
+  box-sizing: content-box;
+  width: 30px;
+  float: left; }
 
 .am-qna-content-comment-oneitem {
   padding: 5px 10px;
   border-bottom: 1px solid #9b9b9b; }
 
-.am-qna-content-comment-oneitem:last-child {
+.am-qna-content-comment-oneitem:nth-last-child(2) {
   border-bottom: 0px; }
 
 .am-qna-content-comment-oneitem-vote {

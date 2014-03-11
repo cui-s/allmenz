@@ -33,7 +33,6 @@ class QuestionController extends BaseController {
 
 
     public function answerQuestion(){
-
         $input = Input::all();
         $date = new \DateTime;
 
@@ -103,4 +102,21 @@ class QuestionController extends BaseController {
         $answer -> is_best = $input['is_best'];
         $answer -> save();
     }
+
+    public function createComment(){
+        $input = Input::all();
+        $date = new \DateTime;
+
+        Eloquent::unguard();
+
+        Comment::create(array(
+            'user_id'   =>  $input['user_id'],
+            'answer_id'   =>  $input['answer_id'],
+            'question_id'   =>  $input['question_id'],
+            'content'       =>  $input['content'],
+            'created_at'    =>  $date,
+            'updated_at'    =>  $date
+        ));
+    }
+
 }

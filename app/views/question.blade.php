@@ -123,6 +123,13 @@
                 <div class="am-qna-content-comment-oneitem-content-answerer">タンク  12秒前</div>
             </div>
         </div>
+        <div class="am-qna-content-comment-makecomment"  value="{{{$answer->id}}}">
+            <form role="form" class="am-comment" method="POST">
+                <div><img src="http://pbs.twimg.com/profile_images/418097553192677376/gqwPNjop_normal.jpeg"></div>
+                <input type="text" class="form-control" id="am-qna-comment-answer{{{$answer->id}}}" placeholder="コメント">
+                <button type="submit" class="btn btn-primary btn-default">コメント</button>
+            </form>
+        </div>
     </div>
     </div>
     @endforeach
@@ -149,6 +156,23 @@
                 data: { "content": $("#am-qna-answer-input-content").val(),
                         "question_id": {{{ $question->id}}},
                         "answerer_id": {{{ Session::get('user')->id }}}
+                },
+                success: function(response) {
+                }
+            });
+        }
+    });
+
+    $(".am-comment").validate({
+
+        submitHandler: function(form) {
+            $.ajax("http://tan-c.allmenz.jp/public/create_comment",{
+                type: "post",
+                data: {
+                    "content": $("#am-qna-comment-answer"+$(form).closest(".am-qna-content-comment-makecomment").attr("value")).val(),
+                    "question_id": {{{ $question->id}}},
+                    "answer_id": $(form).closest(".am-qna-content-comment-makecomment").attr("value"),
+                    "user_id": {{{ Session::get('user')->id }}}
                 },
                 success: function(response) {
                 }
@@ -240,6 +264,7 @@
             });
         }
     })
+
 
     $(document).ready(function(){
        // Sort the answers based on the number of votes
