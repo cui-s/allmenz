@@ -20,12 +20,10 @@
 <div id="am-header"  class=" navbar-fixed-top" role="navigation">
 <div id="am-header-content">
     <div class="am-row">
-        <div id="am-logo">
-            <i class="fa fa-flip-horizontal fa-pagelines"></i>
-        </div>
+<!--        <div id="am-logo">-->
+<!--            <i class="fa fa-flip-horizontal fa-pagelines"></i>-->
+<!--        </div>-->
         <div id="am-header-options">
-
-
             <div class="btn-group am-header-content-option-item" id="am-header-explore">
                 <div class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-eye fa-fw am-header-icon"></i>
@@ -392,6 +390,8 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id="myModalLabelLogIn">ログイン</h4>
        </div>
+
+
        <div class="modal-body">
             <button type="button" class="btn btn-primary btn-block" style="background-color: #1867A0;" id="aw-facebookLogin">
                 <span class="col-md-2"><i class="fa fa-facebook fa-inverse" style="font-size: 1.4em;"></i></span>
@@ -488,14 +488,15 @@
             <h4 class="modal-title" id="myModalLabelLogIn">質問する</h4>
         </div>
 
+        <form action="" id="am-modal-form-post-question" method="POST">
         <div class="modal-body">
             <div class="am-modal-askquestion-question">
                 <div class="am-modal-askquestion-title">
                     <span>質問</span>
                     <div class="am-modal-askquestion-title-description">具体的に、関連性がある</div>
-                </div>
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="聞きたいこと">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="title" placeholder="聞きたいこと">
+                    </div>
                 </div>
                 <div class="am-modal-askquestion-searchresult">
                     <table>
@@ -564,21 +565,22 @@
 
                 </div>
             </div>
+
+
             <div class="am-modal-askquestion-description">
                 <div class="am-modal-askquestion-title">
                     <span>記述</span><div class="am-modal-askquestion-title-description-left">オプショナル</div>
                 </div>
-                <textarea class="form-control" placeholder="詳細。。。" rows="3"></textarea>
+                <textarea class="form-control" name="description" placeholder="詳細。。。" rows="3"></textarea>
             </div>
 
             <div class="am-modal-askquestion-tag">
                 <div class="am-modal-askquestion-title">
                     <span>タグ</span><div class="am-modal-askquestion-title-description">分野の専門家があなたの質問を参照するのはに</div>
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="tag" placeholder="詳細。。。">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="詳細。。。">
-                </div>
-
 
                 <div class="am-modal-askquestion-tag-guideline">
                     <i class="fa fa-sort-desc"></i>
@@ -607,10 +609,10 @@
                 <i class="fa fa-facebook fa-fw"></i>
             </div>
             <div class="am-modal-askquestion-footer-action">
-                キャンセル<div class="btn btn-primary btn-sm">ポスト</div>
+                キャンセル<input type="submit" class="btn btn-primary btn-sm" value="ポスト">
             </div>
-
         </div>
+        </form><!--Form end-->
 
     </div>
 </div>
@@ -624,22 +626,49 @@
 <script src="http://tan-c.allmenz.jp/app/views/js/facebook.js"></script>
 
 @if (Auth::check())
-<script>
-$(document).ready(function(){
-    $("#am-header-content-login").hide();
-    $("#am-header-content-user").show();
-});
-</script>
+    <script>
+        $(document).ready(function(){
+            $("#am-header-content-login").hide();
+            $("#am-header-content-user").show();
+        });
+        </script>
 @else
-<script>
-$(document).ready(function(){
-    $("#am-header-content-login").show();
-    $("#am-header-content-user").hide();
-});
-</script>
+    <script>
+    $(document).ready(function(){
+        $("#am-header-content-login").show();
+        $("#am-header-content-user").hide();
+    });
+    </script>
 @endif
 
 <script>
+
+    // -------------------------------------------
+    // Initializer
+    // -------------------------------------------
+    $(document).ready(function(){
+        // Hide the tips for the qna modal
+        $(".am-modal-askquestion-searchresult").css("display","none");
+        $(".am-modal-askquestion-tag-guideline").css("display","none");
+    });
+
+    // -------------------------------------------
+    // QnA Modal
+    // -------------------------------------------
+
+    $(".am-modal-askquestion-tag input").focus(function(){
+        $(".am-modal-askquestion-tag-guideline").fadeIn("slow");
+    });
+    $(".am-modal-askquestion-tag input").blur(function(){
+        $(".am-modal-askquestion-tag-guideline").fadeOut("slow");
+    });
+
+    $(".am-modal-askquestion-question input").focus(function(){
+        $(".am-modal-askquestion-searchresult").fadeIn("slow");
+    });
+    $(".am-modal-askquestion-question input").blur(function(){
+        $(".am-modal-askquestion-searchresult").fadeOut("slow");
+    });
 
     // -------------------------------------------
     // Form validation
@@ -658,8 +687,8 @@ $(document).ready(function(){
         $("#am-modal-modal-footer>span:first-child").css("display","block");
         $("#am-modal-modal-footer>span:nth-child(2)").css("display","none");
     });
-    //TODO: when modal dismissed return to the display state:
 
+    //TODO: when modal dismissed return to the display state:
     $("#am-modal-form-login").validate({
         errorClass: "am-error",
         errorPlacement: function(error, element) {
@@ -759,6 +788,17 @@ $(document).ready(function(){
         }
     });
 
+    $("#am-modal-form-post-question").validate({
+        submitHandler: function(form) {
+            $.ajax("http://tan-c.allmenz.jp/public/post_question",{
+                type: "post",
+                data: $('#am-modal-form-post-question').serialize(),
+                success: function(response) {
+                    window.location.href="http://tan-c.allmenz.jp/public/question/"+response;
+                }
+            });
+        }
+    });
 
 
     // -------------------------------------------
@@ -787,6 +827,7 @@ $(document).ready(function(){
     function LoginPostProcessing(){
         window.location.href=window.location.href;
     }
+
 </script>
 
 </html>

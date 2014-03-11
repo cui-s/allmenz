@@ -17,7 +17,11 @@ Route::get('/', function()
     return View::make('index');
 });
 
-
+Route::post('create_comment', array('uses' => 'QuestionController@createComment'));
+Route::post('best_answer', array('uses' => 'QuestionController@bestAnswer'));
+Route::post('vote_question', array('uses' => 'QuestionController@vote'));
+Route::post('answer_question', array('uses' => 'QuestionController@answerQuestion'));
+Route::post('post_question', array('uses' => 'QuestionController@postQuestion'));
 Route::post('signup', array('uses' => 'UserController@doSignup'));
 Route::post('login', array('uses' => 'UserController@doLogin'));
 Route::get('login_twitter', array('uses' => 'UserController@doLoginTwitter'));
@@ -32,15 +36,34 @@ Route::get('logout', array('uses' => 'UserController@doLogout'));
 |
 */
 
-Route::get('test', array('as' => 'test', function()
+
+Route::get('question/{id}', array('as' => 'question', function($id)
 {
-    echo "login pls";
+    $answerFullDetailAll = Array();
+
+    $answerList = Answer::where("question_id", $id)->get();
+    foreach ($answerList as $oneAnswer){
+        $answerFullDetail = new StdClass();
+        $answerFullDetail -> answer = $oneAnswer;
+        $answerFullDetail -> comment = Comment::where("question_id", $id) -> where("answer_id", $oneAnswer->id)->get();
+        $answerFullDetail -> answerer = User:: where("id", $oneAnswer->answerer_id)->first();
+        array_push($answerFullDetailAll, $answerFullDetail);
+    }
+
+    return View::make('question')
+        ->with("question",Question::find($id))
+        // and the asker detail from the question_id
+        ->with("answerList",$answerFullDetailAll);
+        // and all the users with the answer_id
+
+        // and all the comments with the respective answer
 }));
 
-Route::get('tag', function()
+
+Route::get('tag', array('as' => 'tag', function()
 {
     return View::make('tag_main');
-});
+}));
 
 Route::get('tag_detail', function()
 {
@@ -57,10 +80,6 @@ Route::get('category', function()
     return View::make('category_main');
 });
 
-Route::get('qna', function()
-{
-    return View::make('qna');
-});
 
 
 Route::get('tutorial', function()
@@ -79,7 +98,6 @@ Route::group(array('prefix' => 'user', 'before' => 'auth'), function(){
     Route::get('pinboard',  array('as' => 'user_pinboard', function()
     {
         return View::make('user');
-//        ->with("login_status", $login_status)
     }));
 
     Route::get('edit', function()

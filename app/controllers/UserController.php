@@ -3,8 +3,6 @@
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'/vendor/twitteroauth/twitteroauth.php');
 
-
-
 class UserController extends BaseController {
 
     private static $CONSUMER_KEY='wHLNxp8OcgwLFIrLIhmiuQ';
@@ -26,7 +24,6 @@ class UserController extends BaseController {
         }
         else{   // facebook
             $input = Input::all();
-            log::info(Input::all());
             $name = isset($input['name']) ? $input['name'] : $input['firstname']." ".$input['lastname'];
             $username = $input['email'];
             $method = isset($input['method']) ? $input['method'] : 'manual';
@@ -47,7 +44,7 @@ class UserController extends BaseController {
                 'name'          =>  $name,
                 'user_name'     =>  $username,
                 'password'      =>  isset($input['password']) ? Hash::make($input['password']): "",       // i think password is a keyword
-                'create_time'   =>  date('Y/m/d H:i:s'),
+                'create_time'   =>  user('Y/m/d H:i:s'),
                 'create_method' =>  $method,
                 'picture_url'   =>  $picture
             ));
@@ -67,7 +64,6 @@ class UserController extends BaseController {
     }
 
     public function doLogin(){
-
         // create our user data for the authentication
         $userdata = array(
             'user_name' => Input::get('email'),

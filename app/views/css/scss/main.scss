@@ -60,7 +60,7 @@
 .am-qna-profile-pic{
   height: 100px;
   width: 100px;
-  background-image: url("../resources/index/staruser/tc.png");
+//  background-image: url("../resources/index/staruser/tc.png");
   background-size: 100px;
   border-radius: 75px;
   border: 2px solid white;
@@ -121,7 +121,11 @@
 .am-qna-content-bestanswer{
   border-left: 10px solid $secondary-color;
   border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .am-qna-content-question{
@@ -131,6 +135,11 @@
 .am-qna-content-question span{
   color: $primary-color;
   font-weight: bold;
+}
+
+.am-qna-content-description{
+  @extend .am-05;
+  color: $mid-grey;
 }
 
 .am-qna-content-top{
@@ -158,7 +167,31 @@
   overflow: auto;
   width: 65%;
   margin-left: 11%;
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+
+.am-qna-content-comment-makecomment{
+  padding-top:10px;
+  border-top: 2px solid whitesmoke;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.am-qna-content-comment-makecomment input{
+  float: left;
+  width: 76%;
+  margin: 0 6px;
+
+}
+
+.am-qna-content-comment-makecomment img{
+  border-radius: 5px;
+  border: 2px solid white;
+  box-sizing: content-box;
+  width: 30px;
+  float:left;
 }
 
 .am-qna-content-comment-oneitem{
@@ -166,7 +199,7 @@
   border-bottom: 1px solid $mid-grey;
 }
 
-.am-qna-content-comment-oneitem:last-child{
+.am-qna-content-comment-oneitem:nth-last-child(2){
   border-bottom: 0px;
 }
 
@@ -213,7 +246,7 @@
 }
 
 .am-qna-content-comment-triangle span{
-  height: 30px;
+  height: 10px;
   background: white;
   width: 20px;
   display: block;
@@ -232,6 +265,7 @@
   float: left;
   padding: 0 15px;
   width: 80px;
+  text-align: center;
 }
 
 .am-qna-optionbar-vote{
@@ -287,8 +321,30 @@
   overflow: auto;
 }
 
-.am-qna-answer-oneitem .am-qna-optionbar .fa{
+.am-qna-answer-oneitem .am-qna-optionbar .fa-fw{
   color: $primary-color;
+}
+
+.am-qna-answer-oneitem .am-qna-optionbar .fa-fw:hover{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: whitesmoke;
+  box-sizing: content-box;
+  font-size: 2.7em;
+}
+
+.am-qna-optionbar-bestanswer .fa-check{
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $mid-grey;
+}
+
+.am-qna-optionbar-bestanswer .fa-check:hover{
+  color:$mid-grey;
+}
+
+.am-qna-optionbar-bestanswer .fa-check.best-answer{
+  color:$primary-color;
+  -webkit-text-stroke-color: white;
 }
 
 //-------------- MAIN PAGE - Q/A MODAL ------------------

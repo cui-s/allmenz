@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
             $table->string('name', 255);
             $table->string('user_name', 255);
             $table->string('password', 255);
-            $table->dateTime('create_time');
+            $table->text('introduction');
             $table->enum('create_method',array('facebook','twitter','manual'))->default('manual');
             $table->enum('role',array('user','contributor','moderator'))->default('user');
             $table->integer('reputation')->default(0);
@@ -348,32 +348,3 @@ class CreateUsersTable extends Migration {
 //    ON UPDATE CASCADE)
 //ENGINE = InnoDB;
 //
-//
-//-- -----------------------------------------------------
-//-- Table `mydb`.`comment`
-//-- -----------------------------------------------------
-//CREATE TABLE IF NOT EXISTS `mydb`.`comment` (
-//`id` INT NOT NULL,
-//  `user_id` INT NULL,
-//  `question_id` INT NULL,
-//  `content` TEXT NULL,
-//  `create_time` TIME NULL,
-//  PRIMARY KEY (`id`),
-//  INDEX `fk_question_asker_id_idx` (`user_id` ASC),
-//  INDEX `fk_comment_question_id_idx` (`question_id` ASC),
-//  CONSTRAINT `fk_comment_user_id`
-//    FOREIGN KEY (`user_id`)
-//    REFERENCES `mydb`.`user` (`id`)
-//    ON DELETE SET NULL
-//    ON UPDATE CASCADE,
-//  CONSTRAINT `fk_comment_question_id`
-//    FOREIGN KEY (`question_id`)
-//    REFERENCES `mydb`.`question` (`id`)
-//    ON DELETE SET NULL
-//    ON UPDATE CASCADE)
-//ENGINE = InnoDB;
-//
-//
-//SET SQL_MODE=@OLD_SQL_MODE;
-//SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-//SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
