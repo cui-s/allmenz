@@ -44,7 +44,7 @@ class UserController extends BaseController {
                 'name'          =>  $name,
                 'user_name'     =>  $username,
                 'password'      =>  isset($input['password']) ? Hash::make($input['password']): "",       // i think password is a keyword
-                'create_time'   =>  date('Y/m/d H:i:s'),
+                'create_time'   =>  user('Y/m/d H:i:s'),
                 'create_method' =>  $method,
                 'picture_url'   =>  $picture
             ));

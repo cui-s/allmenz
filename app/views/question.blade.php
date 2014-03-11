@@ -65,7 +65,9 @@
                 <span id="am-qna-answer-vote-{{{$answer->id}}}">{{{$answer->voting_point}}}</span>
             </div>
             <div class="am-qna-optionbar-votedown"><i class="fa fa-sort-down fa-fw"></i></div>
+            @if ($question->asker_id === Session::get('user')->id)
             <div class="am-qna-optionbar-bestanswer"><i class="fa fa-check normal-answer"></i></div>
+            @endif
         </div>
 
         <div class="am-qna-content">

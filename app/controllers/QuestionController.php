@@ -10,7 +10,7 @@ class QuestionController extends BaseController {
         Eloquent::unguard();
 
         Question::create(array(
-            'asker_id'      =>  '1',
+            'asker_id'      =>  Auth::user()->id,
             'title'         =>  $input['title'],
             'content'       =>  $input['description'],
             'tag'           =>  $input['tag'],

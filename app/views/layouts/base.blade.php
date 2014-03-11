@@ -143,7 +143,7 @@
 
         <div id="am-header-content-user" class="pull-right">
 
-            <a href="{{ URL::to('mie') }}"
+            <a href="{{ URL::to('logout') }}"
                style="position:absolute;position: absolute;
                 margin-left: -220px;
                 background: red;
