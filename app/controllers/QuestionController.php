@@ -7,7 +7,6 @@ class QuestionController extends BaseController {
 
         $input = Input::all();
         $date = new \DateTime;
-
         Eloquent::unguard();
 
         Question::create(array(
@@ -30,7 +29,6 @@ class QuestionController extends BaseController {
 //        return Redirect::to('tutorial');
 
         return $question_id;
-
     }
 
 
@@ -53,12 +51,13 @@ class QuestionController extends BaseController {
     public function vote(){
 
         $input = Input::all();
+        $date = new \DateTime;
         Eloquent::unguard();
 
         if($input['type'] == "answer")
-            $target = Answer::where("id", $input['id'])->firstOrFail();
+            $target = Answer::where("id", $input['answer_id'])->firstOrFail();
         else if($input['type'] == "question")
-            $target = Question::where("id", $input['id'])->firstOrFail();
+            $target = Question::where("id", $input['question_id'])->firstOrFail();
 
         if($input['direction'] == "up")
             $target -> voting_point +=1;
@@ -66,6 +65,20 @@ class QuestionController extends BaseController {
             $target -> voting_point -=1;
         $target -> save();
 
+        // TODO: update the history data base
+        UserVotingHistory::create(array(
+            'user_id'       =>  $input['voter_id'],
+            'answer_id'     =>  $input['answer_id'],
+            'question_id'   =>  $input['question_id'],
+            'type'          =>  $input['type'],
+            'direction'     =>  $input['direction'],
+            'created_at'    =>  $date,
+            'updated_at'    =>  $date
+        ));
+
+        // TODO: choose a different color scheme or something for items already voted!
+
+        // return the current voting_point of the item to be correctly reflected
         return $target -> voting_point;
 
     }

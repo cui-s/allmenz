@@ -18,11 +18,13 @@ class CreateUserVotingHistoryTable extends Migration {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('question_id')->unsigned();
-            $table->tinyInteger('direction');
+            $table->integer('answer_id')->unsigned();
+            $table->enum('type',array('answer','question'))->default('answer');
+            $table->enum('direction',array('up','down'))->default('up');
 
-            $table->dateTime('create_time');
             $table->timestamps();
 
+            // todo: 2 tables or 2 foreign keys?
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('question_id')->references('id')->on('question');
 

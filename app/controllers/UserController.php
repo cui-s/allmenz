@@ -24,7 +24,6 @@ class UserController extends BaseController {
         }
         else{   // facebook
             $input = Input::all();
-            log::info(Input::all());
             $name = isset($input['name']) ? $input['name'] : $input['firstname']." ".$input['lastname'];
             $username = $input['email'];
             $method = isset($input['method']) ? $input['method'] : 'manual';
@@ -65,7 +64,6 @@ class UserController extends BaseController {
     }
 
     public function doLogin(){
-
         // create our user data for the authentication
         $userdata = array(
             'user_name' => Input::get('email'),

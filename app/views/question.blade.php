@@ -187,7 +187,9 @@
         $.ajax("http://tan-c.allmenz.jp/public/vote_question",{
             type: "post",
             data: {
-                    "id": $(this).closest(".am-qna-optionbar").attr("value"),
+                    "voter_id":  {{{ Session::get('user')->id }}},
+                    "question_id": {{{ $question->id}}},
+                    "answer_id": $(this).closest(".am-qna-optionbar").attr("value"),
                     "direction": "up",
                     "type":"answer"
             },
@@ -202,7 +204,9 @@
         $.ajax("http://tan-c.allmenz.jp/public/vote_question",{
             type: "post",
             data: {
-                    "id": $(this).closest(".am-qna-optionbar").attr("value"),
+                    "voter_id":  {{{ Session::get('user')->id }}},
+                    "question_id": {{{ $question->id}}},
+                    "answer_id": $(this).closest(".am-qna-optionbar").attr("value"),
                     "direction": "down",
                     "type":"answer"
             },
